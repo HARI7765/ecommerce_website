@@ -1,5 +1,4 @@
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,16 +8,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-d&rk5og6)#)dxtkp6+#uld7_c(nj2_1flp7dn%7+7-lubio1v%')
+SECRET_KEY = 'django-insecure-d&rk5og6)#)dxtkp6+#uld7_c(nj2_1flp7dn%7+7-lubio1v%'  # Set this to a secure value in production
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
+DEBUG = True  # Set to False in production
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Add production domain(s) when deploying
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -30,7 +27,9 @@ INSTALLED_APPS = [
     # Other apps like 'django.contrib.sites', 'rest_framework' can be added as needed.
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE = [# ...existing code...
+DEBUG = False  # Set to False in production
+# ...existing code...
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,23 +61,19 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 
 # Database configuration
-# Using PostgreSQL as the database for production
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'ecommerce_db'),
-        'USER': os.getenv('DB_USER', 'your_db_user'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'your_db_password'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': 'ecommerce_db',  # Replace with your database name
+        'USER': 'your_db_user',   # Replace with your username
+        'PASSWORD': 'your_db_password',  # Replace with your password
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
 
 # Password validation
-# See https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -96,8 +91,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# See https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -108,12 +101,15 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# See https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = '/static/'
 
-# Directory for static files (for production)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Ensure you have this for local development
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Make sure you create this directory
+]
+
+# If you're in production, use:
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files (for uploaded images, documents, etc.)
 MEDIA_URL = '/media/'
@@ -122,18 +118,17 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # Email settings (for account verification, notifications)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')  # Gmail as an example
-EMAIL_PORT = os.getenv('EMAIL_PORT', 587)
+EMAIL_HOST = 'smtp.gmail.com'  # Gmail as an example
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'your_email@gmail.com')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'your_email_password')
+EMAIL_HOST_USER = 'your_email@gmail.com'  # Replace with your email
+EMAIL_HOST_PASSWORD = 'your_email_password'  # Replace with your email password
 
 # For sending email from an e-commerce website (e.g., order confirmation, verification)
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # File upload handling (image or proof uploads for users/products)
-
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB limit for file uploads
 
 # Default primary key field type
@@ -141,10 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Security settings
-# Set to 'True' for production to force HTTPS
-SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', 'True') == 'True'
-CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE', 'True') == 'True'
-SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'True') == 'True'
+SECURE_SSL_REDIRECT = False  # Set to True for production to force HTTPS
+CSRF_COOKIE_SECURE = False  # Set to True for production
+SESSION_COOKIE_SECURE = False  # Set to True for production
 
 # X-Content-Type-Options header
 SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -156,5 +150,4 @@ SECURE_HSTS_PRELOAD = True
 
 
 # Cross-Origin Resource Sharing (CORS) settings if using frontend API
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
-
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000']  # Modify for your frontend origin
