@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Cart - MedShop</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MedShop - Your Cart</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#medicines">Medicines</a></li>
+                    <li><a href="#equipments">Medical Equipment</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Your Cart</h2>
+            {% if cart_items %}
+                <ul>
+                    {% for item in cart_items %}
+                        <li>{{ item.name }} - ${{ item.price }}</li>
+                    {% endfor %}
+                </ul>
+                <p>Total: ${{ cart_items|length|multiply:5 }}</p>  <!-- This is just an example; implement actual price calculation -->
+                <button>Proceed to Checkout</button>
+            {% else %}
+                <p>Your cart is empty!</p>
+            {% endif %}
+        </div>
+    </main>
+
+</body>
+</html>
