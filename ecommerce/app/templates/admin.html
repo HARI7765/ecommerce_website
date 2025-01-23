@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- add_medicine.html -->
+{% extends "base_generic.html" %}
+{% block content %}
+  <h2>Add Medicine</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Medicine</button>
+  </form>
+{% endblock %}
+<!-- add_medical_equipment.html -->
+{% extends "base_generic.html" %}
+{% block content %}
+  <h2>Add Medical Equipment</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Equipment</button>
+  </form>
+{% endblock %}
+
+</body>
+</html>

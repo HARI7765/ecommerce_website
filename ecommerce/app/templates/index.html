@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />    
     <title>MedShop - Medicines and Medical Equipment</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
     <style>
         * {
@@ -73,8 +74,8 @@
             font-size: 36px;
             cursor: pointer;
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 30px;
+            left: 30px;
         }
 
         /* Side navigation menu */
@@ -258,6 +259,11 @@
             footer {
                 padding: 15px 0;
             }
+
+            /* Show the menu items in the side nav on small screens */
+            .side-nav a {
+                display: block;
+            }
         }
 
         @media (max-width: 480px) {
@@ -293,13 +299,17 @@
     <!-- Header Section -->
     <header>
         <div class="container">
+            <span class="material-symbols-outlined menu-toggle" onclick="openNav()">menu</span> <!-- Move this here -->
             <h1>MedShop</h1>
             <nav>
-                <span class="material-symbols-outlined menu-toggle" onclick="openNav()">menu</span>
-                <!-- Cart icon -->
-                <span class="material-symbols-outlined cart-icon">
-                    shopping_cart
-                </span>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#medicines">Medicines</a></li>
+                    <li><a href="#equipments">Medical Equipment</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                </ul>
+                <span class="material-symbols-outlined cart-icon">shopping_cart</span>
             </nav>
         </div>
     </header>
@@ -308,7 +318,7 @@
     <main id="home">
         <div class="container">
             <h2>Welcome to MedShop - Your Trusted Source for Medicines and Medical Equipment</h2>
-            <p>Your health and well-being are our priority. We provide a wide range of medicines and medical equipment at affordable prices.</p>
+            <p>Your health and well-being are our priority. .</p>
         </div>
     </main>
 
@@ -324,7 +334,6 @@
                     <p><strong>$5.00</strong></p>
                     <button>Add to Cart</button>
                 </div>
-                <!-- Add more product items here -->
             </div>
         </div>
     </section>
@@ -341,7 +350,6 @@
                     <p><strong>$40.00</strong></p>
                     <button>Add to Cart</button>
                 </div>
-                <!-- Add more product items here -->
             </div>
         </div>
     </section>

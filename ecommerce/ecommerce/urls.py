@@ -21,5 +21,16 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),  # Include the app URLs
+    path('admin/', admin.site.urls),
+    path('', include('shop.urls')),  # 
 ]
+# shop/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('add_medicine/', views.add_medicine, name='add_medicine'),
+    # Other URL patterns
+]
+
 

@@ -1,0 +1,17 @@
+<!-- shop/templates/add_medical_equipment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medical Equipment</title>
+</head>
+<body>
+    <h1>Add Medical Equipment</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- Your form fields go here -->
+        <button type="submit">Add Item</button>
+    </form>
+</body>
+</html>

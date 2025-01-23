@@ -51,3 +51,48 @@ def add_to_cart(request, product_id):
     cart.append(product)
     request.session['cart'] = cart  # Save updated cart in session
     return redirect('cart')  # Redirect to cart page
+# views.py
+from django.shortcuts import render, redirect
+from .forms import MedicineForm, MedicalEquipmentForm
+
+def add_medicine(request):
+    if request.method == 'POST':
+        form = MedicineForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_page')  # Redirect to admin page after saving
+    else:
+        form = MedicineForm()
+    return render(request, 'add_medicine.html', {'form': form})
+
+def add_medical_equipment(request):
+    if request.method == 'POST':
+        form = MedicalEquipmentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_page')  # Redirect to admin page after saving
+    else:
+        form = MedicalEquipmentForm()
+    return render(request, 'add_medical_equipment.html', {'form': form})
+# views.py
+from django.shortcuts import render
+from .models import Medicine
+
+def home(request):
+    medicines = Medicine.objects.all()
+    return render(request, 'home.html', {'medicines': medicines})
+# shop/views.py
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')
+# shop/views.py
+from django.shortcuts import render
+
+def add_medicine(request):
+    return render(request, 'add_medicine.html')  # Ensure this matches the template name
+# shop/views.py
+from django.shortcuts import render
+
+def add_medical_equipment(request):
+    return render(request, 'add_medical_equipment.html')  # Ensure this matches the template name

@@ -7,3 +7,23 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Medicine(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(upload_to='medicines/')
+
+    def __str__(self):
+        return self.name
+
+
+class MedicalEquipment(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(upload_to='equipment/')
+
+    def __str__(self):
+        return self.name
