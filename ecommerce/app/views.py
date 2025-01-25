@@ -26,7 +26,7 @@ def signin(request):
         user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')  # Redirect to home or dashboard
+            return redirect('index')  # Redirect to home or dashboard
         else:
             messages.error(request, 'Invalid credentials')
             return redirect('signin')
@@ -96,3 +96,8 @@ from django.shortcuts import render
 
 def add_medical_equipment(request):
     return render(request, 'add_medical_equipment.html')  # Ensure this matches the template name
+# views.py
+from django.shortcuts import render
+
+def admin_page(request):
+    return render(request, 'admin_page.html')  # Make sure you have a template 'admin_page.html'

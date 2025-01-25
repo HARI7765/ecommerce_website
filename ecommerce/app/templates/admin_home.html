@@ -1,0 +1,102 @@
+<!-- shop/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MedShop Admin</title>
+</head>
+<body>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 32px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+/* List Item Styling */
+ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Link Styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p, ul li {
+        font-size: 16px;
+    }
+
+    a {
+        font-size: 16px
+
+    </style>
+    <h1>Welcome to MedShop Admin</h1>
+    <p>Use the links below to add new medicines and equipment:</p>
+    <ul>
+        <li><a href="{% url 'add_medicine' %}">Add Medicine</a></li>
+        <li><a href="{% url 'add_medical_equipment' %}">Add Medical Equipment</a></li>
+    </ul>
+</body>
+</html>
