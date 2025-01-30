@@ -1,15 +1,12 @@
-<!-- {% load static %} -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />    
     <title>MedShop - Medicines and Medical Equipment</title>
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+    <!-- Correct Google Fonts link for Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <style>
         * {
             margin: 0;
@@ -62,20 +59,19 @@
             text-decoration: underline;
         }
 
-        .material-symbols-outlined {
+        /* Style for Material Icons */
+        .material-icons {
             font-size: 36px;
             cursor: pointer;
-            margin-left: 15px;
+            color: white;
         }
 
         /* Menu toggle icon */
         .menu-toggle {
             display: none;
-            font-size: 36px;
-            cursor: pointer;
             position: absolute;
-            top: 30px;
-            left: 30px;
+            top: 20px;
+            left: 20px;
         }
 
         /* Side navigation menu */
@@ -230,10 +226,8 @@
                 display: block;
             }
 
-            .material-symbols-outlined {
+            .material-icons {
                 font-size: 30px;
-                margin-left: 0;
-                margin-top: 10px;
             }
 
             .product-grid {
@@ -299,7 +293,9 @@
     <!-- Header Section -->
     <header>
         <div class="container">
-            <span class="material-symbols-outlined menu-toggle" onclick="openNav()">menu</span> <!-- Move this here -->
+            <!-- Menu toggle button for smaller screens -->
+            <span class="material-icons menu-toggle" onclick="openNav()">menu</span>
+            
             <h1>MedShop</h1>
             <nav>
                 <ul>
@@ -309,7 +305,7 @@
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="signup.html">SignUp</a></li>
                 </ul>
-                <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+                <span class="material-icons cart-icon">shopping_cart</span>
             </nav>
         </div>
     </header>
@@ -318,7 +314,7 @@
     <main id="home">
         <div class="container">
             <h2>Welcome to MedShop - Your Trusted Source for Medicines and Medical Equipment</h2>
-            <p>Your health and well-being are our priority. .</p>
+            <p>Your health and well-being are our priority.</p>
         </div>
     </main>
 
