@@ -27,3 +27,15 @@ class MedicalEquipment(models.Model):
 
     def __str__(self):
         return self.name
+from django import forms
+from .models import Medicine, MedicalEquipment
+
+class MedicineForm(forms.ModelForm):
+    class Meta:
+        model = Medicine
+        fields = '__all__'
+
+class MedicalEquipmentForm(forms.ModelForm):
+    class Meta:
+        model = MedicalEquipment
+        fields = '__all__'

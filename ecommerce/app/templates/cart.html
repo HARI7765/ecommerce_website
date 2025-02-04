@@ -1,4 +1,5 @@
-{% load static %}
+{% load custom_filters %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,215 +11,188 @@
 </head>
 <body>
     <style>
-        /* cart/* Reset some default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Body Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-}
+        /* Body and Header styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
 
-/* Header Styling */
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px 0;
-    position: relative; /* Enable absolute positioning of the menu button */
-}
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .menu-toggle {
+            font-size: 36px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: none;
+        }
 
-/* Position the Hamburger Menu Icon to the Top-Left of the Navigation Bar */
-.menu-toggle {
-    font-size: 36px;
-    cursor: pointer;
-    position: absolute;  /* Absolute position to place it on top-left */
-    top: 20px;  /* Adjust the distance from the top */
-    left: 20px;  /* Adjust the distance from the left */
-    display: none;  /* Hide it on larger screens */
-}
+        /* Side Nav Styling */
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.3s ease;
+            padding-top: 60px;
+        }
 
-/* Side Navigation Styling */
-.side-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-}
+        .side-nav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-.side-nav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
+        .side-nav a:hover {
+            color: #f1f1f1;
+        }
 
-.side-nav a:hover {
-    color: #f1f1f1;
-}
+        .side-nav .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+        }
 
-.side-nav .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
+        .top-nav ul {
+            display: flex;
+            list-style-type: none;
+        }
 
-/* Top Navigation (for larger screens) */
-.top-nav ul {
-    display: flex;
-    list-style-type: none;
-}
+        .top-nav ul li {
+            margin-right: 20px;
+        }
 
-.top-nav ul li {
-    margin-right: 20px;
-}
+        .top-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
 
-.top-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
+        /* Cart Page Styling */
+        main {
+            padding: 40px 0;
+        }
 
-.top-nav ul li a:hover {
-    text-decoration: underline;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* Cart Page Styling */
-main {
-    padding: 40px 0;
-}
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        ul {
+            list-style-type: none;
+            margin: 20px 0;
+            padding: 0;
+        }
 
-h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #007bff;
-}
+        ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
 
-/* Cart List Styling */
-ul {
-    list-style-type: none;
-    margin: 20px 0;
-    padding: 0;
-}
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
 
-ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-p {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px 0;
-}
+        button:hover {
+            background-color: #218838;
+        }
 
-button {
-    background-color: #28a745;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+        /* Empty Cart Styling */
+        p.empty-cart {
+            font-size: 18px;
+            color: #999;
+        }
 
-button:hover {
-    background-color: #218838;
-}
+        /* Mobile Styling */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
 
-/* Empty Cart message */
-p {
-    font-size: 18px;
-    color: #999;
-    font-weight: normal;
-}
+            .top-nav {
+                display: none;
+            }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    /* Hamburger Menu */
-    .menu-toggle {
-        font-size: 36px;
-        cursor: pointer;
-        display: block;  /* Show hamburger icon on smaller screens */
-    }
+            .side-nav {
+                width: 0;
+                display: block;
+                position: fixed;
+            }
 
-    /* Hide the Top Navigation on smaller screens */
-    .top-nav {
-        display: none;
-    }
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-    /* Side Navigation */
-    .side-nav {
-        width: 0;
-        display: block;
-        position: fixed;
-    }
+            .side-nav a {
+                font-size: 22px;
+            }
+        }
 
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
 
-    .container {
-        width: 100%;
-    }
-
-    /* Side Nav links */
-    .side-nav a {
-        font-size: 22px;
-    }
-}
-
-/* Media Query for larger screens */
-@media (min-width: 769px) {
-    .menu-toggle {
-        display: none;  /* Hide the menu toggle on larger screens */
-    }
-
-    /* Show the top nav on larger screens */
-    .top-nav {
-        display: flex;
-    }
-}
-
-
+            .top-nav {
+                display: flex;
+            }
+        }
     </style>
-    <!-- Header with Navigation -->
+
     <header>
         <div class="container">
             <h1>MedShop - Your Cart</h1>
-            <!-- Hamburger Menu Icon -->
             <span class="menu-toggle" onclick="openNav()">&#9776;</span>
-            <!-- Side Navigation -->
+
             <div id="mySidenav" class="side-nav">
                 <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
                 <a href="#home">Home</a>
@@ -228,7 +202,6 @@ p {
                 <a href="signup.html">SignUp</a>
             </div>
 
-            <!-- Top Navigation (visible on larger screens) -->
             <nav class="top-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -245,20 +218,19 @@ p {
         <div class="container">
             <h2>Your Cart</h2>
             {% if cart_items %}
-                <ul>
-                    {% for item in cart_items %}
-                        <li>{{ item.name }} - ${{ item.price }}</li>
-                    {% endfor %}
-                </ul>
-                <p>Total: ${{ cart_items|length|multiply:5 }}</p>  <!-- Example; implement actual price calculation -->
-                <button>Proceed to Checkout</button>
-            {% else %}
-                <p>Your cart is empty!</p>
-            {% endif %}
+            <ul>
+                {% for item in cart_items %}
+                    <li>{{ item.name }} - ${{ item.price }} x {{ item.quantity }}</li>
+                {% endfor %}
+            </ul>
+            <p>Total: ${{ some_value }}</p>
+            <button>Proceed to Checkout</button>
+        {% else %}
+            <p>Your cart is empty!</p>
+        {% endif %}
         </div>
     </main>
 
-    <!-- JavaScript for Side Navigation -->
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
