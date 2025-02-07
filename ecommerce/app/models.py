@@ -7,3 +7,4 @@ class Product(models.Model):
     price=models.FloatField()
     description=models.CharField(max_length=500)
     dosage=models.IntegerField(max_length=200)
+
