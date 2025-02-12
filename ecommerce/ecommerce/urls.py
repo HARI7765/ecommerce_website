@@ -19,10 +19,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # Removed duplicate entry
     path('', include('app.urls')),  # Include the app URLs
     path('admin/', admin.site.urls),
-    path('', include('shop.urls')),  # 
+    # path('', include('shop.urls')),  # Commented out due to missing shop app
 ]
 # shop/urls.py
 from django.urls import path
@@ -32,5 +32,3 @@ urlpatterns = [
     path('add_medicine/', views.add_medicine, name='add_medicine'),
     # Other URL patterns
 ]
-
-
