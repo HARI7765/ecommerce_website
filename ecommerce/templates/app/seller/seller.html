@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <h1>Welcome to the Seller Dashboard</h1>
+    <p>This is where you can manage your products.</p>
+    <a href="{% url 'add_medicine' %}">Add Medicine</a>
+    <a href="{% url 'add_medical_equipment' %}">Add Medical Equipment</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

@@ -70,14 +70,12 @@ def seller_add_view(request):
             messages.error(request, "All fields are required!")
             return render(request, 'seller/selleradd.html')  # Render add product page
         
-        # Note: Product model reference has been removed
         messages.success(request, "Product added successfully!")
         return redirect('seller')
     
     return render(request, 'seller/selleradd.html')  # Render add product page
 
 def delete_view(request, id):
-    # Note: Product model reference has been removed
     messages.success(request, "Product deleted successfully!")  # Optional success message
     return redirect('seller')
 
@@ -163,12 +161,10 @@ def admin_page(request):
 
 @login_required
 def cart_view(request):
-    # Logic for displaying the cart
     return render(request, 'app/cart.html')
 
 @login_required
 def add_to_cart(request, product_id):
-    # Logic for adding a product to the cart
     pass
 
 @login_required
@@ -182,3 +178,20 @@ def add_medicine(request):
     else:
         form = MedicineForm()
     return render(request, 'app/add_medicine.html', {'form': form})
+
+@login_required
+def add_medical_equipment(request):
+    if request.method == 'POST':
+        form = MedicalEquipmentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Medical equipment added successfully!')
+            return redirect('admin_page')
+    else:
+        form = MedicalEquipmentForm()
+    return render(request, 'app/add_medical_equipment.html', {'form': form})
+
+@login_required
+def seller_view(request):
+    # Logic to retrieve seller-specific data can be added here
+    return render(request, 'seller/seller_home.html')  # Render the seller home page
