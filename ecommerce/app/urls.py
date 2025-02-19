@@ -24,12 +24,5 @@ urlpatterns = [
     path('add_medical_equipment/', views.add_medical_equipment, name='add_medical_equipment'),
 
     # Seller URLs
-    path('seller/', include([
-        path('home/', views.seller_view, name='home'),
-        path('signup/', views.seller_signup_view, name='signup'),
-        path('logout/', views.seller_logout_view, name='logout'),
-        path('add/', views.seller_add_view, name='add'),
-        path('delete/<int:id>/', views.delete_view, name='delete'),
-        path('edit/<int:pk>/', views.edit_view, name='edit'),
-    ], namespace='seller')),
+    path('seller/', include(('app.urls_seller', 'seller'), namespace='seller')),
 ]
