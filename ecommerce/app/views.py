@@ -104,7 +104,10 @@ def seller_logout_view(request):
     return render(request, 'seller/sellersignin.html')
 
 def index(request):
-    return render(request, 'app/index.html')
+    medicines = Medicine.objects.all()
+    equipment = MedicalEquipment.objects.all()
+    products = list(medicines) + list(equipment)
+    return render(request, 'index.html', {'products': products})
 
 def home(request):
     medicines = Medicine.objects.all()
@@ -126,7 +129,7 @@ def signin(request):
         else:
             messages.error(request, 'Invalid credentials')
 
-    return render(request, 'app/signin.html')  # Render signin page
+    return render(request, 'app/user/signin.html')  # Render signin page
 
 def signup(request):
     if request.method == 'POST':
@@ -152,6 +155,10 @@ def signup(request):
 
 @login_required
 def admin_page(request):
+    if not request.user.is_superuser:
+        messages.error(request, "You don't have permission to access this page")
+        return redirect('home')
+    
     medicines = Medicine.objects.all()
     equipment = MedicalEquipment.objects.all()
     return render(request, 'app/admin_page.html', {
@@ -163,12 +170,38 @@ def admin_page(request):
 def cart_view(request):
     return render(request, 'app/cart.html')
 
-@login_required
 def add_to_cart(request, product_id):
-    pass
+    """
+    Add a product to the user's shopping cart.
+    Redirects to signin page if user is not authenticated.
+    """
+    if not request.user.is_authenticated:
+        messages.info(request, "Please sign in to add items to your cart")
+        return redirect('signin')
+        
+    try:
+        product = Medicine.objects.get(id=product_id)
+        cart = request.session.get('cart', {})
+        
+        # Add product to cart or increment quantity
+        if str(product_id) in cart:
+            cart[str(product_id)] += 1
+        else:
+            cart[str(product_id)] = 1
+        
+        request.session['cart'] = cart
+        messages.success(request, f"{product.name} added to cart!")
+    except Medicine.DoesNotExist:
+        messages.error(request, "Product not found")
+    
+    return redirect('cart_view')
 
 @login_required
 def add_medicine(request):
+    if not request.user.is_superuser:
+        messages.error(request, "You don't have permission to add medicines")
+        return redirect('home')
+        
     if request.method == 'POST':
         form = MedicineForm(request.POST, request.FILES)
         if form.is_valid():
@@ -181,6 +214,10 @@ def add_medicine(request):
 
 @login_required
 def add_medical_equipment(request):
+    if not request.user.is_superuser:
+        messages.error(request, "You don't have permission to add medical equipment")
+        return redirect('home')
+        
     if request.method == 'POST':
         form = MedicalEquipmentForm(request.POST, request.FILES)
         if form.is_valid():
@@ -193,5 +230,9 @@ def add_medical_equipment(request):
 
 @login_required
 def seller_view(request):
+    if not request.user.is_staff:
+        messages.error(request, "You don't have permission to access this page")
+        return redirect('home')
+    
     # Logic to retrieve seller-specific data can be added here
     return render(request, 'seller/seller_home.html')  # Render the seller home page

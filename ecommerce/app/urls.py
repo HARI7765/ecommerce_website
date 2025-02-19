@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+
+app_name = 'app'
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
@@ -22,10 +24,12 @@ urlpatterns = [
     path('add_medical_equipment/', views.add_medical_equipment, name='add_medical_equipment'),
 
     # Seller URLs
-    path('seller/home/', views.seller_view, name='seller'),
-    path('seller/signup/', views.seller_signup_view, name='seller_signup'),
-    path('seller/logout/', views.seller_logout_view, name='seller_logout'),
-    path('seller/add/', views.seller_add_view, name='seller_add'),
-    path('seller/delete/<int:id>/', views.delete_view, name='delete'),
-    path('seller/edit/<int:pk>/', views.edit_view, name='edit'),
+    path('seller/', include([
+        path('home/', views.seller_view, name='home'),
+        path('signup/', views.seller_signup_view, name='signup'),
+        path('logout/', views.seller_logout_view, name='logout'),
+        path('add/', views.seller_add_view, name='add'),
+        path('delete/<int:id>/', views.delete_view, name='delete'),
+        path('edit/<int:pk>/', views.edit_view, name='edit'),
+    ], namespace='seller')),
 ]

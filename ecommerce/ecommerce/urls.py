@@ -19,16 +19,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Removed duplicate entry
-    path('', include('app.urls')),  # Include the app URLs
     path('admin/', admin.site.urls),
-    # path('', include('shop.urls')),  # Commented out due to missing shop app
-]
-# shop/urls.py
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('add_medicine/', views.add_medicine, name='add_medicine'),
-    # Other URL patterns
+    path('', include('app.urls')),  # Include the app URLs
 ]
