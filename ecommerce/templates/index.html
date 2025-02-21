@@ -291,7 +291,7 @@
         <a href="#medicines">Medicines</a>
         <a href="#equipments">Medical Equipment</a>
         <a href="#contact">Contact Us</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'app:signup' %}">Sign Up</a>
     </div>
 
     <!-- Header Section -->
@@ -307,9 +307,9 @@
                     <li><a href="#medicines">Medicines</a></li>
                     <li><a href="#equipments">Medical Equipment</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a>SignUp</a></li>
+                    <li><a href="{% url 'app:signup' %}">Sign Up</a>SignUp</a></li>
                 </ul>
-                <a href="{% url 'cart' %}">
+                <a href="{% url 'app:cart' %}">
                     <span class="material-icons cart-icon">shopping_cart</span>
                 </a>
                 
@@ -389,3 +389,4 @@
     </script>
 </body>
 </html>
+
