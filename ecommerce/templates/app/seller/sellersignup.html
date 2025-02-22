@@ -9,8 +9,8 @@
     <h1>Seller Sign Up</h1>
     <form method="POST">
         {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>
@@ -22,6 +22,13 @@
         <input type="password" id="confirm_password" name="confirm_password" required><br>
 
         <button type="submit">Sign Up</button>
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
     </form>
     <a href="{% url 'seller_signin' %}">Sign In</a>
 </body>
