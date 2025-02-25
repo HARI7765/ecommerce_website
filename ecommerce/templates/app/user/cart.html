@@ -224,21 +224,18 @@
                 {% endfor %}
             </ul>
             <p>Total: ${{ some_value }}</p>
-            <button>Proceed to Checkout</button>
-        {% else %}
-            <p>Your cart is empty!</p>
-        {% endif %}
+            <button onclick="window.location.href='{% url 'app:signin' %}'">Proceed to Checkout</button>
+            <p>If you are not signed in, please <a href="{% url 'app:signin' %}">sign in</a> or <a href="{% url 'app:signup' %}">sign up</a>.</p>
+            <p>Make sure to sign in to access your cart and complete your purchase.</p>
+            <p>Make sure to sign in to access your cart and complete your purchase.</p>
+            <p>Make sure to sign in to access your cart and complete your purchase.</p>
+            {% else %}
+                <p>Your cart is empty!</p>
+            {% endif %}
         </div>
     </main>
 
-    <!-- <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
+<!-- Removed JavaScript for authentication check -->
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script> -->
 </body>
 </html>

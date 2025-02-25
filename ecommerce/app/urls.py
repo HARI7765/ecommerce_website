@@ -6,16 +6,16 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('cart/', views.cart_view, name='cart'),  # URL for viewing the cart
     path('home/', views.home, name='home'),
     
     # Authentication URLs
-    path('signup/', views.signup, name='signup'),
-    path('signin/', views.signin, name='signin'),
+    path('signup/', views.signup, name='signup'),  # User registration
+    path('signin/', views.signin, name='signin'),  # User authentication
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     
     # Cart URLs
-    path('cart/', views.cart_view, name='cart'),
     path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
     
     # Admin/Product Management URLs
