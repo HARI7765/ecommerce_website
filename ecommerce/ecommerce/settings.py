@@ -2,11 +2,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'django-insecure-your-secret-key-here'
+SECRET_KEY = 'your-secure-randomly-generated-secret-key'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
 
 LOGGING = {
     'version': 1,

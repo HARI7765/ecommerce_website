@@ -141,7 +141,7 @@ h2 {
         <div class="signup-box">
             <h2>Create an Account</h2>
             <!-- signup.html -->
-<form action="{% url 'signup' %}" method="POST">
+<form action="{% url 'app:signup' %}" method="POST">
     {% csrf_token %}
     <div class="input-group">
         <label for="username">Username:</label>
@@ -178,7 +178,7 @@ h2 {
     {% endif %}
 
     <p class="signin-redirect">
-        Already have an account? <a href="{% url 'signin' %}">Sign In</a>
+        Already have an account? <a href="{% url 'app:signin' %}">Sign In</a>
     </p>
 </form>
 
