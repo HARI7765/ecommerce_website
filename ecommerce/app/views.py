@@ -72,7 +72,7 @@ def view_cart(request):
             'subtotal': subtotal
         })
     
-    return render(request, 'cart.html', {
+    return render(request, 'app/user/cart.html', {
         'cart_items': cart_items,
         'total': total
     })

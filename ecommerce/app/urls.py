@@ -6,7 +6,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('cart/', views.cart_view, name='cart'),  # URL for viewing the cart
+    path('cart/', views.view_cart, name='cart'),  # URL for viewing the cart
     path('home/', views.home, name='home'),
     
     # Authentication URLs
