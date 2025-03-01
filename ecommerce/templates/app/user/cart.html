@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Your Cart - MedShop</title>
-    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+
+    <!-- Load static files -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <style>
@@ -24,7 +27,7 @@
         }
 
         header {
-            background-color: #007bff;
+            background-color: #000000;
             color: white;
             padding: 20px 0;
             position: relative;
@@ -63,7 +66,6 @@
 
         .side-nav a {
             padding: 8px 8px 8px 32px;
-            text-decoration: none极速赛车开奖结果查询
             text-decoration: none;
             font-size: 25px;
             color: #818181;
@@ -72,7 +74,6 @@
         }
 
         .side-nav a:hover {
-            color: #f1极速赛车开奖结果查询
             color: #f1f1f1;
         }
 
@@ -92,14 +93,12 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-极速赛车开奖结果查询
-            margin: 0 auto;
         }
 
         h2 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: #007bff;
+            color: #030f1d;
         }
 
         ul {
@@ -141,7 +140,6 @@
         }
 
         /* Mobile Styling */
-        @media (max-width极速赛车开奖结果查询
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -180,7 +178,6 @@
 
     <header>
         <div class="container">
-
             <h1>MedShop - Your Cart</h1>
             <span class="menu-toggle" onclick="openNav()">&#9776;</span>
 
@@ -196,14 +193,12 @@
             <nav class="top-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#medicines">极速赛车开奖结果查询
                     <li><a href="#medicines">Medicines</a></li>
                     <li><a href="#equipments">Medical Equipment</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="signup.html">SignUp</a></li>
                 </ul>
             </nav>
-        </极速赛车开奖结果查询
         </div>
     </header>
 
@@ -220,8 +215,7 @@
             <p>Shipping: ${{ some_value }}</p>
             <p>Grand Total: ${{ some_value }}</p>
             <button onclick="window.location.href='{% url 'app:signin' %}'">Proceed to Checkout</button>
-            <p>If you are not signed in, please <a href="{% url 'signin' %}">Sign In</a>
-               or <a href="{% url 'app:signup' %}">sign up</a>.</p>
+            <p>If you are not signed in, please <a href="{% url 'signup' %}">SignUp</a></p>
             <p>Make sure to sign in to access your cart and complete your purchase.</p>
             {% else %}
                 <p>Your cart is empty!</p>
