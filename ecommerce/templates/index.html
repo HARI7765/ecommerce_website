@@ -4,155 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MedShop - Medicines and Medical Equipment</title>
-    <!-- Correct Google Fonts link for Material Icons -->
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Icons -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            transition: margin-left 0.3s;
         }
 
-        .container {
-            width: 90%;
-            margin: 0 auto;
+        /* Navbar Styling */
+        .navbar {
+            background-color: #000 !important;
         }
-
-        header {
-            background-color: #000000;
+        .navbar-brand {
+            font-weight: bold;
+            color: red !important;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 16px;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: linear-gradient(90deg, #000, #333);
             color: white;
-            padding: 20px 0;
             text-align: center;
+            padding: 50px 20px;
+        }
+        .search-box {
+            max-width: 600px;
+            margin: auto;
             position: relative;
         }
-
-        header h1 {
-            font-size: 32px;
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: none;
         }
-
-        header nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-top: 10px;
-            padding: 0;
-        }
-
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
+        .search-box button {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            background: red;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
+            border: none;
+            border-radius: 50%;
+            padding: 8px 12px;
         }
 
-        header nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Style for Material Icons */
-        .material-icons {
-            font-size: 36px;
-            cursor: pointer;
-            color: white;
-        }
-
-        /* Menu toggle icon */
-        .menu-toggle {
-            display: none;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 1001; /* Ensure the menu icon stays on top */
-        }
-
-        /* Side navigation menu */
-        .side-nav {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: -250px;
-            background-color: rgba(51, 51, 51, 0.9); /* Added transparency to background */
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 60px;
-        }
-
-        .side-nav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .side-nav a:hover {
-            color: #f1f1f1;
-        }
-
-        .side-nav .close-btn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        /* When side navigation is open */
-        .side-nav.open {
-            left: 0;
-        }
-
-        /* Adjust body margin when the side nav is open */
-        body.nav-open {
-            overflow: hidden; /* Prevent scrolling when the side nav is open */
-        }
-
-        /* Style for the cart icon */
-        .cart-icon {
-            font-size: 36px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-        }
-
-        main {
-            padding: 40px 0;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
+        /* Responsive Product Grid */
         .product-section {
             padding: 40px 0;
             background-color: #ffffff;
         }
-
-        .product-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
-
         .product-item {
             background-color: #ffffff;
             padding: 20px;
@@ -160,217 +84,141 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         .product-item img {
             width: 100%;
             height: auto;
             border-radius: 8px;
         }
-
-        .product-item h4 {
-            margin-top: 15px;
-            font-size: 20px;
-        }
-
-        .product-item p {
-            margin: 10px 0;
-        }
-
         button {
-            background-color: #000000;
+            background-color: black;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
-
         button:hover {
-            background-color: #000000;
+            background-color: red;
         }
 
-        .contact-section {
-            background-color: #000000;
+        /* Footer */
+        .footer {
+            background-color: black;
             color: white;
-            padding: 40px 0;
             text-align: center;
-        }
-
-        .contact-section a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #000000;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: #000000;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            padding: 20px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 28px;
-            }
-
-            header nav ul {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 10px;
-                padding: 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .material-icons {
-                font-size: 30px;
-            }
-
             .product-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
-
-            .product-item {
-                padding: 15px;
-            }
-
-            button {
-                padding: 8px 16px;
-            }
-
-            .container {
-                width: 95%;
-            }
-
-            .contact-section {
-                padding: 30px 0;
-            }
-
-            footer {
-                padding: 15px 0;
-            }
-
-            /* Show the menu items in the side nav on small screens */
-            .side-nav a {
-                display: block;
-            }
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img {
+            max-width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+        .product-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e60000;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 14px;
+        }
+        .discount {
+            font-size: 14px;
+            color: green;
+        }
+        .cart-btn {
+            background: red;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .cart-btn:hover {
+            background: darkred;
+        }
+        .fav-icon {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            color: #888;
+        }
+        .fav-icon:hover {
+            color: red;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 24px;
-            }
-
-            .product-item h4 {
-                font-size: 18px;
-            }
-
-            .product-item p {
-                font-size: 14px;
-            }
-
-            button {
-                padding: 6px 12px;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Side Navigation -->
-    <div id="mySidenav" class="side-nav">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-        <a href="#home">Home</a>
-        <a href="#medicines">Medicines</a>
-        <a href="#equipments">Medical Equipment</a>
-        <a href="#contact">Contact Us</a>
-        <a href="{% url 'app:signup' %}">Sign Up</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MedPlus Mart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="material-icons">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <h2>Search Medicines / General Products</h2>
+        <div class="search-box">
+            <input type="text" placeholder="Search for... General Products">
+            <button>🔍</button>
+        </div>
     </div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <!-- Menu toggle button for smaller screens -->
-            <span class="material-icons menu-toggle" onclick="openNav()">menu</span>
-            
-            <h1>MedShop</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#medicines">Medicines</a></li>
-                    <li><a href="#equipments">Medical Equipment</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="{% url 'app:signup' %}">SignUp</a></li>
-                </ul>
-                <a href="{% url 'app:cart' %}">
-                    <span class="material-icons cart-icon">shopping_cart</span>
-                </a>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>
-        
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src={"images.jpeg"} class="d-block" style="width:100%">
-          </div>
-          <div class="carousel-item">
-            <img src="img (22).jpg" class="d-block" style="width:100%">
-          </div>
-          <div class="carousel-item">
-            <img src="img (31).jpg" class="d-block" style="width:100%">
-          </div>
-        </div>
-        
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-
-      
-
-    <!-- Main Content Section -->
-    <main id="home">
-        <div class="container">
-            <h2>Welcome to MedShop - Your Trusted Source for Medicines and Medical Equipment</h2>
-            <p>Your health and well-being are our priority.</p>
-        </div>
+    <!-- Main Content -->
+    <main class="container my-4">
+        <h2 class="text-center">Welcome to MedShop</h2>
+        <p class="text-center">Your health and well-being are our priority.</p>
     </main>
 
     <!-- Medicines Section -->
-    <section id="medicines" class="product-section">
+    <section class="product-section">
         <div class="container">
-            <h2>Medicines</h2>
+            <h2 class="text-center">Medicines</h2>
             <div class="product-grid">
                 <div class="product-item">
                     <img src="https://via.placeholder.com/150" alt="Medicine 1">
@@ -382,11 +230,83 @@
             </div>
         </div>
     </section>
+    <div class="container my-4">
+        <h2 class="mb-3">Top Offers</h2>
+        <div class="row">
+            
+            <!-- Product 1 -->
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="product-card">
+                    <i class="fas fa-heart fav-icon"></i>
+                    <img src="https://via.placeholder.com/150" class="product-img" alt="Pampers">
+                    <p class="text-muted">PROCTER AND GAMBLE</p>
+                    <p class="product-title">PAMPERS PANTS NEW BABY 86S</p>
+                    <p class="product-price">₹1039.00 <span class="old-price">₹1299.00</span></p>
+                    <p class="discount">(Save Rs 260)</p>
+                    <button class="cart-btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="product-card">
+                    <i class="fas fa-heart fav-icon"></i>
+                    <img src="https://via.placeholder.com/150" class="product-img" alt="Baby Wipes">
+                    <p class="text-muted">PIRAMAL PHARMA</p>
+                    <p class="product-title">LITTLES BABY WIPES 80S</p>
+                    <p class="product-price">₹95.00 <span class="old-price">₹190.00</span></p>
+                    <p class="discount">(Save 50%)</p>
+                    <button class="cart-btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="product-card">
+                    <i class="fas fa-heart fav-icon"></i>
+                    <img src="https://via.placeholder.com/150" class="product-img" alt="Venusia Cream">
+                    <p class="text-muted">DR REDDYS LABORATORIES</p>
+                    <p class="product-title">VENUSIA MAX 150GM CREAM</p>
+                    <p class="product-price">₹671.00</p>
+                    <p class="discount">(Save up to 20%)</p>
+                    <button class="cart-btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="product-card">
+                    <i class="fas fa-heart fav-icon"></i>
+                    <img src="https://via.placeholder.com/150" class="product-img" alt="Venusia Lotion">
+                    <p class="text-muted">DR REDDYS LABORATORIES</p>
+                    <p class="product-title">VENUSIA MAX 300GM LOTION</p>
+                    <p class="product-price">₹801.50</p>
+                    <p class="discount">(Save up to 20%)</p>
+                    <button class="cart-btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-md-4 col-lg-2 mb-3">
+                <div class="product-card">
+                    <i class="fas fa-heart fav-icon"></i>
+                    <img src="https://via.placeholder.com/150" class="product-img" alt="Ponds Powder">
+                    <p class="text-muted">HUL</p>
+                    <p class="product-title">PONDS DREAMFLOWER 400GM POWDER</p>
+                    <p class="product-price">₹323.70 <span class="old-price">₹415.00</span></p>
+                    <p class="discount">(Save 22%)</p>
+                    <button class="cart-btn">Add To Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <!-- Medical Equipment Section -->
-    <section id="equipments" class="product-section">
+    <section class="product-section">
         <div class="container">
-            <h2>Medical Equipment</h2>
+            <h2 class="text-center">Medical Equipment</h2>
             <div class="product-grid">
                 <div class="product-item">
                     <img src="https://via.placeholder.com/150" alt="Equipment 1">
@@ -399,36 +319,16 @@
         </div>
     </section>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need assistance, feel free to reach out to us.</p>
-            <p>Email: <a href="mailto:support@medshop.com">support@medshop.com</a></p>
-            <p>Phone: +1 234 567 890</p>
-        </div>
+    <!-- Contact Us -->
+    <section class="footer">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:support@medshop.com" class="text-white">support@medshop.com</a></p>
+        <p>Phone: +1 234 567 890</p>
+        <p>&copy; 2025 MedShop. All rights reserved.</p>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 MedShop. All rights reserved.</p>
-            <p><a href="#home">Back to Top</a></p>
-        </div>
-    </footer>
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").classList.add("open");
-            document.body.classList.add("nav-open"); // Prevent body scrolling when the nav is open
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").classList.remove("open");
-            document.body.classList.remove("nav-open"); // Allow body scrolling when the nav is closed
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html>
+</html>   
