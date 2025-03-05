@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ product.name }}</h1>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+        <p>{{ product.description }}</p>
+        <p><strong>Price: ${{ product.price }}</strong></p>
+        <form method="POST" action="{% url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}">
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+        </form>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Back to Products</a>
+    </div>
+</body>
+</html>

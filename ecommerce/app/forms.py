@@ -1,13 +1,15 @@
-# app/forms.py
 from django import forms
-from .models import Medicine, MedicalEquipment
+from django.contrib.auth.models import User
+from .models import Product
 
-class MedicineForm(forms.ModelForm):
-    class Meta:
-        model = Medicine
-        fields = ['name', 'description', 'price', 'image']
+class UserRegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
 
-class MedicalEquipmentForm(forms.ModelForm):
     class Meta:
-        model = MedicalEquipment
-        fields = ['name', 'description', 'price', 'image']
+        model = User
+        fields = ['username', 'password']
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'description', 'price', 'stock', 'category']
