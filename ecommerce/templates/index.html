@@ -115,69 +115,6 @@
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
-        body {
-            background-color: #f8f9fa;
-        }
-        .product-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            text-align: center;
-            position: relative;
-            transition: transform 0.3s ease-in-out;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        .product-img {
-            max-width: 100%;
-            height: 180px;
-            object-fit: contain;
-        }
-        .product-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .product-price {
-            font-size: 18px;
-            font-weight: bold;
-            color: #e60000;
-        }
-        .old-price {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 14px;
-        }
-        .discount {
-            font-size: 14px;
-            color: green;
-        }
-        .cart-btn {
-            background: red;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .cart-btn:hover {
-            background: darkred;
-        }
-        .fav-icon {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 18px;
-            cursor: pointer;
-            color: #888;
-        }
-        .fav-icon:hover {
-            color: red;
-        }
-
     </style>
 </head>
 <body>
@@ -185,7 +122,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">MedPlus Mart</a>
+            <a class="navbar-brand" href="#">Medshop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="material-icons">menu</span>
             </button>
@@ -220,106 +157,20 @@
         <div class="container">
             <h2 class="text-center">Medicines</h2>
             <div class="product-grid">
+                {% for product in products %}
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/150" alt="Medicine 1">
-                    <h4>Paracetamol</h4>
-                    <p>For pain relief and fever reduction.</p>
-                    <p><strong>$5.00</strong></p>
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}</p>
+                    <p><strong>${{ product.price }}</strong></p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
-        </div>
-    </section>
-    <div class="container my-4">
-        <h2 class="mb-3">Top Offers</h2>
-        <div class="row">
-            
-            <!-- Product 1 -->
-            <div class="col-md-4 col-lg-2 mb-3">
-                <div class="product-card">
-                    <i class="fas fa-heart fav-icon"></i>
-                    <img src="https://via.placeholder.com/150" class="product-img" alt="Pampers">
-                    <p class="text-muted">PROCTER AND GAMBLE</p>
-                    <p class="product-title">PAMPERS PANTS NEW BABY 86S</p>
-                    <p class="product-price">₹1039.00 <span class="old-price">₹1299.00</span></p>
-                    <p class="discount">(Save Rs 260)</p>
-                    <button class="cart-btn">Add To Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="col-md-4 col-lg-2 mb-3">
-                <div class="product-card">
-                    <i class="fas fa-heart fav-icon"></i>
-                    <img src="https://via.placeholder.com/150" class="product-img" alt="Baby Wipes">
-                    <p class="text-muted">PIRAMAL PHARMA</p>
-                    <p class="product-title">LITTLES BABY WIPES 80S</p>
-                    <p class="product-price">₹95.00 <span class="old-price">₹190.00</span></p>
-                    <p class="discount">(Save 50%)</p>
-                    <button class="cart-btn">Add To Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-md-4 col-lg-2 mb-3">
-                <div class="product-card">
-                    <i class="fas fa-heart fav-icon"></i>
-                    <img src="https://via.placeholder.com/150" class="product-img" alt="Venusia Cream">
-                    <p class="text-muted">DR REDDYS LABORATORIES</p>
-                    <p class="product-title">VENUSIA MAX 150GM CREAM</p>
-                    <p class="product-price">₹671.00</p>
-                    <p class="discount">(Save up to 20%)</p>
-                    <button class="cart-btn">Add To Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="col-md-4 col-lg-2 mb-3">
-                <div class="product-card">
-                    <i class="fas fa-heart fav-icon"></i>
-                    <img src="https://via.placeholder.com/150" class="product-img" alt="Venusia Lotion">
-                    <p class="text-muted">DR REDDYS LABORATORIES</p>
-                    <p class="product-title">VENUSIA MAX 300GM LOTION</p>
-                    <p class="product-price">₹801.50</p>
-                    <p class="discount">(Save up to 20%)</p>
-                    <button class="cart-btn">Add To Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="col-md-4 col-lg-2 mb-3">
-                <div class="product-card">
-                    <i class="fas fa-heart fav-icon"></i>
-                    <img src="https://via.placeholder.com/150" class="product-img" alt="Ponds Powder">
-                    <p class="text-muted">HUL</p>
-                    <p class="product-title">PONDS DREAMFLOWER 400GM POWDER</p>
-                    <p class="product-price">₹323.70 <span class="old-price">₹415.00</span></p>
-                    <p class="discount">(Save 22%)</p>
-                    <button class="cart-btn">Add To Cart</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- Medical Equipment Section -->
-    <section class="product-section">
-        <div class="container">
-            <h2 class="text-center">Medical Equipment</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="https://via.placeholder.com/150" alt="Equipment 1">
-                    <h4>Blood Pressure Monitor</h4>
-                    <p>For monitoring blood pressure at home.</p>
-                    <p><strong>$40.00</strong></p>
-                    <button>Add to Cart</button>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Contact Us -->
+    <!-- Footer -->
     <section class="footer">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:support@medshop.com" class="text-white">support@medshop.com</a></p>
@@ -331,4 +182,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html>   
+</html>
