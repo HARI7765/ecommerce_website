@@ -6152,3 +6152,814 @@ File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates\orders.htm
 File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates\product.html first seen with mtime 1741426975.4448404
 File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates\signin.html first seen with mtime 1741426975.4448404
 File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates\signup.html first seen with mtime 1741426975.4448404
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\messages\middleware.py first seen with mtime 1741413467.6613414
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\idna.py first seen with mtime 1741409468.8593943
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\migrations\graph.py first seen with mtime 1741413468.322129
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\migrations\__init__.py first seen with mtime 1741413466.5704906
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0010_alter_group_name_max_length.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\migrations\executor.py first seen with mtime 1741413468.322129
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\migrations\loader.py first seen with mtime 1741413468.322129
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\middleware.py first seen with mtime 1741413466.8509655
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1741413467.9337113
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\migrations\__init__.py first seen with mtime 1741413468.0919266
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0009_alter_user_last_name_max_length.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0005_alter_user_last_login_null.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\middleware\common.py first seen with mtime 1741413468.4174824
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\middleware\clickjacking.py first seen with mtime 1741413468.4174824
+File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\app\migrations\0001_initial.py first seen with mtime 1741426975.4117732
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\app\migrations\__init__.py first seen with mtime 1741426975.4117732
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0002_alter_permission_name_max_length.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\backends.py first seen with mtime 1741413466.8465862
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1741413467.9337113
+File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\app\migrations\0003_auto_20250305_1146.py first seen with mtime 1741426975.4117732
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\migrations\recorder.py first seen with mtime 1741413468.322129
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0007_alter_validators_add_error_messages.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\views\csrf.py first seen with mtime 1741413468.4727967
+File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\ecommerce\wsgi.py first seen with mtime 1741426975.4290187
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\contenttypes\migrations\0001_initial.py first seen with mtime 1741413467.1591392
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\db\models\sql\compiler.py first seen with mtime 1741413468.353755
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0012_alter_user_first_name_max_length.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\_imaging.cp312-win_amd64.pyd first seen with mtime 1741413459.795708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\backends\__init__.py first seen with mtime 1741413467.9337113
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\__init__.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\middleware.py first seen with mtime 1741413467.9312365
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\middleware\security.py first seen with mtime 1741413468.4174824
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1741413466.5662568
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0003_alter_user_email_max_length.py first seen with mtime 1741413467.0086575
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\contenttypes\migrations\__init__.py first seen with mtime 1741413467.1591392
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\migrations\0001_initial.py first seen with mtime 1741413468.0919266
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\migrations\0003_logentry_add_action_flag_choices.py first seen with mtime 1741413466.569653
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\contenttypes\migrations\0002_remove_content_type_name.py first seen with mtime 1741413467.1591392
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1741413467.9312365
+File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\app\migrations\0002_cart_order_product_delete_medicalequipment_and_more.py first seen with mtime 1741426975.4117732
+File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\app\migrations\0004_delete_medicine_alter_cart_quantity_and_more.py first seen with mtime 1741426975.4117732
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\stringprep.py first seen with mtime 1741409524.6425624
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\migrations\0002_logentry_remove_auto_add.py first seen with mtime 1741413466.5662568
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\migrations\0008_alter_user_username_max_length.py first seen with mtime 1741413467.0086575
+"GET / HTTP/1.1" 200 13462
+"GET /static/images/pampers.jpg HTTP/1.1" 404 1981
+"GET /static/images/littles.jpg HTTP/1.1" 404 1981
+"GET /static/images/venusia_lotion_300.jpg HTTP/1.1" 404 2014
+"GET /static/images/venusia_cream.jpg HTTP/1.1" 404 1999
+"GET /static/images/venusia_lotion_500.jpg HTTP/1.1" 404 2014
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1741413466.8506193
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1741413467.6670666
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context_processors.py first seen with mtime 1741413468.4174824
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1741413467.6670666
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1741413467.9337113
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1741413468.2227423
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1741413467.6613414
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1741413467.6670666
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\_path\glob.py first seen with mtime 1741409551.5750072
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\readers.py first seen with mtime 1741409490.1420124
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_adapters.py first seen with mtime 1741409490.1429822
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\abc.py first seen with mtime 1741409490.1334193
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\__init__.py first seen with mtime 1741409551.5907319
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\conf\locale\en\__init__.py first seen with mtime 1741413466.077704
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_legacy.py first seen with mtime 1741409490.149879
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_common.py first seen with mtime 1741409490.147235
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\_path\__init__.py first seen with mtime 1741409551.5750072
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tzdata\__init__.py first seen with mtime 1741412142.8315842
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\readers.py first seen with mtime 1741409490.1334193
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\_itertools.py first seen with mtime 1741409490.149146
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\conf\locale\en\formats.py first seen with mtime 1741413466.077704
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\admin\forms.py first seen with mtime 1741413466.2784512
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tzdata\zoneinfo\__init__.py first seen with mtime 1741412142.91546
+File C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\resources\__init__.py first seen with mtime 1741409490.149879
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'hari' LIMIT 21; args=('hari',); alias=default
+(0.000) SELECT 1 AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx' LIMIT 1; args=(1, 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.016) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('u8amw0bmq8abr31pqkmiif12vugjrpjx', 'e30:1tqr78:L-tYkHbBL9DnxfOq0GHuowbTlwGs2n-f9KEJLdww5gA', '2025-03-22 10:09:02.386936'); args=('u8amw0bmq8abr31pqkmiif12vugjrpjx', 'e30:1tqr78:L-tYkHbBL9DnxfOq0GHuowbTlwGs2n-f9KEJLdww5gA', '2025-03-22 10:09:02.386936'); alias=default
+(0.000) COMMIT; args=None; alias=default
+(0.000) UPDATE "auth_user" SET "last_login" = '2025-03-08 10:09:02.395046' WHERE "auth_user"."id" = 1; args=('2025-03-08 10:09:02.395046', 1); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) UPDATE "django_session" SET "session_data" = '.eJxVjDsOwjAQBe_iGll48ZeSnjNY3l0bB5AtxUmFuDtESgHtm5n3EjGtS43ryHOcWJyFEoffDRM9ctsA31O7dUm9LfOEclPkToe8ds7Py-7-HdQ06rdGr4CAvTdZ-VAUgKXT0QAqXcC5lAk0IpFGE4hZFyZKTjtrWaEOIN4f3wE4Kw:1tqr78:Uoc-eN6Bu30l2Xam0K1lvYi24G0FwGrvBAv8ASzBcjk', "expire_date" = '2025-03-22 10:09:02.404418' WHERE "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx'; args=('.eJxVjDsOwjAQBe_iGll48ZeSnjNY3l0bB5AtxUmFuDtESgHtm5n3EjGtS43ryHOcWJyFEoffDRM9ctsA31O7dUm9LfOEclPkToe8ds7Py-7-HdQ06rdGr4CAvTdZ-VAUgKXT0QAqXcC5lAk0IpFGE4hZFyZKTjtrWaEOIN4f3wE4Kw:1tqr78:Uoc-eN6Bu30l2Xam0K1lvYi24G0FwGrvBAv8ASzBcjk', '2025-03-22 10:09:02.404418', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.015) COMMIT; args=None; alias=default
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:02.411567' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:02.411567', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,); alias=default
+"GET /admin/ HTTP/1.1" 200 7764
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:09.006404' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:09.006404', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'app' AND "django_content_type"."model" = 'cart') LIMIT 21; args=('app', 'cart'); alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D19850C4A0>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'G1iJrKiT0oAULIs0I6icl0HnWsmBzrBXeOgfOtYqHSKJYa8obvpTOqwchXezkOiH'>, 'request': <WSGIRequest: GET '/admin/app/cart/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/app/cart/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet []>, 'title': 'Add cart', 'subtitle': None, 'adminform': <AdminForm: form=CartForm fieldsets=[(None, {'fields': ['user', 'product', 'quantity']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Cart>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'app', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D19850C4A0>}, {'heading_level': 2, 'id_suffix': 0}]
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=(); alias=default
+(0.000) SELECT "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_product"; args=(); alias=default
+"GET /admin/app/cart/add/ HTTP/1.1" 200 12783
+(0.015) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:09.782295' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:09.782295', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8710
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/core.js HTTP/1.1" 200 6208
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+"GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+(0.015) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:25.530562' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:25.530562', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_product" WHERE "app_product"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 1; args=(1, 1); alias=default
+(0.000) SELECT 1 AS "a" FROM "app_product" WHERE "app_product"."id" = 1 LIMIT 1; args=(1, 1); alias=default
+(0.000) INSERT INTO "app_cart" ("user_id", "product_id", "quantity") VALUES (1, 1, 1) RETURNING "app_cart"."id"; args=(1, 1, 1); alias=default
+(0.000) INSERT INTO "django_admin_log" ("action_time", "user_id", "content_type_id", "object_id", "object_repr", "action_flag", "change_message") VALUES ('2025-03-08 10:09:25.578453', 1, 9, '1', 'hari''s cart', 1, '[{"added": {}}]') RETURNING "django_admin_log"."id"; args=('2025-03-08 10:09:25.578453', 1, 9, '1', "hari's cart", 1, '[{"added": {}}]'); alias=default
+(0.000) COMMIT; args=None; alias=default
+"POST /admin/app/cart/add/ HTTP/1.1" 302 0
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:25.617968' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:25.617968', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_cart"; args=(); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_cart"; args=(); alias=default
+(0.000) SELECT "app_cart"."id", "app_cart"."user_id", "app_cart"."product_id", "app_cart"."quantity", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_cart" INNER JOIN "auth_user" ON ("app_cart"."user_id" = "auth_user"."id") INNER JOIN "app_product" ON ("app_cart"."product_id" = "app_product"."id") ORDER BY "app_cart"."id" DESC; args=(); alias=default
+"GET /admin/app/cart/ HTTP/1.1" 200 10387
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:26.236520' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:26.236520', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:35.824335' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:35.824335', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'app' AND "django_content_type"."model" = 'product') LIMIT 21; args=('app', 'product'); alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D1986C5340>
+(0.015) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'jdFnlycMOoIwkorrdw9l7EGFtzwmRMy4R0DTIhSjvSSlxQ7PGVg2A4vuO4okC9fO'>, 'request': <WSGIRequest: GET '/admin/app/product/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/app/product/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:09:25.578453+00:00]>, 'title': 'Add product', 'subtitle': None, 'adminform': <AdminForm: form=ProductForm fieldsets=[(None, {'fields': ['name', 'image', 'description', 'price', 'stock', 'category']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Product>, 'content_type_id': 10, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'app', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D1986C5340>}, {'heading_level': 2, 'id_suffix': 0}]
+"GET /admin/app/product/add/ HTTP/1.1" 200 12485
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:09:36.115619' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:09:36.115619', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:12.904633' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:12.904633', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\GifImagePlugin.py first seen with mtime 1741413459.697015
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImageFile.py first seen with mtime 1741413459.708855
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\_imagingmath.cp312-win_amd64.pyd first seen with mtime 1741413459.8271296
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImageOps.py first seen with mtime 1741413459.7239943
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImageColor.py first seen with mtime 1741413459.708855
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\JpegImagePlugin.py first seen with mtime 1741413459.7390115
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\GimpPaletteFile.py first seen with mtime 1741413459.6987228
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImageMath.py first seen with mtime 1741413459.7239943
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImageChops.py first seen with mtime 1741413459.708855
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImagePalette.py first seen with mtime 1741413459.7239943
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PaletteFile.py first seen with mtime 1741413459.7409708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImageSequence.py first seen with mtime 1741413459.7310045
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\_deprecate.py first seen with mtime 1741413459.7796693
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\BmpImagePlugin.py first seen with mtime 1741413459.6695802
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\GimpGradientFile.py first seen with mtime 1741413459.6987228
+(0.000) INSERT INTO "app_product" ("name", "image", "description", "price", "stock", "category") VALUES ('rererrer', 'products/Screenshot_2025-03-08_115219.png', 'uduehuhhd', '434.00', 3, 'medicine') RETURNING "app_product"."id"; args=('rererrer', 'products/Screenshot_2025-03-08_115219.png', 'uduehuhhd', '434.00', 3, 'medicine'); alias=default
+(0.000) INSERT INTO "django_admin_log" ("action_time", "user_id", "content_type_id", "object_id", "object_repr", "action_flag", "change_message") VALUES ('2025-03-08 10:10:14.871673', 1, 10, '4', 'rererrer', 1, '[{"added": {}}]') RETURNING "django_admin_log"."id"; args=('2025-03-08 10:10:14.871673', 1, 10, '4', 'rererrer', 1, '[{"added": {}}]'); alias=default
+(0.000) COMMIT; args=None; alias=default
+"POST /admin/app/product/add/ HTTP/1.1" 302 0
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:14.880228' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:14.880228', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_product"; args=(); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_product"; args=(); alias=default
+(0.000) SELECT "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_product" ORDER BY "app_product"."id" DESC; args=(); alias=default
+"GET /admin/app/product/ HTTP/1.1" 200 12032
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:14.913952' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:14.913952', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\BlpImagePlugin.py first seen with mtime 1741413459.6695802
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\SpiderImagePlugin.py first seen with mtime 1741413459.7564764
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PalmImagePlugin.py first seen with mtime 1741413459.7409708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PsdImagePlugin.py first seen with mtime 1741413459.7564764
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\SgiImagePlugin.py first seen with mtime 1741413459.7564764
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\XVThumbImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\FtexImagePlugin.py first seen with mtime 1741413459.689132
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\EpsImagePlugin.py first seen with mtime 1741413459.679633
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\MspImagePlugin.py first seen with mtime 1741413459.7409708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\TiffImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\DcxImagePlugin.py first seen with mtime 1741413459.6760848
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\GbrImagePlugin.py first seen with mtime 1741413459.690657
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImtImagePlugin.py first seen with mtime 1741413459.7310045
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\WmfImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\MpoImagePlugin.py first seen with mtime 1741413459.7409708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\IcnsImagePlugin.py first seen with mtime 1741413459.6987228
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PngImagePlugin.py first seen with mtime 1741413459.7474823
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\BufrStubImagePlugin.py first seen with mtime 1741413459.6726134
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\JpegPresets.py first seen with mtime 1741413459.7390115
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\IcoImagePlugin.py first seen with mtime 1741413459.6987228
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\Jpeg2KImagePlugin.py first seen with mtime 1741413459.7310045
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\CurImagePlugin.py first seen with mtime 1741413459.6760848
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\FliImagePlugin.py first seen with mtime 1741413459.6819391
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\QoiImagePlugin.py first seen with mtime 1741413459.7564764
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\_webp.cp312-win_amd64.pyd first seen with mtime 1741413459.8427603
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\FitsImagePlugin.py first seen with mtime 1741413459.6819391
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\ImImagePlugin.py first seen with mtime 1741413459.6987228
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\features.py first seen with mtime 1741413459.8427603
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PcxImagePlugin.py first seen with mtime 1741413459.7474823
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\GribStubImagePlugin.py first seen with mtime 1741413459.6987228
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PpmImagePlugin.py first seen with mtime 1741413459.7564764
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\IptcImagePlugin.py first seen with mtime 1741413459.7310045
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\DdsImagePlugin.py first seen with mtime 1741413459.6760848
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\SunImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PixarImagePlugin.py first seen with mtime 1741413459.7474823
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\MpegImagePlugin.py first seen with mtime 1741413459.7409708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PdfImagePlugin.py first seen with mtime 1741413459.7474823
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\Hdf5StubImagePlugin.py first seen with mtime 1741413459.6987228
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\TgaImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\XbmImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PdfParser.py first seen with mtime 1741413459.7474823
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\XpmImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\McIdasImagePlugin.py first seen with mtime 1741413459.7409708
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\WebPImagePlugin.py first seen with mtime 1741413459.7640402
+File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\PcdImagePlugin.py first seen with mtime 1741413459.7474823
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:21.088949' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:21.088949', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'group') LIMIT 21; args=('auth', 'group'); alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D198711D90>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'upvplUCI0hCzfpHLMe45HsfEju59fwB22ctVIDifHLMosRn9fDbMaS4tEZX70TiM'>, 'request': <WSGIRequest: GET '/admin/auth/group/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/auth/group/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:10:14.871673+00:00, 2025-03-08 10:09:25.578453+00:00]>, 'title': 'Add group', 'subtitle': None, 'adminform': <AdminForm: form=GroupForm fieldsets=[(None, {'fields': ['name', 'permissions']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/SelectBox.js', 'admin/js/actions.js', 'admin/js/SelectFilter2.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Group>, 'content_type_id': 3, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'auth', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D198711D90>}, {'heading_level': 2, 'id_suffix': 0}]
+(0.000) SELECT "auth_permission"."id", "auth_permission"."name", "auth_permission"."content_type_id", "auth_permission"."codename", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(); alias=default
+"GET /admin/auth/group/add/ HTTP/1.1" 200 13871
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:21.287730' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:21.287730', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:29.847005' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:29.847005', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D1987F3440>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'febrjxTsDUxGAcesbB14EjfMa45DLEkWN19XGgzZkoHvNEUQE08L7J4BvzXBw11G'>, 'request': <WSGIRequest: GET '/admin/auth/group/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/auth/group/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:10:14.871673+00:00, 2025-03-08 10:09:25.578453+00:00]>, 'title': 'Add group', 'subtitle': None, 'adminform': <AdminForm: form=GroupForm fieldsets=[(None, {'fields': ['name', 'permissions']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/SelectBox.js', 'admin/js/actions.js', 'admin/js/SelectFilter2.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Group>, 'content_type_id': 3, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'auth', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D1987F3440>}, {'heading_level': 2, 'id_suffix': 0}]
+(0.000) SELECT "auth_permission"."id", "auth_permission"."name", "auth_permission"."content_type_id", "auth_permission"."codename", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(); alias=default
+"GET /admin/auth/group/add/ HTTP/1.1" 200 13871
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:29.923884' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:29.923884', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:33.206639' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:33.206639', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_product"; args=(); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_product"; args=(); alias=default
+(0.000) SELECT "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_product" ORDER BY "app_product"."id" DESC; args=(); alias=default
+"GET /admin/app/product/ HTTP/1.1" 200 11833
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:34.320353' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:34.320353', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.016) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D1987DED50>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Z6lndOnSkEwVwwWImw3iIkCBeeSLcndzxTjTAx3p18GKJYC6PVaZbKrqzJKJXKUj'>, 'request': <WSGIRequest: GET '/admin/app/product/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/app/product/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:10:14.871673+00:00, 2025-03-08 10:09:25.578453+00:00]>, 'title': 'Add product', 'subtitle': None, 'adminform': <AdminForm: form=ProductForm fieldsets=[(None, {'fields': ['name', 'image', 'description', 'price', 'stock', 'category']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Product>, 'content_type_id': 10, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'app', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D1987DED50>}, {'heading_level': 2, 'id_suffix': 0}]
+"GET /admin/app/product/add/ HTTP/1.1" 200 12485
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:35.324111' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:35.324111', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_cart"; args=(); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "app_cart"; args=(); alias=default
+(0.000) SELECT "app_cart"."id", "app_cart"."user_id", "app_cart"."product_id", "app_cart"."quantity", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_cart" INNER JOIN "auth_user" ON ("app_cart"."user_id" = "auth_user"."id") INNER JOIN "app_product" ON ("app_cart"."product_id" = "app_product"."id") ORDER BY "app_cart"."id" DESC; args=(); alias=default
+"GET /admin/app/cart/ HTTP/1.1" 200 10186
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:36.451463' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:36.451463', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D1987F2060>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'VOsITAngccpa9O7ZTHELIUdh95Vui01wtBqegj3NTGzZmgNnm6Lsbk26uANs3nIg'>, 'request': <WSGIRequest: GET '/admin/app/cart/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/app/cart/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:10:14.871673+00:00, 2025-03-08 10:09:25.578453+00:00]>, 'title': 'Add cart', 'subtitle': None, 'adminform': <AdminForm: form=CartForm fieldsets=[(None, {'fields': ['user', 'product', 'quantity']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Cart>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'app', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D1987F2060>}, {'heading_level': 2, 'id_suffix': 0}]
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=(); alias=default
+(0.000) SELECT "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_product"; args=(); alias=default
+"GET /admin/app/cart/add/ HTTP/1.1" 200 12822
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:37.198653' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:37.198653', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,); alias=default
+"GET /admin/ HTTP/1.1" 200 8489
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:37.884429' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:37.884429', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:10:37.916459' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:10:37.916459', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,); alias=default
+"GET /admin/ HTTP/1.1" 200 8489
+"GET / HTTP/1.1" 200 13462
+"GET /static/images/littles.jpg HTTP/1.1" 404 1981
+"GET /static/images/pampers.jpg HTTP/1.1" 404 1981
+"GET /static/images/venusia_cream.jpg HTTP/1.1" 404 1999
+"GET /static/images/venusia_lotion_500.jpg HTTP/1.1" 404 2014
+"GET /static/images/venusia_lotion_300.jpg HTTP/1.1" 404 2014
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:28.002015' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:28.002015', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,); alias=default
+"GET /admin/ HTTP/1.1" 200 8489
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:32.482508' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:32.482508', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "app_product"."id", "app_product"."name", "app_product"."image", "app_product"."description", "app_product"."price", "app_product"."stock", "app_product"."category" FROM "app_product" WHERE "app_product"."id" = 4 LIMIT 21; args=(4,); alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D19876F650>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Z13WwLZPSCK8pUCh7f9ZC0akRfm3KfufxO1sTuFmz6UXCmiFAEgG5qZ9cKe1vCbZ'>, 'request': <WSGIRequest: GET '/admin/app/product/4/change/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/app/product/4/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:10:14.871673+00:00, 2025-03-08 10:09:25.578453+00:00]>, 'title': 'Change product', 'subtitle': 'rererrer', 'adminform': <AdminForm: form=ProductForm fieldsets=[(None, {'fields': ['name', 'image', 'description', 'price', 'stock', 'category']})]>, 'object_id': '4', 'original': <Product: rererrer>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Product>, 'content_type_id': 10, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'app', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D19876F650>}, {'heading_level': 2, 'id_suffix': 0}]
+"GET /admin/app/product/4/change/ HTTP/1.1" 200 12913
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:32.743757' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:32.743757', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+(0.015) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:37.648951' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:37.648951', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,); alias=default
+"GET /admin/ HTTP/1.1" 200 8489
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:45.790342' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:45.790342', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x000001D198754B60>
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") ORDER BY "django_admin_log"."action_time" DESC LIMIT 21; args=(); alias=default
+Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\template\base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'UmAksl9NMzFfG65lygUISVtedCo2rQGIs9yQP4Pkt3P4TyLJ1F1plli3y7g0cdns'>, 'request': <WSGIRequest: GET '/admin/app/product/add/'>, 'user': <SimpleLazyObject: <User: hari>>, 'perms': PermWrapper(<SimpleLazyObject: <User: hari>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/app/product/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'App', 'app_label': 'app', 'app_url': '/admin/app/', 'has_module_perms': True, 'models': [{'model': <class 'app.models.Cart'>, 'name': 'Carts', 'object_name': 'Cart', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/cart/', 'add_url': '/admin/app/cart/add/', 'view_only': False}, {'model': <class 'app.models.Order'>, 'name': 'Orders', 'object_name': 'Order', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/order/', 'add_url': '/admin/app/order/add/', 'view_only': False}, {'model': <class 'app.models.Product'>, 'name': 'Products', 'object_name': 'Product', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/app/product/', 'add_url': '/admin/app/product/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-08 10:10:14.871673+00:00, 2025-03-08 10:09:25.578453+00:00]>, 'title': 'Add product', 'subtitle': None, 'adminform': <AdminForm: form=ProductForm fieldsets=[(None, {'fields': ['name', 'image', 'description', 'price', 'stock', 'category']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Product>, 'content_type_id': 10, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'app', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x000001D19852DC40>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E390>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x000001D19854E480>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x000001D198754B60>}, {'heading_level': 2, 'id_suffix': 0}]
+"GET /admin/app/product/add/ HTTP/1.1" 200 12485
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:45.901894' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:45.901894', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+(0.016) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-08 10:11:51.668801' AND "django_session"."session_key" = 'u8amw0bmq8abr31pqkmiif12vugjrpjx') LIMIT 21; args=('2025-03-08 10:11:51.668801', 'u8amw0bmq8abr31pqkmiif12vugjrpjx'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,); alias=default
+"GET /admin/ HTTP/1.1" 200 8489
