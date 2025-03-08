@@ -4775,3 +4775,14 @@ File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_q
 File C:\Users\hari\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1741413467.6670666
 File C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates\index.html previous mtime: 1741410819.5121415, current mtime: 1741415529.22869
 C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates\index.html notified as changed. Signal results: [(<function template_changed at 0x00000212E0C3BCE0>, True), (<function translation_file_changed at 0x00000212E177DDA0>, None)].
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+Watching dir C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\templates with glob **/*.
+Watching dir C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\locale with glob **/*.mo.
+Watching dir C:\Users\hari\Desktop\hari\ecommerce_website\ecommerce\app\locale with glob **/*.mo.
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
