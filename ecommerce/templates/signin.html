@@ -133,7 +133,7 @@
             <h2>Sign In</h2>
        <!-- signup.html -->
     <!-- signin.html -->
-  <form action="{% url 'app:signin' %}" method="POST">
+  <form action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     <div class="input-group">
         <label for="username">Username</label>
