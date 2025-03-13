@@ -49,7 +49,7 @@ def register_view(request):
             return redirect('index')
     else:
         form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
@@ -63,7 +63,7 @@ def login_view(request):
                 return redirect('index')
     else:
         form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'signin.html', {'form': form})
 
 @login_required
 def admin_dashboard_view(request):
