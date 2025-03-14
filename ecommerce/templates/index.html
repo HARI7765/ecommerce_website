@@ -45,6 +45,10 @@
             cursor: pointer;
             position: relative;
         }
+        .cart-i{
+            color: white;
+
+        }
         
         .cart-count {
             position: absolute;
@@ -220,7 +224,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
                 <div class="cart-icon">
-                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <a class="cart-i" href="{% url 'cart' %}"> <span class="material-symbols-outlined">shopping_cart</span></a>
                     <span class="cart-count">0</span>
                 </div>
             </div>
