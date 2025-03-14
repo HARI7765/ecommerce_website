@@ -5,19 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ product.name }}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .product-details {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-details h1 {
+            font-size: 2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 150px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>{{ product.name }}</h1>
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
-        <p>{{ product.description }}</p>
-        <p><strong>Price: ${{ product.price }}</strong></p>
-        <form method="POST" action="{% url 'add_to_cart' product.id %}">
-            {% csrf_token %}
-            <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}">
-            <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </form>
-        <a href="{% url 'index' %}" class="btn btn-secondary">Back to Products</a>
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+            <p class="product-description">{{ product.description }}</p>
+            <p class="product-price"><strong>Price: ${{ product.price }}</strong></p>
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+            <a href="{% url 'index' %}" class="btn btn-secondary back-link">Back to Products</a>
+        </div>
     </div>
 </body>
 </html>
