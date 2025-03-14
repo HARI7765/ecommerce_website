@@ -9,13 +9,20 @@ def index(request):
     products = Product.objects.all()
     return render(request, 'index.html', {'products': products})
 
-@login_required
+# @login_required()
 def cart_view(request):
-    cart_items = Cart.objects.filter(user=request.user)
-    total_price = sum(item.product.price * item.quantity for item in cart_items)
-    return render(request, 'cart.html', {'cart_items': cart_items, 'total_price': total_price})
-
-@login_required
+    if request.user.is_authenticated:
+        user_id = request.user.id
+        # Proceed with logic using user_id
+    else:
+        # Handle the case where the user is not authenticated
+        user_id = None  # or handle it in a way that fits your app
+        # You might want to redirect to a login page
+        return redirect('login')  # Adjust 'login' to your login URL name
+    
+    # Continue with the rest of your cart logic
+    return render(request, 'cart.html', {'user_id': user_id})
+# @login_required
 def checkout_view(request):
     if request.method == 'POST':
         cart_items = Cart.objects.filter(user=request.user)
@@ -31,7 +38,7 @@ def checkout_view(request):
         return redirect('orders')  # Redirect to orders page
     return render(request, 'checkout.html')
 
-@login_required
+# @login_required
 def orders_view(request):
     orders = Order.objects.filter(user=request.user)
     return render(request, 'orders.html', {'orders': orders})
@@ -65,13 +72,13 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'signin.html', {'form': form})
 
-@login_required
+# @login_required
 def admin_dashboard_view(request):
     total_orders = Order.objects.count()
     total_revenue = Order.objects.aggregate(Sum('total_price'))['total_price__sum'] or 0
     return render(request, 'admin_dashboard.html', {'total_orders': total_orders, 'total_revenue': total_revenue})
 
-@login_required
+# @login_required
 def add_product_view(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -91,7 +98,7 @@ def add_product_view(request):
         return redirect('admin_dashboard')
     return render(request, 'add_product.html')
 
-@login_required
+# @login_required
 def manage_orders_view(request):
     orders = Order.objects.all()
     return render(request, 'manage_orders.html', {'orders': orders})
