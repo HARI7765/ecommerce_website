@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Product, Cart, Order
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.db.models import Sum
 
@@ -15,7 +15,7 @@ def cart_view(request):
         user_id = request.user.id
         # Proceed with logic using user_id
     else:
-        # Handle the case where the user is not authenticated
+        # Handle the case where the user is not authentlogicated
         user_id = None  # or handle it in a way that fits your app
         # You might want to redirect to a login page
         return redirect('login')  # Adjust 'login' to your login URL name
@@ -102,3 +102,6 @@ def add_product_view(request):
 def manage_orders_view(request):
     orders = Order.objects.all()
     return render(request, 'manage_orders.html', {'orders': orders})
+def logout_view(request):
+    logout(request)
+    return redirect('index')
