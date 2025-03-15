@@ -44,7 +44,7 @@ def orders_view(request):
     return render(request, 'orders.html', {'orders': orders})
 
 def product_detail_view(request, id):
-    product = Product.objects.get(id=id)
+    product = Product.objects.filter(id=id)
     return render(request, 'product.html', {'product': product})
 
 def register_view(request):

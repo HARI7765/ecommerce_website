@@ -252,99 +252,26 @@
             <h2 class="text-center mb-4">Medicines & Healthcare Products</h2>
             <div class="product-grid">
                 <!-- Product 1 -->
+                 {% for i in products %}
                 <div class="product-item">
                     <button class="wishlist-icon">♡</button>
-                    <img src="{% static 'images/pampers.jpg' %}" alt="Pampers Pants New Baby">
+                    <img src="{{ i.image.url }}" alt="Pampers Pants New Baby">
                     <div class="product-details">
-                        <div class="product-brand">PROCTER AND GAMBLE HOME PRODUCTS</div>
-                        <div class="product-title">PAMPERS PANTS NEW BABY 86S</div>
-                        <div class="product-description">Baby diapers for newborns, extra absorbent</div>
+                        <div class="product-brand">{{i.name}}</div>
+                        <div class="product-title">{{i.name}}</div>
+                        <div class="product-description">{{i.description}}</div>
                     </div>
                     <div class="price-container">
-                        <div class="current-price">MRP ₹1039.00</div>
-                        <div class="original-price">₹1299.00</div>
+                        <div class="current-price">MRP ₹{{i.price}}</div>
+                        <div class="original-price">₹{{i.price}}</div>
                         <div class="savings">(Save Rs 260)</div>
                     </div>
-                    <a href="{% url 'add_to_cart' product.id %}">
+                    <a href="">
                         <button class="add-to-cart">Add To Cart</button>
                     </a>
                 </div>
-                
-                <!-- Product 2 -->
-                <div class="product-item">
-                    <button class="wishlist-icon">♡</button>
-                    <img src="{% static 'images/littles.jpg' %}" alt="Littles Baby Wipes">
-                    <div class="product-details">
-                        <div class="product-brand">PIRAMAL PHARMA LIMITED</div>
-                        <div class="product-title">LITTLES BABY WIPES 80S</div>
-                        <div class="product-description">Gentle baby wipes for sensitive skin</div>
-                    </div>
-                    <div class="price-container">
-                        <div class="current-price">MRP ₹95.00</div>
-                        <div class="original-price">₹190.00</div>
-                        <div class="savings">(Save 50%)</div>
-                    </div>
-                    <a href="{% url 'add_to_cart' product.id %}">
-                        <button class="add-to-cart">Add To Cart</button>
-                    </a>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-item">
-                    <button class="wishlist-icon">♡</button>
-                    <img src="{% static 'images/venusia_cream.jpg' %}" alt="Venusia Max Cream">
-                    <div class="product-details">
-                        <div class="product-brand">DR REDDYS LABORATORIES</div>
-                        <div class="product-title">VENUSIA MAX 150GM CREAM</div>
-                        <div class="product-description">Advanced moisturizing cream for dry skin</div>
-                    </div>
-                    <div class="price-container">
-                        <div class="current-price">MRP ₹671.00</div>
-                        <div class="original-price"></div>
-                        <div class="savings">(Save upto 20%)</div>
-                    </div>
-                    <a href="{% url 'add_to_cart' product.id %}">
-                        <button class="add-to-cart">Add To Cart</button>
-                    </a>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-item">
-                    <button class="wishlist-icon">♡</button>
-                    <img src="{% static 'images/venusia_lotion_300.jpg' %}" alt="Venusia Max Lotion">
-                    <div class="product-details">
-                        <div class="product-brand">DR REDDYS LABORATORIES</div>
-                        <div class="product-title">VENUSIA MAX 300GM LOTION</div>
-                        <div class="product-description">Hydrating body lotion for all skin types</div>
-                    </div>
-                    <div class="price-container">
-                        <div class="current-price">MRP ₹801.50</div>
-                        <div class="original-price"></div>
-                        <div class="savings">(Save upto 20%)</div>
-                    </div>
-                    <a href="{% url 'add_to_cart' product.id %}">
-                        <button class="add-to-cart">Add To Cart</button>
-                    </a>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="product-item">
-                    <button class="wishlist-icon">♡</button>
-                    <img src="{% static 'images/venusia_lotion_500.jpg' %}" alt="Venusia Max Lotion">
-                    <div class="product-details">
-                        <div class="product-brand">DR REDDYS LABORATORIES</div>
-                        <div class="product-title">VENUSIA MAX 500GM LOTION</div>
-                        <div class="product-description">Premium hydrating lotion for dry and sensitive skin</div>
-                    </div>
-                    <div class="price-container">
-                        <div class="current-price">MRP ₹1197.00</div>
-                        <div class="original-price"></div>
-                        <div class="savings">(Save upto 20%)</div>
-                    </div>
-                    <a href="{% url 'add_to_cart' product.id %}">
-                        <button class="add-to-cart">Add To Cart</button>
-                    </a>
-                </div>
+                {% endfor %}
+
             </div>
         </div>
     </section>
