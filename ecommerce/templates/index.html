@@ -220,8 +220,16 @@
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
+                    {% if not user.is_authenticated %}
+
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Signup</a></li>
+                    {% endif %}
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">logout</a></li>
+                    {% endif %}
+
                 </ul>
                 <div class="cart-icon">
                     <a class="cart-i" href="{% url 'cart' %}"> <span class="material-symbols-outlined">shopping_cart</span></a>
