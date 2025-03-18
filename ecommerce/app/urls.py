@@ -19,6 +19,7 @@ urlpatterns = [
     path('admin/dashboard/', views.admin_dashboard_view, name='admin_dashboard'),  # Admin dashboard
     path('admin/add_product/', views.add_product_view, name='add_product'),  # Admin add product
     path('admin/manage_orders/', views.manage_orders_view, name='manage_orders'),  # Admin manage orders
+    path('contact/',views.contact_view, name='contact'),  # Contact page
 ]
 
 # Serve media files in development
