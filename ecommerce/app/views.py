@@ -105,3 +105,11 @@ def manage_orders_view(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+def contact_view(request):
+#     if request.method == 'POST':
+#         name = request.POST['name']
+#         email = request.POST['email']
+#         message = request.POST['message']
+    return render(request,'contact.html')
+        
