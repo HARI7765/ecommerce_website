@@ -20,40 +20,48 @@
         }
 
         /* Navbar Styling */
-
         .navbar {
             background-color: #000 !important;
             position: sticky;
             top: 0;
-            z-index: 9999;  /* Ensures the navbar stays on top of other content */
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        
         .navbar-brand {
             font-weight: bold;
             color: red !important;
+            flex-grow: 1; /* Allow brand name to take space in the middle */
+            text-align: center; /* Center brand name */
         }
+
         .navbar-nav .nav-link {
             color: white !important;
             font-size: 16px;
         }
+
         .navbar-toggler {
             border: none;
+            order: -1;
         }
+
         .navbar-toggler:focus {
             box-shadow: none;
         }
-        
+
         .cart-icon {
             color: white;
             font-size: 27px;
-            margin-left: 15px;
             cursor: pointer;
             position: relative;
         }
+
         .cart-i {
             color: white;
         }
+
         .cart-count {
             position: absolute;
             top: -5px;
@@ -72,17 +80,20 @@
             text-align: center;
             padding: 50px 20px;
         }
+
         .search-box {
             max-width: 600px;
             margin: auto;
             position: relative;
         }
+
         .search-box input {
             width: 100%;
             padding: 10px 15px;
             border-radius: 25px;
             border: none;
         }
+
         .search-box button {
             position: absolute;
             right: 10px;
@@ -99,12 +110,14 @@
             padding: 40px 0;
             background-color: #ffffff;
         }
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
+
         .product-item {
             background-color: #ffffff;
             padding: 20px;
@@ -116,6 +129,7 @@
             display: flex;
             flex-direction: column;
         }
+
         .product-item img {
             width: 100%;
             height: 200px;
@@ -123,26 +137,31 @@
             border-radius: 8px;
             margin-bottom: 15px;
         }
+
         .product-details {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
+
         .product-title {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
         }
+
         .product-brand {
             color: #666;
             font-size: 14px;
             margin-bottom: 8px;
         }
+
         .product-description {
             font-size: 14px;
             margin-bottom: 10px;
             flex-grow: 1;
         }
+
         .price-container {
             display: flex;
             justify-content: center;
@@ -150,21 +169,25 @@
             margin-bottom: 15px;
             flex-wrap: wrap;
         }
+
         .current-price {
             font-weight: bold;
             font-size: 18px;
             margin-right: 10px;
         }
+
         .original-price {
             text-decoration: line-through;
             color: #999;
         }
+
         .savings {
             width: 100%;
             font-size: 14px;
             color: green;
             margin-top: 5px;
         }
+
         button.add-to-cart {
             background-color: #e53935;
             color: white;
@@ -175,9 +198,11 @@
             width: 100%;
             transition: background-color 0.3s;
         }
+
         button.add-to-cart:hover {
             background-color: #c62828;
         }
+
         .wishlist-icon {
             position: absolute;
             top: 10px;
@@ -200,6 +225,31 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            addToCartButtons.forEach(button => {
+                button.addEventListen
+            }
+
+            .navbar-toggler {
+                order: 1;
+            }
+
+            .navbar-brand {
+                order: 2;
+                text-align: center; /* Center the brand */
+            }
+
+            .cart-icon {
+                order: 3;
+                position: relative;
+                margin-top: 10px;
+            }
+            addToCartButtons.forEach(button => {
+                button.addEventListen
             .product-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
@@ -217,7 +267,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
                     {% if not user.is_authenticated %}
@@ -228,10 +278,11 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     {% endif %}
                 </ul>
-                <div class="cart-icon">
-                    <a class="cart-i" href="{% url 'cart' %}"><span class="material-symbols-outlined">shopping_cart</span></a>
-                    <div id="cart-count" class="cart-count">0</div>
-                </div>
+            </div>
+            <!-- Cart Icon -->
+            <div class="cart-icon">
+                <a class="cart-i" href="{% url 'cart' %}"><span class="material-symbols-outlined">shopping_cart</span></a>
+                <div id="cart-count" class="cart-count">0</div>
             </div>
         </div>
     </nav>
