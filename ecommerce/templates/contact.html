@@ -18,27 +18,58 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
-        .cart-icon{
-            color: #fff;
-        }
 
         /* Navbar Styling */
         .navbar {
             background-color: #000 !important;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
         .navbar-brand {
             font-weight: bold;
             color: red !important;
+            flex-grow: 1;
+            text-align: center;
         }
+
         .navbar-nav .nav-link {
             color: white !important;
             font-size: 16px;
         }
+
         .navbar-toggler {
             border: none;
         }
+
         .navbar-toggler:focus {
             box-shadow: none;
+        }
+
+        .cart-icon {
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .cart-i {
+            color: white;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 100%;
         }
 
         /* Contact Section */
@@ -46,21 +77,25 @@
             background-color: #fff;
             padding: 50px 20px;
         }
+
         .contact-section h2 {
             font-size: 28px;
             margin-bottom: 30px;
             text-align: center;
             color: #333;
         }
+
         .contact-form {
             background-color: #fff;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px;
@@ -68,10 +103,12 @@
             border: 1px solid #ddd;
             font-size: 16px;
         }
+
         .form-group textarea {
             resize: vertical;
             min-height: 150px;
         }
+
         .form-group button {
             background-color: #e53935;
             color: white;
@@ -82,6 +119,7 @@
             font-size: 16px;
             transition: background-color 0.3s;
         }
+
         .form-group button:hover {
             background-color: #c62828;
         }
@@ -91,15 +129,46 @@
             margin-top: 50px;
             color: #333;
         }
+
         .contact-info p {
             font-size: 16px;
         }
 
+        /* Footer */
         .footer {
             background-color: black;
             color: white;
             text-align: center;
             padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar-nav {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .navbar-toggler {
+                order: 1;
+            }
+
+            .navbar-brand {
+                order: 2;
+            }
+
+            .cart-icon {
+                order: 3;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -114,7 +183,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
                     {% if not user.is_authenticated %}
@@ -124,10 +193,12 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     {% endif %}
                 </ul>
-                <div class="cart-icon">
-                    <a class="cart-i" href="{% url 'cart' %}"> <span class="material-symbols-outlined">shopping_cart</span></a>
-                    <span class="cart-count">0</span>
-                </div>
+            </div>
+            <div class="cart-icon">
+                <a class="cart-i" href="{% url 'cart' %}">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+                <span class="cart-count">0</span>
             </div>
         </div>
     </nav>
@@ -136,7 +207,6 @@
     <section class="contact-section">
         <h2>Contact Us</h2>
         <div class="container">
-            <!-- Contact Form -->
             <div class="contact-form">
                 <form method="POST">
                     {% csrf_token %}
@@ -175,5 +245,31 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+
+            let cartItems = parseInt(localStorage.getItem('cartItems')) || 0;
+            cartCount.textContent = cartItems;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.target.textContent = "Added!";
+                    e.target.style.backgroundColor = "#4CAF50";
+
+                    cartItems++;
+                    localStorage.setItem('cartItems', cartItems);
+                    cartCount.textContent = cartItems;
+
+                    setTimeout(() => {
+                        e.target.textContent = "Add To Cart";
+                        e.target.style.backgroundColor = "#e53935";
+                    }, 1000);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
