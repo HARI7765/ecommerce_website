@@ -230,9 +230,6 @@
                 justify-content: center;
                 align-items: center;
             }
-            addToCartButtons.forEach(button => {
-                button.addEventListen
-            }
 
             .navbar-toggler {
                 order: 1;
@@ -248,8 +245,7 @@
                 position: relative;
                 margin-top: 10px;
             }
-            addToCartButtons.forEach(button => {
-                button.addEventListen
+
             .product-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
@@ -267,7 +263,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
                     {% if not user.is_authenticated %}
@@ -311,7 +306,8 @@
                 {% for i in products %}
                 <div class="product-item">
                     <button class="wishlist-icon">♡</button>
-                    <img src="{{ i.image.url }}" alt="Pampers Pants New Baby">
+                    <a href="{% url 'product_detail' i.id %}">
+                    <img src="{{ i.image.url }}" alt="Pampers Pants New Baby"> </a>
                     <div class="product-details">
                         <div class="product-brand">{{i.name}}</div>
                         <div class="product-title">{{i.name}}</div>
