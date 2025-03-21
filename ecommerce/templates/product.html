@@ -1,116 +1,268 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ product.name }}</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Product Details - MedShop</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
 
-        .container {
-            margin-top: 50px;
+        /* Navbar Styling */
+        .navbar {
+            background-color: #000 !important;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .product-details {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-details h1 {
-            font-size: 2rem;
-            color: #333;
+        .navbar-brand {
             font-weight: bold;
-        }
-
-        .product-details img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .product-description {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .product-price {
-            font-size: 1.5rem;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            width: 150px;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: #28a745;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #218838;
-        }
-
-        .btn-secondary {
-            background-color: #6c757d;
-            border: none;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5a6268;
-        }
-
-        .back-link {
-            margin-top: 20px;
-            display: block;
+            color: red !important;
+            flex-grow: 1;
             text-align: center;
-            font-size: 1.1rem;
-            color: #007bff;
-            text-decoration: none;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 16px;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .cart-icon {
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .cart-i {
+            color: white;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 100%;
+        }
+
+        /* Product Details Section */
+        .product-section {
+            background-color: #fff;
+            padding: 50px 20px;
+        }
+
+        .product-section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product-image {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-info {
+            max-width: 500px;
+            flex-grow: 1;
+        }
+
+        .product-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-info p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 22px;
+            color: #e53935;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #e53935;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #c62828;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar-nav {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .navbar-toggler {
+                order: 1;
+            }
+
+            .navbar-brand {
+                order: 2;
+            }
+
+            .cart-icon {
+                order: 3;
+                margin-top: 10px;
+            }
+
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-info {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="product-details">
-            <h1>{{ product.name }}</h1>
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
-            <p class="product-description">{{ product.description }}</p>
-            <p class="product-price"><strong>Price: ${{ product.price }}</strong></p>
-            <form method="POST" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-primary">Add to Cart</button>
-            </form>
-            <a href="{% url 'index' %}" class="btn btn-secondary back-link">Back to Products</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Medshop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
+                    {% if not user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">SignIn</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="cart-icon">
+                <a class="cart-i" href="{% url 'cart' %}">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+                <span class="cart-count">0</span>
+            </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-section">
+        <h2>Product Details</h2>
+        <div class="container">
+            <div class="product-container">
+                <!-- Product Image -->
+                <div>
+                    <img src="{% static 'images/product_image.jpg' %}" alt="Product Image" class="product-image">
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info">
+                    <h3>Product Name</h3>
+                    <p>Description: This is a detailed description of the product. It includes important features, benefits, and other relevant information that can help customers decide to buy the product.</p>
+                    <p>Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Directions: Use as directed.</p>
+                    <div class="price">$49.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <p>&copy; 2025 MedShop. All rights reserved.</p>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButton = document.querySelector('.add-to-cart-btn');
+            const cartCount = document.querySelector('.cart-count');
+
+            let cartItems = parseInt(localStorage.getItem('cartItems')) || 0;
+            cartCount.textContent = cartItems;
+
+            addToCartButton.addEventListener('click', function(e) {
+                cartItems++;
+                localStorage.setItem('cartItems', cartItems);
+                cartCount.textContent = cartItems;
+
+                alert('Product added to cart');
+            });
+        });
+    </script>
 </body>
 </html>
