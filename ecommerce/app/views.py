@@ -45,7 +45,7 @@ def orders_view(request):
 
 def product_detail_view(request, id):
     product = Product.objects.filter(id=id)
-    return render(request, 'product.html', {'product': product})
+    return render(request, 'product_view.html', {'product': product})
 
 def register_view(request):
     if request.method == 'POST':

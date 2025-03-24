@@ -223,21 +223,30 @@
             <div class="product-container">
                 <!-- Product Image -->
                 <div>
-                    <img src="{% static 'images/product_image.jpg' %}" alt="Product Image" class="product-image">
+                    <!-- Dynamically rendered image based on the model -->
+                    <img src="{{ product.image.url }}" alt="{{ product.name }} Image" class="product-image">
                 </div>
-                
+    
                 <!-- Product Information -->
                 <div class="product-info">
-                    <h3>Product Name</h3>
-                    <p>Description: This is a detailed description of the product. It includes important features, benefits, and other relevant information that can help customers decide to buy the product.</p>
-                    <p>Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p>Directions: Use as directed.</p>
-                    <div class="price">$49.99</div>
+                    <!-- Product name dynamically rendered -->
+                    <h3>{{ product.name }}</h3>
+                    <p><strong>Description:</strong> {{ product.description }}</p>
+                    
+                    <!-- Assuming Ingredients and Directions can be included in the description or added as new fields in the model -->
+                    <!-- <p><strong>Category:</strong> {{ product.category }}</p> -->
+                    <p><strong>Stock:</strong> {{ product.stock }} available</p>
+    
+                    <!-- Product price dynamically rendered -->
+                    <div class="price">₹{{ product.price }}</div>
+                    
+                    <!-- Add to Cart button (you can add logic for adding the product to cart) -->
                     <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <section class="footer">
