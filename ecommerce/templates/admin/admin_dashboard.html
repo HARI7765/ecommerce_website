@@ -20,7 +20,6 @@
         nav h3 {
             margin: 0;
             font-size: 1.2rem;
-            color: #ffffff;
         }
 
         nav a {
@@ -76,8 +75,9 @@
         <h3><a href="order">Orders</a></h3>
         <h3><a href="address">Addresses</a></h3>
         <h3><a href="users">Users</a></h3>
+        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
         {% if user.is_authenticated %}
-        <h3><a class="nav-link" href="{% url 'logout' %}">Logout</a></h3>
+        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
         {% endif %}
     </nav>
 
