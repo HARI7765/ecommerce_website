@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.db.models import Sum
-
+from django.contrib import messages
 def index(request):
     products = Product.objects.all()
     return render(request, 'index.html', {'products': products})
@@ -58,26 +58,63 @@ def register_view(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
+# def login_view(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(data=request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password')
+#             user = authenticate(username=username, password=password)
+#             if user is not None:
+#                 login(request, user)
+#                 return redirect('index')
+#     else:
+#         form = AuthenticationForm()
+#     return render(request, 'signin.html', {'form': form})
 def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('index')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'signin.html', {'form': form})
+    if request.user.is_authenticated:
+        return redirect('index')
 
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            request.session['username'] = username
+            if user.is_superuser:
+                return redirect('admin_dashboard')  # use URL name here
+            else:
+                return redirect('index')
+        else:
+            messages.error(request, "Invalid credentials.")
+
+    return render(request, 'signin.html')
 # @login_required
 def admin_dashboard_view(request):
     total_orders = Order.objects.count()
     total_revenue = Order.objects.aggregate(Sum('total_price'))['total_price__sum'] or 0
-    return render(request, 'admin_dashboard.html', {'total_orders': total_orders, 'total_revenue': total_revenue})
+    return render(request, 'admin_dashboard.html', {
+        'total_orders': total_orders,
+        'total_revenue': total_revenue
+    })
+def register_admin_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_staff = True
+        if user.is_superuser:
+         return redirect('admin_dashboard')  # still valid because the name is the same
 
+        user.save()
+        login(request, user)
+        return redirect('admin_dashboard')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register_admin.html', {'form': form})
 # @login_required
 def add_product_view(request):
     if request.method == 'POST':
