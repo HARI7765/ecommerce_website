@@ -5,6 +5,9 @@ from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.db.models import Sum
 from django.contrib import messages
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Product, Category
+
 def index(request):
     products = Product.objects.all()
     return render(request, 'index.html', {'products': products})
@@ -58,19 +61,7 @@ def register_view(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = AuthenticationForm(data=request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data.get('username')
-#             password = form.cleaned_data.get('password')
-#             user = authenticate(username=username, password=password)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('index')
-#     else:
-#         form = AuthenticationForm()
-#     return render(request, 'signin.html', {'form': form})
+
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('index')
@@ -118,12 +109,28 @@ def register_admin_view(request):
 # @login_required
 def add_product_view(request):
     if request.method == 'POST':
-        name = request.POST['name']
-        image = request.FILES['image']
-        description = request.POST['description']
-        price = request.POST['price']
-        stock = request.POST['stock']
-        category = request.POST['category']
+        name = request.POST.get('name')
+        image = request.FILES.get('image')
+        description = request.POST.get('description')
+        price = request.POST.get('price')
+        stock = request.POST.get('stock')
+        category_id = request.POST.get('category')
+
+        # Validate category
+        category = get_object_or_404(Category, id=category_id)
+
+        # Validate and convert numeric fields
+        try:
+            price = float(price)
+            stock = int(stock)
+        except (ValueError, TypeError):
+            # handle invalid inputs gracefully
+            return render(request, 'add_product.html', {
+                'categories': Category.objects.all(),
+                'error': 'Price must be a number and stock must be an integer.'
+            })
+
+        # Create the product
         Product.objects.create(
             name=name,
             image=image,
@@ -132,9 +139,12 @@ def add_product_view(request):
             stock=stock,
             category=category
         )
-        return redirect('admin_dashboard')
-    return render(request, 'add_product.html')
 
+        return redirect('admin_dashboard')
+
+    # GET request
+    categories = Category.objects.all()
+    return render(request, 'add_product.html', {'categories': categories})
 # @login_required
 def manage_orders_view(request):
     orders = Order.objects.all()

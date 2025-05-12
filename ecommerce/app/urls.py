@@ -4,25 +4,29 @@ from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 
-
-
 urlpatterns = [
+    # Core site pages
     path('', views.index, name='index'),  # Homepage
+    path('product/<int:id>/', views.product_detail_view, name='product_detail'),
+    path('contact/', views.contact_view, name='contact'),
+    
+    # Shopping features
     path('cart/', views.cart_view, name='cart'),
     path('checkout/', views.checkout_view, name='checkout'),
     path('orders/', views.orders_view, name='orders'),
-    path('product/<int:id>/', views.product_detail_view, name='product_detail'),
+    # Removed the incorrect path with product_details_view
+    # Authentication
     path('register/', views.register_view, name='register'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     
-    # Admin dashboard and features
-    path('register/admin/', views.register_admin_view, name='register_admin'),
-    path('dashboard/', views.admin_dashboard_view, name='admin_dashboard'),
-    path('admin/add_product/', views.add_product_view, name='add_product'),
-    path('admin/manage_orders/', views.manage_orders_view, name='manage_orders'),
+    # Admin features
+    path('ecommerce/register/admin/', views.register_admin_view, name='register_admin'),
+    path('ecommerce/dashboard/', views.admin_dashboard_view, name='admin_dashboard'),
+    path('ecommerce/add_product/', views.add_product_view, name='add_product'),
+    path('product_details', views.product_detail_view, name='product_details'),
+    path('ecommerce/manage_orders/', views.manage_orders_view, name='manage_orders'),
 
-    path('contact/', views.contact_view, name='contact'),
 ]
 
 # Serve media files in development
