@@ -10,15 +10,14 @@ from .models import Product, Category
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse  
-
+from django.shortcuts import render, get_object_or_404
+from .models import Product
 
 
     # Check if the user is authenticated
 def index(request):
     categories = Category.objects.prefetch_related('products').all()
     return render(request, 'index.html', {'categories': categories})    
-
-
 
 # @login_required()
 def cart_view(request):

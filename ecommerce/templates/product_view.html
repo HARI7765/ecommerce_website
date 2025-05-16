@@ -1,75 +1,382 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - MedShop</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        :root {
+            --primary-color: #ff1a1a;
+            --secondary-color: #333;
+            --light-bg: #f5f5f5;
+            --dark-bg: #000000;
+            --text-light: #ffffff;
+            --text-dark: #333333;
         }
 
-        /* Navbar Styling */
-        .navbar {
-            background-color: #000 !important;
-            position: sticky;
-            top: 0;
-            z-index: 9999;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark-bg);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
         }
 
-        .navbar-brand {
-            font-weight: bold;
-            color: red !important;
-            flex-grow: 1;
-            text-align: center;
+        .logo {
+            flex: 0 0 auto;
         }
 
-        .navbar-nav .nav-link {
-            color: white !important;
+        .logo a {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 30px;
             font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
         }
 
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
 
         .cart-icon {
-            color: white;
-            font-size: 27px;
-            cursor: pointer;
             position: relative;
         }
 
-        .cart-i {
-            color: white;
+        .cart-icon i {
+            font-size: 20px;
         }
 
         .cart-count {
             position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: red;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary-color);
             color: white;
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 100%;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-color: var(--dark-bg);
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #e60000;
+        }
+
+        /* Welcome Section Styles */
+        .welcome {
+            padding: 60px 0;
+            text-align: center;
+            background-color: var(--light-bg);
+        }
+
+        .welcome h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .welcome p {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Products Section Styles */
+        .products {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .products h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-link {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f9f9f9;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-info .price {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-info .stock {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .product-info .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .product-info .btn:hover {
+            background-color: #e60000;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #f9f9f9;
+            padding: 60px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature i {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 50px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 14px;
         }
 
         /* Product Details Section */
@@ -83,6 +390,19 @@
             margin-bottom: 30px;
             text-align: center;
             color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        .product-section h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .product-container {
@@ -90,6 +410,8 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .product-image {
@@ -97,17 +419,23 @@
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.02);
         }
 
         .product-info {
             max-width: 500px;
             flex-grow: 1;
+            padding: 20px;
         }
 
         .product-info h3 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #333;
+            color: var(--text-dark);
         }
 
         .product-info p {
@@ -118,60 +446,32 @@
 
         .price {
             font-size: 22px;
-            color: #e53935;
+            color: var(--primary-color);
             font-weight: bold;
             margin-bottom: 20px;
         }
 
         .add-to-cart-btn {
-            background-color: #e53935;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             padding: 12px 25px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
         }
 
         .add-to-cart-btn:hover {
-            background-color: #c62828;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 20px;
+            background-color: #e60000;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .navbar-nav {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .navbar-toggler {
-                order: 1;
-            }
-
-            .navbar-brand {
-                order: 2;
-            }
-
-            .cart-icon {
-                order: 3;
-                margin-top: 10px;
+            .nav-links a {
+                margin-left: 20px;
+                font-size: 14px;
             }
 
             .product-container {
@@ -183,43 +483,60 @@
                 max-width: 100%;
             }
         }
+
+        @media (max-width: 576px) {
+            .logo a {
+                font-size: 24px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .product-section h2 {
+                font-size: 24px;
+            }
+
+            .product-info h3 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
-<body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Medshop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
-                    {% if not user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'log' %}">SignIn</a></li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            <div class="cart-icon">
-                <a class="cart-i" href="{% url 'cart' %}">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                </a>
-                <span class="cart-count">0</span>
-            </div>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="{% url 'index'  %}">Medshop</a>
         </div>
-    </nav>
+        <div class="nav-links">
+            <a href="#">Pharmacy</a>
+            {% if user.is_authenticated %}
+            <a href="#">Profile</a>
+            {% else %}
+            <a href="{% url 'log' %}">Login</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'cart' %}" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
 
     <!-- Product Details Section -->
     <section class="product-section">
-        <h2>Product Details</h2>
-        <div class="container">
+        <div class="container text-center">
+            <h2>Product Details</h2>
             <div class="product-container">
                 <!-- Product Image -->
                 <div>
@@ -246,15 +563,74 @@
             </div>
         </div>
     </section>
-    
 
-    <!-- Footer -->
-    <section class="footer">
-        <p>&copy; 2025 MedShop. All rights reserved.</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Fast Delivery</h3>
+            <p>Get your medications delivered quickly to your doorstep</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-user-md"></i>
+            <h3>Expert Pharmacists</h3>
+            <p>Our professional team is available for consultations</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Authentic Products</h3>
+            <p>All our medicines are genuine and quality-checked</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-tag"></i>
+            <h3>Best Prices</h3>
+            <p>Competitive prices and regular discounts on all products</p>
+        </div>
     </section>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Prescription Drugs</a></li>
+                    <li><a href="#">Over-the-counter</a></li>
+                    <li><a href="#">Health Supplements</a></li>
+                    <li><a href="#">Medical Devices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> support@medshop.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MedShop. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
