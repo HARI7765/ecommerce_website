@@ -200,7 +200,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Health Store</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Pharmacy</a></li>
                     {% if not user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">SignIn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'log' %}">SignIn</a></li>
                     {% endif %}
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
