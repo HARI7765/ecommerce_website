@@ -7,10 +7,18 @@ from django.db.models import Sum
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Category
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse  
 
+
+
+    # Check if the user is authenticated
 def index(request):
-    products = Product.objects.all()
-    return render(request, 'index.html', {'products': products})
+    categories = Category.objects.prefetch_related('products').all()
+    return render(request, 'index.html', {'categories': categories})    
+
+
 
 # @login_required()
 def cart_view(request):
@@ -25,6 +33,8 @@ def cart_view(request):
     
     # Continue with the rest of your cart logic
     return render(request, 'cart.html', {'user_id': user_id})
+
+
 # @login_required
 def checkout_view(request):
     if request.method == 'POST':
@@ -62,9 +72,11 @@ def register_view(request):
     return render(request, 'signup.html', {'form': form})
 
 
+from .models import Category
+
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect_to_homepage(request)
 
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -76,37 +88,62 @@ def login_view(request):
             login(request, user)
             request.session['username'] = username
             if user.is_superuser:
-                return redirect('admin_dashboard')  # use URL name here
+                return redirect('admin_dashboard')  # Use URL name
             else:
-                return redirect('index')
+                return redirect_to_homepage(request)
         else:
             messages.error(request, "Invalid credentials.")
 
     return render(request, 'signin.html')
+
+
+def redirect_to_homepage(request):
+    # Redirect to first available category
+    first_category = Category.objects.first()
+    if first_category:
+        return redirect('index', id=first_category.id)
+    else:
+        messages.error(request, "No categories available.")
+        return redirect('signin')  # or render a custom error page
+    
+
 # @login_required
 def admin_dashboard_view(request):
+    products = Product.objects.all()
     total_orders = Order.objects.count()
     total_revenue = Order.objects.aggregate(Sum('total_price'))['total_price__sum'] or 0
     return render(request, 'admin_dashboard.html', {
         'total_orders': total_orders,
-        'total_revenue': total_revenue
+        'total_revenue': total_revenue,
+        'products': products,
     })
-def register_admin_view(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.is_staff = True
-        if user.is_superuser:
-         return redirect('admin_dashboard')  # still valid because the name is the same
 
-        user.save()
-        login(request, user)
-        return redirect('admin_dashboard')
-    else:
-        form = UserCreationForm()
-    return render(request, 'register_admin.html', {'form': form})
-# @login_required
+
+def signup(request):
+    if request.method == 'POST':  
+        email = request.POST.get('email')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        confirmpassword = request.POST.get('confirmpassword')
+
+        if not username or not email or not password or not confirmpassword:
+            messages.error(request, 'All fields are required.')
+        elif confirmpassword != password:
+            messages.error(request, "Passwords do not match.")
+        elif User.objects.filter(email=email).exists():
+            messages.error(request, "Email already exists.")
+        elif User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists.")
+        else:
+            # Corrected line to use create_user
+            user = User.objects.create_user(username=username, email=email, password=password)
+            user.save()
+            messages.success(request, "Account created successfully!")
+            return redirect('log')  
+
+    return render(request, "signup.html")# @login_required
+
+
 def add_product_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -145,18 +182,64 @@ def add_product_view(request):
     # GET request
     categories = Category.objects.all()
     return render(request, 'add_product.html', {'categories': categories})
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    
+    return render(request, 'product_detail.html', {'product': product})
+
+def edit_product_view(request, id):
+    product = get_object_or_404(Product, id=id)
+    if request.method == 'POST':
+        product.name = request.POST.get('name')
+        product.image = request.FILES.get('image', product.image)  # Keep old image if new one not provided
+        product.description = request.POST.get('description')
+        product.price = request.POST.get('price')
+        product.stock = request.POST.get('stock')
+        product.category_id = request.POST.get('category')
+
+        # Validate and convert numeric fields
+        try:
+            product.price = float(product.price)
+            product.stock = int(product.stock)
+        except (ValueError, TypeError):
+            # handle invalid inputs gracefully
+            return render(request, 'edit_product.html', {
+                'product': product,
+                'categories': Category.objects.all(),
+                'error': 'Price must be a number and stock must be an integer.'
+            })
+
+        product.save()
+        return redirect('admin_dashboard')
+
+    categories = Category.objects.all()
+    return render(request, 'edit_product.html', {'product': product, 'categories': categories})
+
+def delete_product_view(request, id):
+    product = get_object_or_404(Product, id=id)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('admin_dashboard')
+    return render(request, 'delete_product.html', {'product': product})
+
+
 # @login_required
 def manage_orders_view(request):
     orders = Order.objects.all()
     return render(request, 'manage_orders.html', {'orders': orders})
+
+
 def logout_view(request):
     logout(request)
     return redirect('index')
 
 def contact_view(request):
-#     if request.method == 'POST':
-#         name = request.POST['name']
-#         email = request.POST['email']
-#         message = request.POST['message']
+    # if request.method == 'POST':
+    #     name = request.POST['name']
+    #     email = request.POST['email']
+    #     message = request.POST['message']
     return render(request,'contact.html')
+
+
         

@@ -109,21 +109,22 @@
                     <tbody>
                         {% for product in products %}
                         <tr>
-                            <td>{{ product.title }}</td>
+                            <td>{{ product.name }}</td>
                             <td>
-                                {% if product.image1 %}
-                                    <img src="{{ product.image1.url }}" class="product-img" alt="{{ product.title }}">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="product-img" alt="{{ product.title }}">
                                 {% else %}
                                     <span class="text-muted">No image</span>
                                 {% endif %}
                             </td>
                             <td>{{ product.description }}</td>
-                            <td>₹{{ product.original_price }}</td>
+                            <td>₹{{ product.price }}</td>
                             <td>{{ product.category }}</td>
                             <td>
                                 <a href="{% url 'edit_product' product.id %}" class="btn btn-warning btn-sm">Edit</a>
                                 <a href="{% url 'delete_product' product.id %}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
+
                         </tr>
                         {% endfor %}
                     </tbody>
