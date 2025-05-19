@@ -19,6 +19,7 @@ from django.db.models import Q
 from .models import Category
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
+from .models import Product, CartItem, Order
 
 
 
@@ -61,23 +62,17 @@ def cart_view(request):
     return render(request, 'cart.html', {'user_id': user_id})
 
 def add_to_cart_view(request, id):
-    if request.method == 'POST':
-        product = get_object_or_404(Product, id=id)
-        quantity = int(request.POST.get('quantity', 1))  # Default to 1 if not provided
-
-        # Check if the product is already in the cart
-        cart_item, created = Cart.objects.get_or_create(
-            user=request.user,
-            product=product,
-            defaults={'quantity': quantity}
-        )
-
-        if not created:
-            # If the item already exists, update the quantity
-            cart_item.quantity += quantity
-            cart_item.save()
-
-        return redirect('cart')  # Redirect to cart page
+    product = get_object_or_404(Product, id=id)
+    # Get or create cart item logic here
+    cart_item, created = CartItem.objects.get_or_create(
+        product=product,
+        user=request.user,
+        defaults={'quantity': 1}
+    )
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
+    return redirect('cart')  # Redirect to cart page
 
 
 # @login_required
@@ -270,6 +265,9 @@ def edit_product_view(request, id):
         'categories': categories
     })
 
+def product_list_view(request):
+    products = Product.objects.all()
+    return render(request, 'products.html', {'products': products})
 
 def delete_product_view(request, id):
     product = get_object_or_404(Product, id=id)
