@@ -3,6 +3,7 @@ from . import views
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
+from app.views import product_list_view
 
 urlpatterns = [
     # Core site pages
@@ -17,6 +18,8 @@ urlpatterns = [
     path('cart/', views.cart_view, name='cart'),
     path('checkout/', views.checkout_view, name='checkout'),
     path('orders/', views.orders_view, name='orders'),
+    path('products/', views.product_list_view, name='product'),
+    path('add_to_cart/<int:id>/', views.add_to_cart_view, name='add_to_cart'),
     # Removed the incorrect path with product_details_view
     # Authentication
     path('register/', views.signup, name='register'),
