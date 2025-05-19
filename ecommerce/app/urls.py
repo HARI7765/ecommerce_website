@@ -6,9 +6,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # Core site pages
-    path('', views.index, name='index'),  # Homepage
+    path('', views.index, name='home'),  # Homepage
+    path('index/', views.index, name='index'),  # Homepage
+    path('index/<int:id>/', views.index, name='index'),  # Homepage
     path('product/<int:id>/', views.product_detail_view, name='product_detail'),
     path('contact/', views.contact_view, name='contact'),
+    path('profile/', views.profile_view, name='profile'),
     
     # Shopping features
     path('cart/', views.cart_view, name='cart'),
