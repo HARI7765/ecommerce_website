@@ -614,7 +614,7 @@
         <div class="nav-links">
              <a href="">Pharmacy</a>
             {% if user.is_authenticated %}
-            <a href="#">Profile</a>
+            <a href="{% url 'profile' %}">Profile</a>
             {% else %}
             <a href="{% url 'log' %}">Login</a>
             {% endif %}
@@ -637,8 +637,10 @@
     <section class="hero">
         <h1>Search Medicines....</h1>
         <div class="search-container">
-            <input type="text" placeholder="Search for... General Products">
+            <form method="get" action ="{% url 'index' %}">
+            <input type="text" name="q" placeholder="Search for..." value="{{ request.GET.q }}">
             <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
         </div>
     </section>
 
@@ -665,9 +667,9 @@
                                 <p>{{ product.description|truncatewords:15 }}</p>
                                 <p class="price">₹{{ product.price }}</p>
                                 <p class="stock">Stock: {{ product.stock }}</p>
+                                </a>
                                 <button class="btn">Add to Cart</button>
                             </div>
-                        </a>
                     </div>
                 {% empty %}
                     <p>No products in this category.</p>

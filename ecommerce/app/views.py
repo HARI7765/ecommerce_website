@@ -12,12 +12,39 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse  
 from django.shortcuts import render, get_object_or_404
 from .models import Product
+from decimal import Decimal
+from . forms import ProductForm
+from django.views.decorators.http import require_http_methods
+from django.db.models import Q
+from .models import Category
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
+
+
 
 
     # Check if the user is authenticated
-def index(request):
+def index(request, id=None):
+    # Handle product ID if provided
+    product_id = id
+    
+    # Handle search query if provided
+    query = request.GET.get('q')
+    products = Product.objects.all()
+    if query:
+        products = products.filter()
+        Q(name__icontains=query) | Q(description__icontains=query)
+    
+    # Get all categories with their products
     categories = Category.objects.prefetch_related('products').all()
-    return render(request, 'index.html', {'categories': categories})    
+    
+    context = {
+        'product_id': product_id,
+        'products': products,
+        'categories': categories,
+        'query': query
+    }
+    return render(request, 'index.html', context)
 
 # @login_required()
 def cart_view(request):
@@ -32,6 +59,25 @@ def cart_view(request):
     
     # Continue with the rest of your cart logic
     return render(request, 'cart.html', {'user_id': user_id})
+
+def add_to_cart_view(request, id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, id=id)
+        quantity = int(request.POST.get('quantity', 1))  # Default to 1 if not provided
+
+        # Check if the product is already in the cart
+        cart_item, created = Cart.objects.get_or_create(
+            user=request.user,
+            product=product,
+            defaults={'quantity': quantity}
+        )
+
+        if not created:
+            # If the item already exists, update the quantity
+            cart_item.quantity += quantity
+            cart_item.save()
+
+        return redirect('cart')  # Redirect to cart page
 
 
 # @login_required
@@ -70,8 +116,6 @@ def register_view(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
-
-from .models import Category
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -143,6 +187,7 @@ def signup(request):
     return render(request, "signup.html")# @login_required
 
 
+
 def add_product_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -187,33 +232,44 @@ def product_detail(request, pk):
     
     return render(request, 'product_detail.html', {'product': product})
 
+@login_required
+@require_http_methods(["GET", "POST"])
 def edit_product_view(request, id):
+    """
+    View for editing an existing product.
+    Requires login and handles both GET and POST requests.
+    """
+    # Get the product or return 404
     product = get_object_or_404(Product, id=id)
-    if request.method == 'POST':
-        product.name = request.POST.get('name')
-        product.image = request.FILES.get('image', product.image)  # Keep old image if new one not provided
-        product.description = request.POST.get('description')
-        product.price = request.POST.get('price')
-        product.stock = request.POST.get('stock')
-        product.category_id = request.POST.get('category')
-
-        # Validate and convert numeric fields
-        try:
-            product.price = float(product.price)
-            product.stock = int(product.stock)
-        except (ValueError, TypeError):
-            # handle invalid inputs gracefully
-            return render(request, 'edit_product.html', {
-                'product': product,
-                'categories': Category.objects.all(),
-                'error': 'Price must be a number and stock must be an integer.'
-            })
-
-        product.save()
+    
+    # Check if the user has permission to edit products
+    if not request.user.has_perm('products.change_product'):
+        messages.error(request, "You don't have permission to edit products.")
         return redirect('admin_dashboard')
-
+    
+    if request.method == 'POST':
+        # Create form instance with POST data and files, instance is the existing product
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        
+        if form.is_valid():
+            # Form will handle all validation including price and stock
+            form.save()
+            messages.success(request, f"Product '{product.name}' was updated successfully.")
+            return redirect('admin_dashboard')
+    else:
+        # Create form pre-populated with product data for GET request
+        form = ProductForm(instance=product)
+    
+    # Get all categories for the form dropdown
     categories = Category.objects.all()
-    return render(request, 'edit_product.html', {'product': product, 'categories': categories})
+    
+    # Render the template with the form and categories
+    return render(request, 'edit_product.html', {
+        'form': form,
+        'product': product,
+        'categories': categories
+    })
+
 
 def delete_product_view(request, id):
     product = get_object_or_404(Product, id=id)
@@ -229,9 +285,20 @@ def manage_orders_view(request):
     return render(request, 'manage_orders.html', {'orders': orders})
 
 
+
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+@login_required
+def profile_view(request):
+    user = User.objects.get(username=request.user.username)
+    context = {
+        'user': user.username,
+    }
+    return render(request, 'profile.html',context)
+
+
 
 def contact_view(request):
     # if request.method == 'POST':
