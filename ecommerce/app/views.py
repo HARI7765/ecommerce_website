@@ -61,35 +61,10 @@ def cart_view(request):
     # Continue with the rest of your cart logic
     return render(request, 'cart.html', {'user_id': user_id})
 
-def add_to_cart_view(request, id):
-    product = get_object_or_404(Product, id=id)
-    # Get or create cart item logic here
-    cart_item, created = CartItem.objects.get_or_create(
-        product=product,
-        user=request.user,
-        defaults={'quantity': 1}
-    )
-    if not created:
-        cart_item.quantity += 1
-        cart_item.save()
-    return redirect('cart')  # Redirect to cart page
 
 
 # @login_required
-def checkout_view(request):
-    if request.method == 'POST':
-        cart_items = Cart.objects.filter(user=request.user)
-        for item in cart_items:
-            Order.objects.create(
-                user=request.user,
-                product=item.product,
-                quantity=item.quantity,
-                total_price=item.product.price * item.quantity,
-                status='Pending'
-            )
-            item.delete()  # Clear cart after order
-        return redirect('orders')  # Redirect to orders page
-    return render(request, 'checkout.html')
+
 
 # @login_required
 def orders_view(request):
@@ -97,8 +72,34 @@ def orders_view(request):
     return render(request, 'orders.html', {'orders': orders})
 
 def product_detail_view(request, id):
-    product = Product.objects.filter(id=id)
-    return render(request, 'product_view.html', {'product': product})
+    # Get a single product object instead of a queryset
+    product = Product.objects.get(id=id)
+    
+    
+    # Check if product is in stock
+    in_stock = product.stock > 0
+    
+    # Check if the product is in the user's cart (if user is authenticated)
+    cart_product_ids = []
+    if request.user.is_authenticated:
+        cart_items = CartItem.objects.filter(user=request.user)
+        cart_product_ids = [item.product.id for item in cart_items]
+    
+    # Similar for wishlist if you have that functionality
+    wishlist_product_ids = []
+    # Uncomment and modify if you have a wishlist model
+    # if request.user.is_authenticated:
+    #     wishlist_items = Wishlist.objects.filter(user=request.user)
+    #     wishlist_product_ids = [item.product.id for item in wishlist_items]
+    
+    context = {
+        'product': product,
+        'in_stock': in_stock,
+        'cart_product_ids': cart_product_ids,
+        'wishlist_product_ids': wishlist_product_ids,
+    }
+    
+    return render(request, 'product_view.html', context)
 
 def register_view(request):
     if request.method == 'POST':
@@ -265,6 +266,8 @@ def edit_product_view(request, id):
         'categories': categories
     })
 
+
+
 def product_list_view(request):
     products = Product.objects.all()
     return render(request, 'products.html', {'products': products})
@@ -282,17 +285,18 @@ def manage_orders_view(request):
     orders = Order.objects.all()
     return render(request, 'manage_orders.html', {'orders': orders})
 
-
-
+# @login_required
 def logout_view(request):
     logout(request)
     return redirect('index')
 
 @login_required
 def profile_view(request):
-    user = User.objects.get(username=request.user.username)
+    user = User.objects.get(id=request.user.id)
     context = {
         'user': user.username,
+        'email': user.email,
+
     }
     return render(request, 'profile.html',context)
 
@@ -307,3 +311,219 @@ def contact_view(request):
 
 
         
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    categories = Category.objects.all()
+    
+    # Check if product is in cart
+    cart_product_ids = []
+    cart_items_count = 0
+    
+    if request.user.is_authenticated:
+        cart_items = CartItem.objects.filter(user=request.user)
+        cart_product_ids = [item.product.id for item in cart_items]
+        cart_items_count = sum(item.quantity for item in cart_items)
+    
+    context = {
+        'product': product,
+        'categories': categories,
+        'in_stock': product.stock > 0,
+        'cart_product_ids': cart_product_ids,
+        'cart_items_count': cart_items_count,
+    }
+    
+    # If it's a POST request, handle adding to cart
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            messages.warning(request, "Please log in to add items to your cart.")
+            return redirect('log')
+        
+        quantity = int(request.POST.get('quantity', 1))
+        
+        # Check if already in cart
+        cart_item, created = CartItem.objects.get_or_create(
+            user=request.user,
+            product=product,
+            defaults={'quantity': quantity}
+        )
+        
+        # If not created, update the quantity
+        if not created:
+            cart_item.quantity += quantity
+            cart_item.save()
+        
+        messages.success(request, f"{product.name} added to your cart!")
+        return redirect('cart')
+    
+    return render(request, 'product_detail.html', context)
+
+@login_required
+def cart_view(request):
+    # Get all cart items for the current user
+    cart_items = CartItem.objects.filter(user=request.user)
+    cart_items_count = sum(item.quantity for item in cart_items)
+    
+    # Calculate totals
+    subtotal = sum(item.product.price * item.quantity for item in cart_items)
+    tax = subtotal * Decimal('0.10')  # 10% tax
+    total = subtotal + tax
+    
+    context = {
+        'cart_items': cart_items,
+        'cart_items_count': cart_items_count,
+        'subtotal': subtotal,
+        'tax': tax,
+        'total': total,
+    }
+    
+    return render(request, 'cart.html', context)
+
+@login_required
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    # Don't add if out of stock
+    if product.stock <= 0:
+        messages.error(request, f"Sorry, {product.name} is out of stock.")
+        return redirect('product_detail', product_id=product_id)
+    
+    quantity = int(request.POST.get('quantity', 1))
+    
+    # Check if already in cart
+    cart_item, created = CartItem.objects.get_or_create(
+        user=request.user,
+        product=product,
+        defaults={'quantity': quantity}
+    )
+    
+    # If not created, update the quantity
+    if not created:
+        cart_item.quantity += quantity
+        cart_item.save()
+    
+    messages.success(request, f"{product.name} added to your cart!")
+    
+    # If the request is AJAX, return JSON response
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': True})
+    
+    return redirect('cart')
+
+@login_required
+def remove_from_cart(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id, user=request.user)
+    cart_item.delete()
+    
+    messages.success(request, "Item removed from your cart.")
+    return redirect('cart')
+
+@login_required
+def increase_quantity(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id, user=request.user)
+    
+    # Check if increasing quantity is possible (stock availability)
+    if cart_item.quantity < cart_item.product.stock:
+        cart_item.quantity += 1
+        cart_item.save()
+    else:
+        messages.warning(request, f"Sorry, only {cart_item.product.stock} items available in stock.")
+    
+    return redirect('cart')
+
+@login_required
+def decrease_quantity(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id, user=request.user)
+    
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+        messages.success(request, "Item removed from your cart.")
+    
+    return redirect('cart')
+
+@login_required
+def clear_cart(request):
+    CartItem.objects.filter(user=request.user).delete()
+    messages.success(request, "Your cart has been cleared.")
+    return redirect('cart')
+
+@login_required
+def checkout(request):
+    # Get all cart items for the current user
+    cart_items = CartItem.objects.filter(user=request.user)
+    
+    # Calculate subtotal
+    subtotal = sum(item.product.price * item.quantity for item in cart_items)
+    
+    # Calculate shipping cost - free over ₹500, otherwise ₹50
+    shipping_cost = Decimal('0.00') if subtotal >= 500 else Decimal('50.00')
+    
+    # Calculate tax (5% of subtotal)
+    tax_amount = subtotal * Decimal('0.05')
+    
+    # Calculate total
+    total = subtotal + shipping_cost + tax_amount
+    
+    if request.method == 'POST':
+        # Process the order
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        address = request.POST.get('address')
+        city = request.POST.get('city')
+        postal_code = request.POST.get('postal_code')
+        state = request.POST.get('state')
+        country = request.POST.get('country')
+        
+        # Validate form data
+        if not all([first_name, last_name, email, phone, address, city, postal_code, state, country]):
+            messages.error(request, 'Please fill all the required fields.')
+            return redirect('checkout')
+        
+        # Create new order for each cart item
+        for item in cart_items:
+            Order.objects.create(
+                user=request.user,
+                product=item.product,
+                quantity=item.quantity,
+                amount=float(item.product.price * item.quantity),
+                status='PENDING',
+                provider_order_id=str(uuid.uuid4())[:40]  # Generate a unique order ID
+            )
+            
+            # Update product stock
+            product = item.product
+            product.stock -= item.quantity
+            product.save()
+        
+        # Clear the cart
+        cart_items.delete()
+        
+        messages.success(request, 'Your order has been placed successfully!')
+        return redirect('order_confirmation')
+    
+    context = {
+        'cart_items': cart_items,
+        'cart_items_count': cart_items.count(),
+        'subtotal': subtotal,
+        'shipping_cost': shipping_cost,
+        'tax_amount': tax_amount,
+        'total': total
+    }
+    
+    return render(request, 'checkout.html', context)
+
+@login_required
+def order_confirmation(request):
+    # Get recent orders for the current user
+    recent_orders = Order.objects.filter(user=request.user).order_by('-created_at')[:5]
+    
+    context = {
+        'recent_orders': recent_orders,
+        'cart_items_count': CartItem.objects.filter(user=request.user).count()
+    }
+    
+    return render(request, 'order_confirmation.html', context)

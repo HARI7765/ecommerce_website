@@ -424,21 +424,21 @@
     <!-- Products Section -->
     <section class="product-section">
         <div class="container">
-            {% for category in categories %}
+            {% for i in products %}
             <div class="category">
-                <h2>{{ category.name }}</h2>
+                <h2>{{ i.name }}</h2>
                 <div class="products">
-                    {% for product in category.products.all %}
+
                     <div class="product-card">
-                        <a href="{% url 'product_detail' product.pk %}" class="product-link">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <a href="{% url 'product_detail' i.pk %}" class="product-link">
+                            <img src="{{ i.image.url }}" alt="{{ i.name }}">
                             <div class="product-info">
-                                <h3>{{ product.name }}</h3>
-                                <p>{{ product.description|truncatewords:15 }}</p>
-                                <p class="price">₹{{ product.price }}</p>
-                                <p class="stock">Stock: {{ product.stock }}</p>
+                                <h3>{{ i.name }}</h3>
+                                <p>{{ i.description|truncatewords:15 }}</p>
+                                <p class="price">₹{{ i.price }}</p>
+                                <p class="stock">Stock: {{ i.stock }}</p>
                         </a>
-                        <form method="post" action="{% url 'add_to_cart' product.id %}">
+                        <form method="post" action="#">
                             {% csrf_token %}
                             <button type="submit" class="btn">Add to Cart</button>
                         </form>
@@ -449,7 +449,7 @@
                 {% endfor %}
             </div>
         </div>
-        {% endfor %}
+
         </div>
     </section>
 

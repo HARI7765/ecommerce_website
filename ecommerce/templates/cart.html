@@ -512,15 +512,11 @@
                     <span class="summary-label">Shipping</span>
                     <span class="summary-value">Free</span>
                 </div>
-                
-                <div class="summary-row">
-                    <span class="summary-label">Tax</span>
-                    <span class="summary-value">₹{{ tax }}</span>
-                </div>
+        
                 
                 <div class="summary-row summary-total">
                     <span>Total</span>
-                    <span>₹{{ total }}</span>
+                    <span>₹{{ subtotal }}</span>
                 </div>
                 
                 <a href="{% url 'checkout' %}" class="checkout-btn">Proceed to Checkout</a>

@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
+from .constants import PaymentStatus
+from django.db.models.fields import CharField
+from django.utils import timezone
 
 
 
@@ -23,11 +27,17 @@ class Product(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField(default=1)
     order_date = models.DateTimeField(auto_now_add=True)
-
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    
+    def save(self, *args, **kwargs):
+        # Calculate total price before saving
+        self.total_price = self.product.price * self.quantity
+        super().save(*args, **kwargs)
+    
     def __str__(self):
-        return f"{self.user.username} - {self.product.name} x {self.quantity}"
+        return f"Order #{self.id} - {self.product.name}"
 
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -42,3 +52,25 @@ class CartItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} of {self.product.name}"
+    
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+    
+    amount = models.FloatField(_("Amount"), null=False, blank=False)
+    status = models.CharField(
+        _("Payment Status"),
+        default=PaymentStatus.PENDING,
+        max_length=254,
+        blank=False,
+        null=False,
+    )
+    provider_order_id = models.CharField(_("Order ID"), max_length=40,null=True)
+    payment_id = models.CharField(_("Payment ID"), max_length=36,null=True)
+    signature_id = models.CharField(_("Signature ID"), max_length=128,null=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return f"{self.user.username} - {self.product.title} ({self.quantity})"

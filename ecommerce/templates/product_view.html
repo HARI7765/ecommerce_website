@@ -5,9 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - MedShop</title>
+    <title>{{ product.name }} - MedShop</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Your CSS styles remain the same */
         :root {
             --primary-color: #ff1a1a;
             --secondary-color: #333;
@@ -27,6 +28,32 @@
         body {
             line-height: 1.6;
             background-color: var(--light-bg);
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .alert-warning {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
         }
 
         /* Header Styles */
@@ -101,225 +128,142 @@
             font-weight: bold;
         }
 
-        /* Hero Section Styles */
-        .hero {
-            background-color: var(--dark-bg);
-            padding: 60px 0;
-            text-align: center;
-            color: var(--text-light);
+        /* Product Details Section */
+        .product-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            margin-top: 20px;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 40px;
-        }
-
-        .search-container {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .search-container input {
-            width: 100%;
-            padding: 15px 25px;
-            border-radius: 50px;
-            border: none;
-            font-size: 16px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-container button {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--primary-color);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
+        .product-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
         }
 
-        .search-container button:hover {
-            background-color: #e60000;
-        }
-
-        /* Welcome Section Styles */
-        .welcome {
-            padding: 60px 0;
+        .product-image-container {
+            flex: 1;
+            min-width: 300px;
             text-align: center;
-            background-color: var(--light-bg);
         }
 
-        .welcome h2 {
-            font-size: 36px;
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-title {
+            font-size: 28px;
             color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .product-meta {
+            margin-bottom: 30px;
+        }
+
+        .product-meta-item {
             margin-bottom: 15px;
         }
 
-        .welcome p {
-            font-size: 18px;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Products Section Styles */
-        .products {
-            padding: 60px 5%;
-            text-align: center;
-        }
-
-        .products h2 {
-            font-size: 36px;
+        .product-meta-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
             color: var(--text-dark);
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
         }
 
-        .products h2::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+        .product-meta-value {
+            color: #666;
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
+        .product-size-selector {
+            margin-bottom: 20px;
+        }
+
+        .product-select-size {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .product-actions {
             margin-top: 30px;
         }
 
-        /* Product Card Styles */
-        .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .product-quantity-selector {
             display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-link {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            background-color: #f9f9f9;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .product-info h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        .product-info p {
-            color: #666;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .product-info .price {
-            color: var(--primary-color);
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .product-info .stock {
-            color: #666;
-            font-size: 16px;
+            align-items: center;
             margin-bottom: 20px;
         }
 
-        .product-info .btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-            margin-top: auto;
-            width: 100%;
-            font-size: 16px;
+        .product-quantity-label {
+            margin-right: 10px;
+            font-weight: bold;
         }
 
-        .product-info .btn:hover {
+        .product-quantity-input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .product-button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .product-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .product-btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .product-btn-primary:hover {
             background-color: #e60000;
         }
 
-        /* Features Section */
-        .features {
-            background-color: #f9f9f9;
-            padding: 60px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .feature i {
-            font-size: 40px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
+        .product-btn-icon {
+            padding: 12px;
             font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--text-dark);
         }
 
-        .feature p {
-            color: #666;
+        .product-text-danger {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         /* Footer Styles */
@@ -327,6 +271,7 @@
             background-color: var(--dark-bg);
             color: var(--text-light);
             padding: 50px 5% 20px;
+            margin-top: 50px;
         }
 
         .footer-content {
@@ -379,94 +324,6 @@
             font-size: 14px;
         }
 
-        /* Product Details Section */
-        .product-section {
-            background-color: #fff;
-            padding: 50px 20px;
-        }
-
-        .product-section h2 {
-            font-size: 28px;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #333;
-            position: relative;
-            display: inline-block;
-        }
-
-        .product-section h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .product-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-image {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .product-image:hover {
-            transform: scale(1.02);
-        }
-
-        .product-info {
-            max-width: 500px;
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
-        .product-info p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            font-size: 22px;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .add-to-cart-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .add-to-cart-btn:hover {
-            background-color: #e60000;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links a {
@@ -476,11 +333,6 @@
 
             .product-container {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .product-info {
-                max-width: 100%;
             }
         }
 
@@ -489,21 +341,12 @@
                 font-size: 24px;
             }
 
-            .hero {
-                padding: 40px 0;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-                margin-bottom: 30px;
-            }
-
-            .product-section h2 {
+            .product-title {
                 font-size: 24px;
             }
 
-            .product-info h3 {
-                font-size: 20px;
+            .product-button-group {
+                flex-direction: column;
             }
         }
     </style>
@@ -528,63 +371,96 @@
             <a href="{% url 'contact' %}">Contact</a>
             <a href="{% url 'cart' %}" class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
+                <span class="cart-count">{{ cart_items_count }}</span>
             </a>
         </div>
     </header>
 
+    <!-- Messages -->
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <!-- Product Details Section -->
     <section class="product-section">
-        <div class="container text-center">
-            <h2>Product Details</h2>
-            <div class="product-container">
-                <!-- Product Image -->
-                <div>
-                    <!-- Dynamically rendered image based on the model -->
-                    <img src="{{ product.image.url }}" alt="{{ product.name }} Image" class="product-image">
-                </div>
-    
-                <!-- Product Information -->
-                <div class="product-info">
-                    <!-- Product name dynamically rendered -->
-                    <h3>{{ product.name }}</h3>
-                    <p><strong>Description:</strong> {{ product.description }}</p>
-                    
-                    <!-- Assuming Ingredients and Directions can be included in the description or added as new fields in the model -->
-                    <!-- <p><strong>Category:</strong> {{ product.category }}</p> -->
-                    <p><strong>Stock:</strong> {{ product.stock }} available</p>
-    
-                    <!-- Product price dynamically rendered -->
-                    <div class="price">₹{{ product.price }}</div>
-                    
-                    <!-- Add to Cart button (you can add logic for adding the product to cart) -->
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                </div>
+        <div class="product-container">
+            <div class="product-image-container">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
             </div>
-        </div>
-    </section>
+            
+            <div class="product-details">
+                <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <h1 class="product-title">{{ product.name }}</h1>
+                    <div class="product-price">${{ product.price }}</div>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature">
-            <i class="fas fa-shipping-fast"></i>
-            <h3>Fast Delivery</h3>
-            <p>Get your medications delivered quickly to your doorstep</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-user-md"></i>
-            <h3>Expert Pharmacists</h3>
-            <p>Our professional team is available for consultations</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Authentic Products</h3>
-            <p>All our medicines are genuine and quality-checked</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-tag"></i>
-            <h3>Best Prices</h3>
-            <p>Competitive prices and regular discounts on all products</p>
+                    <div class="product-meta">
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">Category</span>
+                            <span class="product-meta-value">{{ product.category.name }}</span>
+                        </div>
+                        
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">Description</span>
+                            <span class="product-meta-value">{{ product.description }}</span>
+                        </div>
+                        
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">Stock</span>
+                            <span class="product-meta-value">{{ product.stock }} available</span>
+                        </div>
+                    </div>
+
+                    <input type="hidden" value="{{ product.id }}" name="product_id">
+
+                    {% if sizes %}
+                    <div class="product-size-selector">
+                        <label class="product-meta-label" for="product-size-dropdown">Select Size</label>
+                        <select class="product-select-size" name="selected_size" id="product-size-dropdown" required>
+                            <option value="" disabled selected>Choose size</option>
+                            {% for size in sizes %}
+                            {% if size.Stock > 0 %}
+                            <option value="{{ size.size }}">
+                                {{ size.size }}
+                            </option>
+                            {% else %}
+                            <option value="{{ size.size }}" disabled>
+                                {{ size.size }} (Out of stock)
+                            </option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% endif %}
+
+                    <div class="product-actions">
+                        <div class="product-quantity-selector">
+                            <span class="product-quantity-label">Quantity:</span>
+                            <div class="product-quantity-controls">
+                                <input type="number" class="product-quantity-input" name="quantity" id="product-quantity" value="1" disabled min="1" max="{{ product.stock }}">
+                            </div>
+                        </div>
+
+                        <div class="product-button-group">
+                            {% if not in_stock %}
+                            <p class="product-text-danger">Out of Stock</p>
+                            {% else %}
+                                {% if product.id in cart_product_ids %}
+                                <a href="{% url 'cart' %}" class="product-btn product-btn-primary">GO TO CART</a>
+                                {% else %}
+                                <button type="submit" class="product-btn product-btn-primary">ADD TO CART</button>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -594,9 +470,9 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Products</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
@@ -634,19 +510,27 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const addToCartButton = document.querySelector('.add-to-cart-btn');
-            const cartCount = document.querySelector('.cart-count');
-
-            let cartItems = parseInt(localStorage.getItem('cartItems')) || 0;
-            cartCount.textContent = cartItems;
-
-            addToCartButton.addEventListener('click', function(e) {
-                cartItems++;
-                localStorage.setItem('cartItems', cartItems);
-                cartCount.textContent = cartItems;
-
-                alert('Product added to cart');
+            // Quantity controls
+            const quantityInput = document.getElementById('product-quantity');
+            const maxStock = {{ product.stock }};
+            
+            // Ensure quantity doesn't exceed stock
+            quantityInput.addEventListener('change', function() {
+                if (parseInt(this.value) > maxStock) {
+                    this.value = maxStock;
+                }
+                if (parseInt(this.value) < 1) {
+                    this.value = 1;
+                }
             });
+            
+            // Auto hide messages after 3 seconds
+            setTimeout(function() {
+                const messages = document.querySelectorAll('.alert');
+                messages.forEach(function(message) {
+                    message.style.display = 'none';
+                });
+            }, 3000);
         });
     </script>
 </body>
