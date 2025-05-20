@@ -14,13 +14,34 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
     path('profile/', views.profile_view, name='profile'),
     
-    # Shopping features
-    path('cart/', views.cart_view, name='cart'),
-    path('checkout/', views.checkout_view, name='checkout'),
-    path('orders/', views.orders_view, name='orders'),
+
+    # Product listing
     path('products/', views.product_list_view, name='product'),
-    path('add_to_cart/<int:id>/', views.add_to_cart_view, name='add_to_cart'),
-    # Removed the incorrect path with product_details_view
+
+
+    # Cart and Checkout
+    path('cart/', views.cart_view, name='cart'),
+    path('orders/', views.orders_view, name='orders'),
+
+
+
+        # Cart views
+    path('cart/', views.cart_view, name='cart'),
+    path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('remove-from-cart/<int:item_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('increase-quantity/<int:item_id>/', views.increase_quantity, name='increase_quantity'),
+    path('decrease-quantity/<int:item_id>/', views.decrease_quantity, name='decrease_quantity'),
+    path('clear-cart/', views.clear_cart, name='clear_cart'),
+    
+    # Checkout
+    path('checkout/', views.checkout, name='checkout'),
+    path('order-confirmation/', views.order_confirmation, name='order_confirmation'),
+
+
+    #payments and shipping
+
+
+
     # Authentication
     path('register/', views.signup, name='register'),
     path('login/', views.login_view, name='log'),
