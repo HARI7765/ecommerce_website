@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        nav {
+            background-color: #343a40;
+            padding: 15px 30px;
+        }
+
+        nav h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #495057;
+        }
+
+        .dashboard-header {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .product-img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-primary {
+            background-color: #ff9900;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #e68a00;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="d-flex gap-4 align-items-center">
+        <h3><a href="order">Orders</a></h3>
+        <h3><a href="address">Addresses</a></h3>
+        <h3><a href="users">Users</a></h3>
+        {% if user.is_authenticated %}
+        <h3><a class="nav-link" href="{% url 'logout' %}">Logout</a></h3>
+        {% endif %}
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container dashboard-header text-center">
+        <h1 class="fw-bold">Admin Dashboard</h1>
+    </div>
+
+    <div class="container">
+
+        <!-- Products Section -->
+        <div class="card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3>Products</h3>
+                <a href="{% url 'add_product' %}" class="btn btn-primary">Add Product</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Title</th>
+                            <th>Images</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="product-img" alt="{{ product.title }}">
+                                {% else %}
+                                    <span class="text-muted">No image</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ product.description }}</td>
+                            <td>₹{{ product.price }}</td>
+                            <td>{{ product.category }}</td>
+                            <td>
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="{% url 'delete_product' product.id %}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

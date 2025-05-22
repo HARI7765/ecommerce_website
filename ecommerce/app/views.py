@@ -45,7 +45,7 @@ def index(request, id=None):
         'categories': categories,
         'query': query
     }
-    return render(request, 'index.html', context)
+    return render(request, 'main/index.html', context)
 
 # @login_required()
 def cart_view(request):
@@ -59,7 +59,7 @@ def cart_view(request):
         return redirect('login')  # Adjust 'login' to your login URL name
     
     # Continue with the rest of your cart logic
-    return render(request, 'cart.html', {'user_id': user_id})
+    return render(request, 'orders/cart.html', {'user_id': user_id})
 
 
 
@@ -99,7 +99,7 @@ def product_detail_view(request, id):
         'wishlist_product_ids': wishlist_product_ids,
     }
     
-    return render(request, 'product_view.html', context)
+    return render(request, 'products/product_view.html', context)
 
 def register_view(request):
     if request.method == 'POST':
@@ -110,7 +110,7 @@ def register_view(request):
             return redirect('index')
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'login/signup.html', {'form': form})
 
 
 def login_view(request):
@@ -127,13 +127,13 @@ def login_view(request):
             login(request, user)
             request.session['username'] = username
             if user.is_superuser:
-                return redirect('admin_dashboard')  # Use URL name
+                return redirect('admin/admin_dashboard')  # Use URL name
             else:
                 return redirect_to_homepage(request)
         else:
             messages.error(request, "Invalid credentials.")
 
-    return render(request, 'signin.html')
+    return render(request, 'login/signin.html')
 
 
 def redirect_to_homepage(request):
@@ -151,7 +151,7 @@ def admin_dashboard_view(request):
     products = Product.objects.all()
     total_orders = Order.objects.count()
     total_revenue = Order.objects.aggregate(Sum('total_price'))['total_price__sum'] or 0
-    return render(request, 'admin_dashboard.html', {
+    return render(request, 'admin/admin_dashboard.html', {
         'total_orders': total_orders,
         'total_revenue': total_revenue,
         'products': products,
@@ -180,7 +180,7 @@ def signup(request):
             messages.success(request, "Account created successfully!")
             return redirect('log')  
 
-    return render(request, "signup.html")# @login_required
+    return render(request, "login/signup.html")# @login_required
 
 
 
@@ -217,16 +217,16 @@ def add_product_view(request):
             category=category
         )
 
-        return redirect('admin_dashboard')
+        return redirect('admin/admin_dashboard')
 
     # GET request
     categories = Category.objects.all()
-    return render(request, 'add_product.html', {'categories': categories})
+    return render(request, 'products/add_product.html', {'categories': categories})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     
-    return render(request, 'product_detail.html', {'product': product})
+    return render(request, 'products/product_detail.html', {'product': product})
 
 @login_required
 @require_http_methods(["GET", "POST"])
@@ -241,7 +241,7 @@ def edit_product_view(request, id):
     # Check if the user has permission to edit products
     if not request.user.has_perm('products.change_product'):
         messages.error(request, "You don't have permission to edit products.")
-        return redirect('admin_dashboard')
+        return redirect('admin/admin_dashboard')
     
     if request.method == 'POST':
         # Create form instance with POST data and files, instance is the existing product
@@ -251,7 +251,7 @@ def edit_product_view(request, id):
             # Form will handle all validation including price and stock
             form.save()
             messages.success(request, f"Product '{product.name}' was updated successfully.")
-            return redirect('admin_dashboard')
+            return redirect('admin/admin_dashboard')
     else:
         # Create form pre-populated with product data for GET request
         form = ProductForm(instance=product)
@@ -260,7 +260,7 @@ def edit_product_view(request, id):
     categories = Category.objects.all()
     
     # Render the template with the form and categories
-    return render(request, 'edit_product.html', {
+    return render(request, 'products/edit_product.html', {
         'form': form,
         'product': product,
         'categories': categories
@@ -270,20 +270,20 @@ def edit_product_view(request, id):
 
 def product_list_view(request):
     products = Product.objects.all()
-    return render(request, 'products.html', {'products': products})
+    return render(request, 'products/products.html', {'products': products})
 
 def delete_product_view(request, id):
     product = get_object_or_404(Product, id=id)
     if request.method == 'POST':
         product.delete()
         return redirect('admin_dashboard')
-    return render(request, 'delete_product.html', {'product': product})
+    return render(request, 'products/delete_product.html', {'product': product})
 
 
 # @login_required
 def manage_orders_view(request):
     orders = Order.objects.all()
-    return render(request, 'manage_orders.html', {'orders': orders})
+    return render(request, 'orders/manage_orders.html', {'orders': orders})
 
 # @login_required
 def logout_view(request):
@@ -298,7 +298,7 @@ def profile_view(request):
         'email': user.email,
 
     }
-    return render(request, 'profile.html',context)
+    return render(request, 'user/profile.html',context)
 
 
 
@@ -307,7 +307,7 @@ def contact_view(request):
     #     name = request.POST['name']
     #     email = request.POST['email']
     #     message = request.POST['message']
-    return render(request,'contact.html')
+    return render(request,'contacts/contact.html')
 
 
         
@@ -355,7 +355,7 @@ def product_detail(request, product_id):
         messages.success(request, f"{product.name} added to your cart!")
         return redirect('cart')
     
-    return render(request, 'product_detail.html', context)
+    return render(request, 'products/product_detail.html', context)
 
 @login_required
 def cart_view(request):
@@ -376,7 +376,7 @@ def cart_view(request):
         'total': total,
     }
     
-    return render(request, 'cart.html', context)
+    return render(request, 'orders/cart.html', context)
 
 @login_required
 def add_to_cart(request, product_id):
@@ -514,7 +514,7 @@ def checkout(request):
         'total': total
     }
     
-    return render(request, 'checkout.html', context)
+    return render(request, 'orders/checkout.html', context)
 
 @login_required
 def order_confirmation(request):
@@ -526,4 +526,4 @@ def order_confirmation(request):
         'cart_items_count': CartItem.objects.filter(user=request.user).count()
     }
     
-    return render(request, 'order_confirmation.html', context)
+    return render(request, 'orders/order_confirmation.html', context)
