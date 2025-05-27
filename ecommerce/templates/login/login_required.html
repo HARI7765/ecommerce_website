@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops - MedShop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #000;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        .header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .search-section {
+            background: #000;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .search-section h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 50px;
+            padding: 5px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 50px;
+        }
+
+        .search-bar button {
+            background: #ff0000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            background: #fff;
+            color: #333;
+        }
+
+        .oops-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oops-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .oops-icon {
+            font-size: 80px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .oops-title {
+            color: #333;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .oops-message {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-home {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .divider {
+            margin: 20px 0;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .helpful-links {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .helpful-links a {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+
+        .helpful-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .oops-container {
+                padding: 30px 20px;
+            }
+            
+            .oops-icon {
+                font-size: 60px;
+            }
+            
+            .oops-title {
+                font-size: 24px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+
+            .header nav a {
+                margin-left: 15px;
+            }
+
+            .search-section h1 {
+                font-size: 36px;
+            }
+        }
+
+        .feature-highlight {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff0000;
+        }
+
+        .feature-highlight h4 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .feature-highlight p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff0000;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">MedShop</div>
+        <nav>
+            <a href="{% url 'product' %}">Pharmacy</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about' %}">About</a>
+       
+        </nav>
+    </header>
+
+    <section class="search-section">
+        <h1>Search Medicines....</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for...">
+            <button>🔍</button>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2 class="section-title">Welcome to MedShop</h2>
+        <p class="section-subtitle">Your health and well-being are our priority.</p>
+
+        <div class="oops-container">
+            <div class="oops-icon">🩺</div>
+            <h1 class="oops-title">Oops!</h1>
+            <p class="oops-message">
+                You need to login to access this page.
+            </p>
+
+            <div class="feature-highlight">
+                <h4>🔐 Why do I need to login?</h4>
+                <p>We require authentication to protect your personal information and provide you with a personalized shopping experience.</p>
+            </div>
+
+            <div class="action-buttons">
+                <a href="{% url 'log' %}" class="btn btn-primary">
+                    🔑 Login Now
+                </a>
+                <a href="{% url 'log' %}" class="btn btn-secondary">
+                    📝 Create Account
+                </a>
+            </div>
+
+            <div class="divider">── OR ──</div>
+
+            <div class="action-buttons">
+                <a href="{% url 'index'  %}" class="btn btn-home">
+                    🏠 Go to Homepage
+                </a>
+            </div>
+
+            <div class="helpful-links">
+                <a href="{% url 'about' %}">About</a> |
+                <a href="{% url 'contact' %}">Contact Us</a> |
+                <a href="{% url 'product' %}">Browse Products</a>
+            </div>
+        </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px) scale(1.02)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Auto-focus on login button after 2 seconds
+            setTimeout(() => {
+                const loginBtn = document.querySelector('.btn-primary');
+                if (loginBtn) {
+                    loginBtn.style.animation = 'pulse 1s infinite';
+                }
+            }, 2000);
+        });
+
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

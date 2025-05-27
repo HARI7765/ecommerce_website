@@ -20,11 +20,45 @@ from .models import Category
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from .models import Product, CartItem, Order
+import uuid
+from django.http import JsonResponse
+from functools import wraps
 
 
+# Custom decorator for login required with oops page
+def custom_login_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            # Store the original URL they were trying to access
+            request.session['next_url'] = request.get_full_path()
+            return render(request, 'login/login_required.html', {
+                'message': 'Oops! You need to login to access this page.',
+                'redirect_url': request.get_full_path(),
+                'page_title': 'Login Required'
+            })
+        return view_func(request, *args, **kwargs)
+    return wrapper
 
+# Custom decorator for admin required with oops page
+def admin_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            request.session['next_url'] = request.get_full_path()
+            return render(request, 'login/oops_login_required.html', {
+                'message': 'Oops! You need to login to access this page.',
+                'redirect_url': request.get_full_path(),
+                'page_title': 'Login Required'
+            })
+        elif not request.user.is_superuser:
+            return render(request, 'admin/admin_required.html', {
+                'message': 'Oops! You need admin privileges to access this page.',
+                'page_title': 'Admin Access Required'
+            })
+        return view_func(request, *args, **kwargs)
+    return wrapper
 
-    # Check if the user is authenticated
 def index(request, id=None):
     # Handle product ID if provided
     product_id = id
@@ -33,8 +67,9 @@ def index(request, id=None):
     query = request.GET.get('q')
     products = Product.objects.all()
     if query:
-        products = products.filter()
-        Q(name__icontains=query) | Q(description__icontains=query)
+        products = products.filter(
+            Q(name__icontains=query) | Q(description__icontains=query)
+        )
     
     # Get all categories with their products
     categories = Category.objects.prefetch_related('products').all()
@@ -47,26 +82,34 @@ def index(request, id=None):
     }
     return render(request, 'main/index.html', context)
 
-# @login_required()
+def about_view(request):
+    """
+    View for the About page.
+    """
+    return render(request, 'main/about.html')
+
+@custom_login_required
 def cart_view(request):
-    if request.user.is_authenticated:
-        user_id = request.user.id
-        # Proceed with logic using user_id
-    else:
-        # Handle the case where the user is not authentlogicated
-        user_id = None  # or handle it in a way that fits your app
-        # You might want to redirect to a login page
-        return redirect('login')  # Adjust 'login' to your login URL name
+    # Get all cart items for the current user
+    cart_items = CartItem.objects.filter(user=request.user)
+    cart_items_count = sum(item.quantity for item in cart_items)
     
-    # Continue with the rest of your cart logic
-    return render(request, 'orders/cart.html', {'user_id': user_id})
+    # Calculate totals
+    subtotal = sum(item.product.price * item.quantity for item in cart_items)
+    tax = subtotal * Decimal('0.10')  # 10% tax
+    total = subtotal + tax
+    
+    context = {
+        'cart_items': cart_items,
+        'cart_items_count': cart_items_count,
+        'subtotal': subtotal,
+        'tax': tax,
+        'total': total,
+    }
+    
+    return render(request, 'orders/cart.html', context)
 
-
-
-# @login_required
-
-
-# @login_required
+@custom_login_required
 def orders_view(request):
     orders = Order.objects.filter(user=request.user)
     return render(request, 'orders.html', {'orders': orders})
@@ -74,7 +117,6 @@ def orders_view(request):
 def product_detail_view(request, id):
     # Get a single product object instead of a queryset
     product = Product.objects.get(id=id)
-    
     
     # Check if product is in stock
     in_stock = product.stock > 0
@@ -87,10 +129,6 @@ def product_detail_view(request, id):
     
     # Similar for wishlist if you have that functionality
     wishlist_product_ids = []
-    # Uncomment and modify if you have a wishlist model
-    # if request.user.is_authenticated:
-    #     wishlist_items = Wishlist.objects.filter(user=request.user)
-    #     wishlist_product_ids = [item.product.id for item in wishlist_items]
     
     context = {
         'product': product,
@@ -107,11 +145,15 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            # Check if there's a next URL to redirect to
+            next_url = request.session.get('next_url')
+            if next_url:
+                del request.session['next_url']
+                return redirect(next_url)
             return redirect('index')
     else:
         form = UserCreationForm()
     return render(request, 'login/signup.html', {'form': form})
-
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -126,15 +168,21 @@ def login_view(request):
         if user is not None:
             login(request, user)
             request.session['username'] = username
+            
+            # Check if there's a next URL to redirect to
+            next_url = request.session.get('next_url')
+            if next_url:
+                del request.session['next_url']
+                return redirect(next_url)
+            
             if user.is_superuser:
-                return redirect('admin/admin_dashboard')  # Use URL name
+                return redirect('admin/admin_dashboard')
             else:
                 return redirect_to_homepage(request)
         else:
             messages.error(request, "Invalid credentials.")
 
     return render(request, 'login/signin.html')
-
 
 def redirect_to_homepage(request):
     # Redirect to first available category
@@ -143,10 +191,9 @@ def redirect_to_homepage(request):
         return redirect('index', id=first_category.id)
     else:
         messages.error(request, "No categories available.")
-        return redirect('signin')  # or render a custom error page
-    
+        return redirect('signin')
 
-# @login_required
+@admin_required
 def admin_dashboard_view(request):
     products = Product.objects.all()
     total_orders = Order.objects.count()
@@ -156,7 +203,6 @@ def admin_dashboard_view(request):
         'total_revenue': total_revenue,
         'products': products,
     })
-
 
 def signup(request):
     if request.method == 'POST':  
@@ -174,16 +220,22 @@ def signup(request):
         elif User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
         else:
-            # Corrected line to use create_user
             user = User.objects.create_user(username=username, email=email, password=password)
             user.save()
             messages.success(request, "Account created successfully!")
+            
+            # Check if there's a next URL to redirect to after signup
+            next_url = request.session.get('next_url')
+            if next_url:
+                login(request, user)  # Auto login after signup
+                del request.session['next_url']
+                return redirect(next_url)
+            
             return redirect('log')  
 
-    return render(request, "login/signup.html")# @login_required
+    return render(request, "login/signup.html")
 
-
-
+@admin_required
 def add_product_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -201,7 +253,6 @@ def add_product_view(request):
             price = float(price)
             stock = int(stock)
         except (ValueError, TypeError):
-            # handle invalid inputs gracefully
             return render(request, 'add_product.html', {
                 'categories': Category.objects.all(),
                 'error': 'Price must be a number and stock must be an integer.'
@@ -225,92 +276,70 @@ def add_product_view(request):
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    
     return render(request, 'products/product_detail.html', {'product': product})
 
-@login_required
+@admin_required
 @require_http_methods(["GET", "POST"])
 def edit_product_view(request, id):
     """
     View for editing an existing product.
-    Requires login and handles both GET and POST requests.
+    Requires admin privileges and handles both GET and POST requests.
     """
-    # Get the product or return 404
     product = get_object_or_404(Product, id=id)
     
-    # Check if the user has permission to edit products
-    if not request.user.has_perm('products.change_product'):
-        messages.error(request, "You don't have permission to edit products.")
-        return redirect('admin/admin_dashboard')
-    
     if request.method == 'POST':
-        # Create form instance with POST data and files, instance is the existing product
         form = ProductForm(request.POST, request.FILES, instance=product)
         
         if form.is_valid():
-            # Form will handle all validation including price and stock
             form.save()
             messages.success(request, f"Product '{product.name}' was updated successfully.")
             return redirect('admin/admin_dashboard')
     else:
-        # Create form pre-populated with product data for GET request
         form = ProductForm(instance=product)
     
-    # Get all categories for the form dropdown
     categories = Category.objects.all()
     
-    # Render the template with the form and categories
     return render(request, 'products/edit_product.html', {
         'form': form,
         'product': product,
         'categories': categories
     })
 
-
-
 def product_list_view(request):
     products = Product.objects.all()
     return render(request, 'products/products.html', {'products': products})
 
+@admin_required
 def delete_product_view(request, id):
     product = get_object_or_404(Product, id=id)
     if request.method == 'POST':
         product.delete()
+        messages.success(request, f"Product '{product.name}' has been deleted successfully.")
         return redirect('admin_dashboard')
     return render(request, 'products/delete_product.html', {'product': product})
 
-
-# @login_required
+@admin_required
 def manage_orders_view(request):
     orders = Order.objects.all()
     return render(request, 'orders/manage_orders.html', {'orders': orders})
 
-# @login_required
+@custom_login_required
 def logout_view(request):
     logout(request)
     return redirect('index')
 
-@login_required
+@custom_login_required
 def profile_view(request):
     user = User.objects.get(id=request.user.id)
     context = {
         'user': user.username,
         'email': user.email,
-
     }
-    return render(request, 'user/profile.html',context)
-
-
+    return render(request, 'user/profile.html', context)
 
 def contact_view(request):
-    # if request.method == 'POST':
-    #     name = request.POST['name']
-    #     email = request.POST['email']
-    #     message = request.POST['message']
-    return render(request,'contacts/contact.html')
+    return render(request, 'contacts/contact.html')
 
-
-        
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     categories = Category.objects.all()
@@ -335,8 +364,14 @@ def product_detail(request, product_id):
     # If it's a POST request, handle adding to cart
     if request.method == 'POST':
         if not request.user.is_authenticated:
-            messages.warning(request, "Please log in to add items to your cart.")
-            return redirect('log')
+            # Store the current URL for redirect after login
+            request.session['next_url'] = request.get_full_path()
+            return render(request, 'login/oops_login_required.html', {
+                'message': 'Oops! Please login to add items to your cart.',
+                'redirect_url': request.get_full_path(),
+                'page_title': 'Login Required',
+                'action': 'add items to cart'
+            })
         
         quantity = int(request.POST.get('quantity', 1))
         
@@ -357,28 +392,7 @@ def product_detail(request, product_id):
     
     return render(request, 'products/product_detail.html', context)
 
-@login_required
-def cart_view(request):
-    # Get all cart items for the current user
-    cart_items = CartItem.objects.filter(user=request.user)
-    cart_items_count = sum(item.quantity for item in cart_items)
-    
-    # Calculate totals
-    subtotal = sum(item.product.price * item.quantity for item in cart_items)
-    tax = subtotal * Decimal('0.10')  # 10% tax
-    total = subtotal + tax
-    
-    context = {
-        'cart_items': cart_items,
-        'cart_items_count': cart_items_count,
-        'subtotal': subtotal,
-        'tax': tax,
-        'total': total,
-    }
-    
-    return render(request, 'orders/cart.html', context)
-
-@login_required
+@custom_login_required
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     
@@ -409,7 +423,7 @@ def add_to_cart(request, product_id):
     
     return redirect('cart')
 
-@login_required
+@custom_login_required
 def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id, user=request.user)
     cart_item.delete()
@@ -417,7 +431,7 @@ def remove_from_cart(request, item_id):
     messages.success(request, "Item removed from your cart.")
     return redirect('cart')
 
-@login_required
+@custom_login_required
 def increase_quantity(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id, user=request.user)
     
@@ -430,7 +444,7 @@ def increase_quantity(request, item_id):
     
     return redirect('cart')
 
-@login_required
+@custom_login_required
 def decrease_quantity(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id, user=request.user)
     
@@ -443,13 +457,13 @@ def decrease_quantity(request, item_id):
     
     return redirect('cart')
 
-@login_required
+@custom_login_required
 def clear_cart(request):
     CartItem.objects.filter(user=request.user).delete()
     messages.success(request, "Your cart has been cleared.")
     return redirect('cart')
 
-@login_required
+@custom_login_required
 def checkout(request):
     # Get all cart items for the current user
     cart_items = CartItem.objects.filter(user=request.user)
@@ -491,7 +505,7 @@ def checkout(request):
                 quantity=item.quantity,
                 amount=float(item.product.price * item.quantity),
                 status='PENDING',
-                provider_order_id=str(uuid.uuid4())[:40]  # Generate a unique order ID
+                provider_order_id=str(uuid.uuid4())[:40]
             )
             
             # Update product stock
@@ -516,7 +530,7 @@ def checkout(request):
     
     return render(request, 'orders/checkout.html', context)
 
-@login_required
+@custom_login_required
 def order_confirmation(request):
     # Get recent orders for the current user
     recent_orders = Order.objects.filter(user=request.user).order_by('-created_at')[:5]
