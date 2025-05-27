@@ -162,31 +162,6 @@
             margin: 0 auto;
         }
 
-        /* Category Styles */
-        .category {
-            margin-bottom: 60px;
-        }
-
-        .category h2 {
-            font-size: 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            color: var(--text-dark);
-        }
-
-        .category h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
         /* Product Grid */
         .products {
             display: grid;
@@ -284,6 +259,13 @@
             background-color: #e60000;
         }
 
+        .no-products {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 18px;
+        }
+
         /* Footer Styles */
         footer {
             background-color: var(--dark-bg);
@@ -352,10 +334,6 @@
                 font-size: 36px;
             }
 
-            .category h2 {
-                font-size: 28px;
-            }
-
             .products {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 20px;
@@ -403,9 +381,10 @@
             <a href="{% url 'logout' %}">Logout</a>
             {% endif %}
             <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about' %}">About</a>
             <a href="{% url 'cart' %}" class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">{{ cart_items_count }}</span>
+                <span class="cart-count">{{ cart_items_count|default:0 }}</span>
             </a>
         </div>
     </header>
@@ -424,32 +403,33 @@
     <!-- Products Section -->
     <section class="product-section">
         <div class="container">
-            {% for i in products %}
-            <div class="category">
-                <h2>{{ i.name }}</h2>
+            {% if products %}
                 <div class="products">
-
-                    <div class="product-card">
-                        <a href="{% url 'product_detail' i.pk %}" class="product-link">
-                            <img src="{{ i.image.url }}" alt="{{ i.name }}">
-                            <div class="product-info">
-                                <h3>{{ i.name }}</h3>
-                                <p>{{ i.description|truncatewords:15 }}</p>
-                                <p class="price">₹{{ i.price }}</p>
-                                <p class="stock">Stock: {{ i.stock }}</p>
-                        </a>
-                        <form method="post" action="#">
-                            {% csrf_token %}
-                            <button type="submit" class="btn">Add to Cart</button>
-                        </form>
-                    </div>
+                    {% for product in products %}
+                        <div class="product-card">
+                            <a href="{% url 'product_detail' product.pk %}" class="product-link">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <div class="product-info">
+                                    <h3>{{ product.name }}</h3>
+                                    <p>{{ product.description|truncatewords:15 }}</p>
+                                    <p class="price">₹{{ product.price }}</p>
+                                    <p class="stock">Stock: {{ product.stock }}</p>
+                                </div>
+                            </a>
+                            <div style="padding: 0 20px 20px;">
+                                <form method="post" action="{% url 'add_to_cart' product.pk %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">Add to Cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-                {% empty %}
-                <p>No products in this category.</p>
-                {% endfor %}
-            </div>
-        </div>
-
+            {% else %}
+                <div class="no-products">
+                    <p>No products available at the moment.</p>
+                </div>
+            {% endif %}
         </div>
     </section>
 
@@ -460,8 +440,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>

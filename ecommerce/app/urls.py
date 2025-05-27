@@ -13,6 +13,7 @@ urlpatterns = [
     path('product/<int:id>/', views.product_detail_view, name='product_detail'),
     path('contact/', views.contact_view, name='contact'),
     path('profile/', views.profile_view, name='profile'),
+    path('about/', views.about_view, name='about'),
     
 
     # Product listing
@@ -43,9 +44,12 @@ urlpatterns = [
 
 
     # Authentication
+    path('oops/', views.custom_login_required, name='oops'),
     path('register/', views.signup, name='register'),
     path('login/', views.login_view, name='log'),
+    
     path('logout/', views.logout_view, name='logout'),
+
     
     # Admin features
     path('ecommerce/dashboard/', views.admin_dashboard_view, name='admin_dashboard'),
