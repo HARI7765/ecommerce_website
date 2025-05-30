@@ -23,8 +23,11 @@ from .models import Product, CartItem, Order
 import uuid
 from django.http import JsonResponse
 from functools import wraps
-
-
+from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.core.mail import send_mail
+from django.conf import settings
+from .models import Contact
 # Custom decorator for login required with oops page
 def custom_login_required(view_func):
     @wraps(view_func)
@@ -337,7 +340,30 @@ def profile_view(request):
     }
     return render(request, 'user/profile.html', context)
 
+
+
 def contact_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        
+        # Save to database
+        Contact.objects.create(
+            name=name,
+            email=email,
+            message=message
+        )
+        
+        # Send email to website contact
+        send_mail(
+            subject=f'New Contact Form Submission from {name}',
+            message=f"Name: {name}\nEmail: {email}\nMessage: {message}",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=['test1project11@gmail.com'],
+            fail_silently=False,
+        )
+        return render(request, 'contacts/contact.html')
     return render(request, 'contacts/contact.html')
 
 def product_detail(request, product_id):
