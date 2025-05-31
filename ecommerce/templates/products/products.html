@@ -368,10 +368,10 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <a href="{% url 'index' %}">Medshop</a>
+            <a href="{% url 'index' %}">Home</a>
         </div>
         <div class="nav-links">
-            <a href="">Pharmacy</a>
+            <a href="{% url 'products' %}">Products</a>
             {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
             {% else %}
