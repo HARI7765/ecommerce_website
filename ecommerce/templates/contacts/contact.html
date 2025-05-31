@@ -185,6 +185,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'product' %}">Pharmacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                     {% if not user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">SignIn</a></li>
                     {% endif %}
