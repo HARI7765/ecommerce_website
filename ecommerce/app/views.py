@@ -28,6 +28,8 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import Contact
+
+
 # Custom decorator for login required with oops page
 def custom_login_required(view_func):
     @wraps(view_func)
@@ -48,17 +50,9 @@ def admin_required(view_func):
     @wraps(view_func)
     def wrapper(request, *args, **kwargs):
         if not request.user.is_authenticated:
-            request.session['next_url'] = request.get_full_path()
-            return render(request, 'login/oops_login_required.html', {
-                'message': 'Oops! You need to login to access this page.',
-                'redirect_url': request.get_full_path(),
-                'page_title': 'Login Required'
-            })
+            return redirect('log')  # Redirect to login
         elif not request.user.is_superuser:
-            return render(request, 'admin/admin_required.html', {
-                'message': 'Oops! You need admin privileges to access this page.',
-                'page_title': 'Admin Access Required'
-            })
+            return render(request, 'admin/admin_required.html', ...)
         return view_func(request, *args, **kwargs)
     return wrapper
 
@@ -165,21 +159,21 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-
         user = authenticate(username=username, password=password)
 
         if user is not None:
             login(request, user)
             request.session['username'] = username
             
-            # Check if there's a next URL to redirect to
+            # Handle next URL redirect
             next_url = request.session.get('next_url')
             if next_url:
                 del request.session['next_url']
                 return redirect(next_url)
             
+            # Redirect based on user type
             if user.is_superuser:
-                return redirect('admin/admin_dashboard')
+                return redirect('admin_dashboard')  # Using URL name
             else:
                 return redirect_to_homepage(request)
         else:
@@ -195,17 +189,28 @@ def redirect_to_homepage(request):
     else:
         messages.error(request, "No categories available.")
         return redirect('signin')
-
+    
 @admin_required
 def admin_dashboard_view(request):
     products = Product.objects.all()
     total_orders = Order.objects.count()
-    total_revenue = Order.objects.aggregate(Sum('total_price'))['total_price__sum'] or 0
+    total_revenue = Order.objects.aggregate(Sum('amount'))['amount__sum'] or 0
     return render(request, 'admin/admin_dashboard.html', {
         'total_orders': total_orders,
         'total_revenue': total_revenue,
         'products': products,
     })
+def admin_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('log')
+        elif not request.user.is_superuser:
+            return render(request, 'admin/admin_required.html', {
+                'message': 'You need admin privileges to access this page.'
+            })
+        return view_func(request, *args, **kwargs)
+    return wrapper
 
 def signup(request):
     if request.method == 'POST':  
@@ -256,7 +261,7 @@ def add_product_view(request):
             price = float(price)
             stock = int(stock)
         except (ValueError, TypeError):
-            return render(request, 'add_product.html', {
+            return render(request, 'products/add_product.html', {
                 'categories': Category.objects.all(),
                 'error': 'Price must be a number and stock must be an integer.'
             })
@@ -271,7 +276,7 @@ def add_product_view(request):
             category=category
         )
 
-        return redirect('admin/admin_dashboard')
+        return redirect('admin_dashboard')  # Use the URL name
 
     # GET request
     categories = Category.objects.all()

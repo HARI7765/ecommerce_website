@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from app.views import product_list_view
 
+
 urlpatterns = [
     # Core site pages
     path('', views.index, name='home'),  # Homepage
@@ -23,10 +24,7 @@ urlpatterns = [
     # Cart and Checkout
     path('cart/', views.cart_view, name='cart'),
     path('orders/', views.orders_view, name='orders'),
-
-
-
-        # Cart views
+     # Cart views
     path('cart/', views.cart_view, name='cart'),
     path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
     path('remove-from-cart/<int:item_id>/', views.remove_from_cart, name='remove_from_cart'),
