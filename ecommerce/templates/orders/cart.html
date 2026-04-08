@@ -472,7 +472,7 @@
             <div class="cart-items">
                 {% for item in cart_items %}
                 <div class="cart-item">
-                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="cart-item-img">
+                    <img src="{{ item.products.image.url }}" alt="{{ item.products.name }}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h3 class="cart-item-title">{{ item.product.name }}</h3>
                         <p class="cart-item-price">₹{{ item.product.price }}</p>

@@ -496,7 +496,7 @@
         </div>
         <div class="nav-links">
             <a href="{% url 'index' %}">Home</a>
-            <a href="{% url 'product' %}">Pharmacy</a>
+            <a href="{% url 'products' %}">Pharmacy</a>
             {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
             {% else %}
@@ -637,7 +637,7 @@
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="{% url 'product' %}">Products</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>

@@ -572,3 +572,13 @@ def order_confirmation(request):
     }
     
     return render(request, 'orders/order_confirmation.html', context)
+def search_view(request):
+    from django.db.models import Q
+    query = request.GET.get('q', '')
+    results = []
+    if query:
+        results = Product.objects.filter(
+            Q(name__icontains=query) |
+            Q(description__icontains=query)
+        )
+    return render(request, 'main/search.html', {'results': results, 'query': query})

@@ -393,7 +393,7 @@
     <section class="page-header">
         <h1>Our Products</h1>
         <div class="search-container">
-            <form method="get" action="{% url 'index' %}">
+            <form method="get" action="{% url 'search' %}">
                 <input type="text" name="q" placeholder="Search for medicines..." value="{{ request.GET.q }}">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>

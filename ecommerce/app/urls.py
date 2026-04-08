@@ -18,7 +18,8 @@ urlpatterns = [
     
 
     # Product listing
-    path('products/', views.product_list_view, name='product'),
+    path('search/', views.search_view, name='search'),
+    path('products/', views.product_list_view, name='products'),
 
 
     # Cart and Checkout
@@ -45,7 +46,6 @@ urlpatterns = [
     path('oops/', views.custom_login_required, name='oops'),
     path('register/', views.signup, name='register'),
     path('login/', views.login_view, name='log'),
-    
     path('logout/', views.logout_view, name='logout'),
 
     
