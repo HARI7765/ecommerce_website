@@ -60,6 +60,7 @@
             margin-left: 20px;
             font-size: 15px;
             font-weight: 500;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
@@ -255,16 +256,27 @@
             margin: 0 15px 15px;
             background-color: var(--primary-color);
             color: white;
-            text-decoration: none;
+            border: none;
             text-align: center;
             padding: 11px 16px;
             border-radius: 50px;
             font-weight: 600;
-            display: block;
+            font-size: 15px;
+            cursor: pointer;
+            width: calc(100% - 30px);
+            transition: background-color 0.3s, transform 0.1s;
         }
 
         .add-to-cart:hover {
             background-color: #e60000;
+        }
+
+        .add-to-cart:active {
+            transform: scale(0.97);
+        }
+
+        .add-to-cart:disabled {
+            cursor: not-allowed;
         }
 
         .slider-btn {
@@ -291,17 +303,38 @@
             background: var(--primary-color);
         }
 
-        .slider-btn.prev {
-            left: 10px;
-        }
-
-        .slider-btn.next {
-            right: 10px;
-        }
+        .slider-btn.prev { left: 10px; }
+        .slider-btn.next { right: 10px; }
 
         .empty-note {
             color: #777;
             padding: 12px 0;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #28a745;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* Footer */
@@ -346,7 +379,7 @@
         .footer-column ul li a {
             color: #aaa;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-column ul li a:hover {
@@ -373,14 +406,8 @@
                 min-width: calc(50% - 10px);
                 flex: 0 0 calc(50% - 10px);
             }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .slider-btn {
-                opacity: 1;
-            }
+            .nav-links { justify-content: center; }
+            .slider-btn { opacity: 1; }
         }
 
         @media (max-width: 576px) {
@@ -389,7 +416,6 @@
                 gap: 12px;
                 padding: 12px 5%;
             }
-
             .product-slide {
                 min-width: 100%;
                 flex: 0 0 100%;
@@ -398,6 +424,13 @@
     </style>
 </head>
 <body>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-msg">Added to cart!</span>
+    </div>
+
     <header>
         <div class="logo">
             <a href="{% url 'index' %}">Medshop</a>
@@ -456,7 +489,12 @@
                                     <p class="stock">Stock: {{ product.stock }}</p>
                                 </div>
                             </a>
-                            <a href="{% url 'add_to_cart' product.pk %}" class="add-to-cart">Add to Cart</a>
+                            <button
+                                class="add-to-cart"
+                                onclick="addToCart(event, {{ product.pk }}, this)"
+                                data-url="{% url 'add_to_cart' product.pk %}">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
                         </div>
                     </div>
                     {% empty %}
@@ -516,6 +554,80 @@
     </footer>
 
     <script>
+        // -------------------------
+        // AJAX Add to Cart
+        // -------------------------
+        function getCookie(name) {
+            const val = document.cookie.split(';').find(c => c.trim().startsWith(name + '='));
+            return val ? val.trim().split('=')[1] : '';
+        }
+
+        let toastTimer;
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function addToCart(event, productId, btn) {
+            event.preventDefault();
+
+            const url = btn.getAttribute('data-url');
+            const csrfToken = getCookie('csrftoken');
+
+            // Loading state
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding...';
+            btn.style.backgroundColor = '#ff6666';
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    // Success state
+                    btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+                    btn.style.backgroundColor = '#28a745';
+
+                    // Update cart count
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = data.cart_count;
+                    });
+
+                    // Show toast
+                    showToast('Added to cart!');
+
+                    // Reset button after 2s
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 2000);
+
+                } else {
+                    resetBtn(btn);
+                }
+            })
+            .catch(() => resetBtn(btn));
+        }
+
+        function resetBtn(btn) {
+            btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+            btn.style.backgroundColor = '';
+            btn.disabled = false;
+        }
+
+        // -------------------------
+        // Slider
+        // -------------------------
         const sliders = {};
         const autoTimers = {};
 
@@ -563,7 +675,6 @@
                 const categoryId = wrap.getAttribute('data-category');
                 sliders[categoryId] = 0;
                 startAuto(categoryId);
-
                 wrap.addEventListener('mouseenter', () => stopAuto(categoryId));
                 wrap.addEventListener('mouseleave', () => startAuto(categoryId));
             });

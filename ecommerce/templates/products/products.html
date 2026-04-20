@@ -29,7 +29,6 @@
             background-color: var(--light-bg);
         }
 
-        /* Header Styles */
         header {
             background-color: var(--dark-bg);
             padding: 15px 5%;
@@ -43,17 +42,13 @@
             width: 100%;
         }
 
-        .logo {
-            flex: 0 0 auto;
-        }
+        .logo { flex: 0 0 auto; }
 
         .logo a {
             color: var(--primary-color);
             font-size: 28px;
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            text-transform: none;
         }
 
         .nav-links {
@@ -73,17 +68,10 @@
             white-space: nowrap;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        .nav-links a:hover { color: var(--primary-color); }
 
-        .cart-icon {
-            position: relative;
-        }
-
-        .cart-icon i {
-            font-size: 20px;
-        }
+        .cart-icon { position: relative; }
+        .cart-icon i { font-size: 20px; }
 
         .cart-count {
             position: absolute;
@@ -101,7 +89,6 @@
             font-weight: bold;
         }
 
-        /* Page Header */
         .page-header {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -114,7 +101,6 @@
             margin-bottom: 20px;
         }
 
-        /* Search Bar */
         .search-container {
             max-width: 700px;
             margin: 0 auto;
@@ -148,11 +134,8 @@
             transition: background-color 0.3s ease;
         }
 
-        .search-container button:hover {
-            background-color: #e60000;
-        }
+        .search-container button:hover { background-color: #e60000; }
 
-        /* Product Section */
         .product-section {
             padding: 60px 5%;
         }
@@ -162,7 +145,6 @@
             margin: 0 auto;
         }
 
-        /* Product Grid */
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -170,7 +152,6 @@
             margin-top: 30px;
         }
 
-        /* Product Card */
         .product-card {
             background-color: white;
             border-radius: 10px;
@@ -204,9 +185,7 @@
             transition: transform 0.3s ease;
         }
 
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
+        .product-card:hover img { transform: scale(1.05); }
 
         .product-info {
             padding: 20px;
@@ -250,14 +229,14 @@
             cursor: pointer;
             font-weight: 500;
             transition: background-color 0.3s ease;
-            margin-top: auto;
-            width: 100%;
+            margin: 0 20px 20px;
+            width: calc(100% - 40px);
             font-size: 16px;
         }
 
-        .btn:hover {
-            background-color: #e60000;
-        }
+        .btn:hover { background-color: #e60000; }
+        .btn:active { transform: scale(0.97); }
+        .btn:disabled { cursor: not-allowed; }
 
         .no-products {
             text-align: center;
@@ -266,7 +245,33 @@
             font-size: 18px;
         }
 
-        /* Footer Styles */
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #28a745;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Footer */
         footer {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -297,13 +302,9 @@
             left: 0;
         }
 
-        .footer-column ul {
-            list-style: none;
-        }
+        .footer-column ul { list-style: none; }
 
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
+        .footer-column ul li { margin-bottom: 10px; }
 
         .footer-column ul li a {
             color: #aaa;
@@ -311,9 +312,7 @@
             transition: color 0.3s ease;
         }
 
-        .footer-column ul li a:hover {
-            color: var(--primary-color);
-        }
+        .footer-column ul li a:hover { color: var(--primary-color); }
 
         .copyright {
             text-align: center;
@@ -323,48 +322,29 @@
             font-size: 14px;
         }
 
-        /* Responsive Media Queries */
         @media (max-width: 768px) {
-            .nav-links a {
-                margin-left: 20px;
-                font-size: 14px;
-            }
-
-            .page-header h1 {
-                font-size: 36px;
-            }
-
-            .products {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 20px;
-            }
+            .nav-links a { margin-left: 20px; font-size: 14px; }
+            .page-header h1 { font-size: 36px; }
+            .products { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
         }
 
         @media (max-width: 576px) {
-            .logo a {
-                font-size: 24px;
-            }
-
-            .page-header {
-                padding: 40px 0;
-            }
-
-            .page-header h1 {
-                font-size: 28px;
-            }
-
-            .search-container input {
-                padding: 12px 20px;
-            }
-
-            .products {
-                grid-template-columns: 1fr;
-            }
+            .logo a { font-size: 24px; }
+            .page-header { padding: 40px 0; }
+            .page-header h1 { font-size: 28px; }
+            .products { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-msg">Added to cart!</span>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="logo">
@@ -374,11 +354,9 @@
             <a href="{% url 'products' %}">Products</a>
             {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
             {% else %}
             <a href="{% url 'login' %}">Login</a>
-            {% endif %}
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Logout</a>
             {% endif %}
             <a href="{% url 'contact' %}">Contact</a>
             <a href="{% url 'about' %}">About</a>
@@ -408,7 +386,7 @@
                     {% for product in products %}
                         <div class="product-card">
                             <a href="{% url 'product_detail' product.pk %}" class="product-link">
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img src="{{ product.image }}" alt="{{ product.name }}">
                                 <div class="product-info">
                                     <h3>{{ product.name }}</h3>
                                     <p>{{ product.description|truncatewords:15 }}</p>
@@ -416,12 +394,12 @@
                                     <p class="stock">Stock: {{ product.stock }}</p>
                                 </div>
                             </a>
-                            <div style="padding: 0 20px 20px;">
-                                <form method="post" action="{% url 'add_to_cart' product.pk %}">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn">Add to Cart</button>
-                                </form>
-                            </div>
+                            <button
+                                class="btn"
+                                onclick="addToCart(event, {{ product.pk }}, this)"
+                                data-url="{% url 'add_to_cart' product.pk %}">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
                         </div>
                     {% endfor %}
                 </div>
@@ -475,6 +453,69 @@
             <p>&copy; 2025 MedShop. All rights reserved.</p>
         </div>
     </footer>
-</body>
 
+    <script>
+        function getCookie(name) {
+            const val = document.cookie.split(';').find(c => c.trim().startsWith(name + '='));
+            return val ? val.trim().split('=')[1] : '';
+        }
+
+        let toastTimer;
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function addToCart(event, productId, btn) {
+            event.preventDefault();
+
+            const url = btn.getAttribute('data-url');
+            const csrfToken = getCookie('csrftoken');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding...';
+            btn.style.backgroundColor = '#ff6666';
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+                    btn.style.backgroundColor = '#28a745';
+
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = data.cart_count;
+                    });
+
+                    showToast('Added to cart!');
+
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    resetBtn(btn);
+                }
+            })
+            .catch(() => resetBtn(btn));
+        }
+
+        function resetBtn(btn) {
+            btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+            btn.style.backgroundColor = '';
+            btn.disabled = false;
+        }
+    </script>
+</body>
 </html>

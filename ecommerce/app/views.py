@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q, Prefetch
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Product, Category, CartItem, Order, Contact
@@ -60,7 +61,7 @@ def product_list_view(request):
 # -------------------------------
 def product_detail_view(request, id):
     product = get_object_or_404(Product, id=id)
-    return render(request, "products/product_view.html", {
+    return render(request, "products/product_detail.html", {
         "product": product,
         "in_stock": product.stock > 0
     })
@@ -86,22 +87,24 @@ def cart_view(request):
 
 
 # -------------------------------
-# Add to Cart
+# Add to Cart (AJAX)
 # -------------------------------
 @custom_login_required
 def add_to_cart(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    cart_item, created = CartItem.objects.get_or_create(
-        user=request.user,
-        product=product
-    )
+    if request.method == "POST":
+        product = get_object_or_404(Product, id=product_id)
+        cart_item, created = CartItem.objects.get_or_create(
+            user=request.user,
+            product=product
+        )
+        if not created:
+            cart_item.quantity += 1
+            cart_item.save()
 
-    if not created:
-        cart_item.quantity += 1
-        cart_item.save()
+        cart_count = CartItem.objects.filter(user=request.user).count()
+        return JsonResponse({"success": True, "cart_count": cart_count})
 
-    messages.success(request, "Added to cart")
-    return redirect("cart")
+    return JsonResponse({"success": False})
 
 
 # -------------------------------
