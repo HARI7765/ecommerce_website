@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +28,6 @@
             background-color: var(--light-bg);
         }
 
-        /* Header Styles */
         header {
             background-color: var(--dark-bg);
             padding: 15px 5%;
@@ -43,17 +41,12 @@
             width: 100%;
         }
 
-        .logo {
-            flex: 0 0 auto;
-        }
-
         .logo a {
             color: var(--primary-color);
             font-size: 28px;
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 0.5px;
-            text-transform: none;
         }
 
         .nav-links {
@@ -101,7 +94,6 @@
             font-weight: bold;
         }
 
-        /* Cart Page Styles */
         .cart-container {
             max-width: 1200px;
             margin: 40px auto;
@@ -223,6 +215,9 @@
             margin: 0 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cart-item-remove {
@@ -282,6 +277,9 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .checkout-btn:hover {
@@ -289,12 +287,11 @@
         }
 
         .continue-shopping {
-            display: inline-block;
+            display: inline-flex;
             margin-top: 20px;
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
-            display: flex;
             align-items: center;
         }
 
@@ -346,7 +343,6 @@
             background-color: #e60000;
         }
 
-        /* Footer Styles */
         footer {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -404,12 +400,11 @@
             font-size: 14px;
         }
 
-        /* Responsive Styles */
         @media (max-width: 992px) {
             .cart-content {
                 flex-direction: column;
             }
-            
+
             .cart-summary {
                 width: 100%;
                 position: static;
@@ -420,21 +415,28 @@
             .cart-item {
                 flex-direction: column;
             }
-            
+
             .cart-item-img {
                 width: 100%;
                 height: 200px;
             }
-            
+
             .cart-header h1 {
                 font-size: 28px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .nav-links a {
+                margin-left: 0;
             }
         }
     </style>
 </head>
-
 <body>
-    <!-- Header -->
     <header>
         <div class="logo">
             <a href="{% url 'index' %}">Medshop</a>
@@ -442,16 +444,14 @@
         <div class="nav-links">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'products' %}">Products</a>
-            
+
             {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
-
-            {% else %}
-            <a href="{% url 'log' %}">Login</a>
-            {% endif %}
-            {% if user.is_authenticated %}
             <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
             {% endif %}
+
             <a href="{% url 'contact' %}">Contact</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'cart' %}" class="cart-icon">
@@ -461,7 +461,6 @@
         </div>
     </header>
 
-    <!-- Cart Content -->
     <div class="cart-container">
         <div class="cart-header">
             <h1>Your Shopping Cart</h1>
@@ -472,23 +471,25 @@
             <div class="cart-items">
                 {% for item in cart_items %}
                 <div class="cart-item">
-                    <img src="{{ item.products.image.url }}" alt="{{ item.products.name }}" class="cart-item-img">
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h3 class="cart-item-title">{{ item.product.name }}</h3>
                         <p class="cart-item-price">₹{{ item.product.price }}</p>
-                        
+
                         <div class="cart-item-quantity">
                             <form method="post" action="{% url 'decrease_quantity' item.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="quantity-btn">-</button>
                             </form>
+
                             <span class="quantity-input">{{ item.quantity }}</span>
+
                             <form method="post" action="{% url 'increase_quantity' item.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="quantity-btn">+</button>
                             </form>
                         </div>
-                        
+
                         <form method="post" action="{% url 'remove_from_cart' item.id %}">
                             {% csrf_token %}
                             <button type="submit" class="cart-item-remove">
@@ -498,31 +499,30 @@
                     </div>
                 </div>
                 {% endfor %}
-                
+
                 <a href="{% url 'index' %}" class="continue-shopping">
                     <i class="fas fa-arrow-left"></i> Continue Shopping
                 </a>
             </div>
-            
+
             <div class="cart-summary">
                 <h3 class="summary-title">Order Summary</h3>
-                
+
                 <div class="summary-row">
                     <span class="summary-label">Subtotal</span>
                     <span class="summary-value">₹{{ subtotal }}</span>
                 </div>
-                
+
                 <div class="summary-row">
                     <span class="summary-label">Shipping</span>
                     <span class="summary-value">Free</span>
                 </div>
-        
-                
+
                 <div class="summary-row summary-total">
                     <span>Total</span>
-                    <span>₹{{ subtotal }}</span>
+                    <span>₹{{ total }}</span>
                 </div>
-                
+
                 <a href="{% url 'checkout' %}" class="checkout-btn">Proceed to Checkout</a>
             </div>
         </div>
@@ -536,15 +536,14 @@
         {% endif %}
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Products</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
@@ -580,5 +579,4 @@
         </div>
     </footer>
 </body>
-
 </html>

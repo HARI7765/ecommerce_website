@@ -1,4 +1,4 @@
 class PaymentStatus:
-    SUCCESS = "Success"
-    FAILURE = 'Failure'
-    PENDING = 'Pending'
+    PENDING = "Pending"
+    COMPLETED = "Completed"
+    FAILED = "Failed"

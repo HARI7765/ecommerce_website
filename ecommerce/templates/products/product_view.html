@@ -1,17 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ product.name }} - MedShop</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Your CSS styles remain the same */
         :root {
             --primary-color: #ff1a1a;
-            --secondary-color: #333;
             --light-bg: #f5f5f5;
             --dark-bg: #000000;
             --text-light: #ffffff;
@@ -26,37 +23,11 @@
         }
 
         body {
-            line-height: 1.6;
             background-color: var(--light-bg);
+            line-height: 1.6;
         }
 
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .alert-success {
-            color: #155724;
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-        }
-
-        .alert-warning {
-            color: #856404;
-            background-color: #fff3cd;
-            border-color: #ffeeba;
-        }
-
-        .alert-danger {
-            color: #721c24;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-        }
-
-        /* Header Styles */
+        /* Header */
         header {
             background-color: var(--dark-bg);
             padding: 15px 5%;
@@ -66,12 +37,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            width: 100%;
-        }
-
-        .logo {
-            flex: 0 0 auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .logo a {
@@ -79,25 +45,21 @@
             font-size: 28px;
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            text-transform: none;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            flex: 1;
+            gap: 8px;
         }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 16px;
+            margin-left: 20px;
+            font-size: 15px;
             font-weight: 500;
-            transition: color 0.3s ease;
-            white-space: nowrap;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
@@ -106,10 +68,6 @@
 
         .cart-icon {
             position: relative;
-        }
-
-        .cart-icon i {
-            font-size: 20px;
         }
 
         .cart-count {
@@ -128,150 +86,172 @@
             font-weight: bold;
         }
 
-        /* Product Details Section */
-        .product-section {
-            background-color: #fff;
-            padding: 50px 20px;
-            margin-top: 20px;
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 5%;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Detail */
+        .product-detail {
+            padding: 30px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Product Image */
+        .product-image-wrap {
             display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            padding: 30px;
+            min-height: 350px;
         }
 
-        .product-image-container {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .product-image {
+        .product-image-wrap img {
             max-width: 100%;
-            height: auto;
+            max-height: 350px;
+            object-fit: contain;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .product-details {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .product-title {
-            font-size: 28px;
+        /* Product Info */
+        .product-info h1 {
+            font-size: 32px;
             color: var(--text-dark);
             margin-bottom: 10px;
         }
 
-        .product-price {
-            font-size: 24px;
-            color: var(--primary-color);
-            font-weight: bold;
+        .product-category {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
             margin-bottom: 20px;
         }
 
-        .product-meta {
+        .product-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 25px;
+        }
+
+        .stock-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-bottom: 30px;
         }
 
-        .product-meta-item {
-            margin-bottom: 15px;
+        .stock-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        .product-meta-label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: var(--text-dark);
+        .in-stock {
+            background-color: #e6f4ea;
+            color: #2e7d32;
         }
 
-        .product-meta-value {
+        .out-of-stock {
+            background-color: #fdecea;
+            color: #c62828;
+        }
+
+        .stock-count {
             color: #666;
+            font-size: 14px;
         }
 
-        .product-size-selector {
-            margin-bottom: 20px;
-        }
-
-        .product-select-size {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-        }
-
-        .product-actions {
-            margin-top: 30px;
-        }
-
-        .product-quantity-selector {
+        /* Buttons */
+        .action-buttons {
             display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .product-quantity-label {
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .product-quantity-input {
-            width: 60px;
-            padding: 8px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .product-button-group {
-            display: flex;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 10px;
         }
 
-        .product-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .product-btn-primary {
+        .btn-cart {
             background-color: var(--primary-color);
             color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
         }
 
-        .product-btn-primary:hover {
+        .btn-cart:hover {
             background-color: #e60000;
         }
 
-        .product-btn-icon {
-            padding: 12px;
-            font-size: 20px;
+        .btn-back {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 2px solid #ddd;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .product-text-danger {
+        .btn-back:hover {
+            border-color: var(--primary-color);
             color: var(--primary-color);
-            font-weight: bold;
-            margin-top: 10px;
         }
 
-        /* Footer Styles */
+        /* Footer */
         footer {
             background-color: var(--dark-bg);
             color: var(--text-light);
             padding: 50px 5% 20px;
-            margin-top: 50px;
         }
 
         .footer-content {
@@ -309,7 +289,7 @@
         .footer-column ul li a {
             color: #aaa;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-column ul li a:hover {
@@ -324,145 +304,118 @@
             font-size: 14px;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links a {
-                margin-left: 20px;
-                font-size: 14px;
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 25px;
             }
 
-            .product-container {
+            .product-info h1 {
+                font-size: 24px;
+            }
+
+            .product-price {
+                font-size: 28px;
+            }
+
+            .action-buttons {
                 flex-direction: column;
+            }
+
+            .btn-cart, .btn-back {
+                justify-content: center;
             }
         }
 
         @media (max-width: 576px) {
-            .logo a {
-                font-size: 24px;
-            }
-
-            .product-title {
-                font-size: 24px;
-            }
-
-            .product-button-group {
+            header {
                 flex-direction: column;
+                gap: 12px;
             }
         }
     </style>
 </head>
-
 <body>
+
     <!-- Header -->
     <header>
         <div class="logo">
-            <a href="{% url 'index'  %}">Medshop</a>
+            <a href="{% url 'index' %}">Medshop</a>
         </div>
         <div class="nav-links">
-            <a href="{% url 'index' %}">Home</a>
-            <a href="{% url 'products' %}">Products</a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'profile' %}">Profile</a>
-            {% else %}
-            <a href="{% url 'log' %}">Login</a>
-            {% endif %}
+            <a href="{% url 'products' %}">Pharmacy</a>
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
             {% endif %}
             <a href="{% url 'contact' %}">Contact</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'cart' %}" class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">{{ cart_items_count }}</span>
+                <span class="cart-count">{{ cart_items_count|default:0 }}</span>
             </a>
         </div>
     </header>
 
-    <!-- Messages -->
-    {% if messages %}
-    <div class="messages-container">
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
-        {% endfor %}
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="{% url 'index' %}">Home</a> &rsaquo;
+        <a href="{% url 'products' %}">Products</a> &rsaquo;
+        {{ product.name }}
     </div>
-    {% endif %}
 
-    <!-- Product Details Section -->
-    <section class="product-section">
+    <!-- Product Detail -->
+    <section class="product-detail">
         <div class="product-container">
-            <div class="product-image-container">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+
+            <!-- Image -->
+            <div class="product-image-wrap">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
             </div>
-            
-            <div class="product-details">
-                <form method="POST" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <h1 class="product-title">{{ product.name }}</h1>
-                    <div class="product-price">${{ product.price }}</div>
 
-                    <div class="product-meta">
-                        <div class="product-meta-item">
-                            <span class="product-meta-label">Category</span>
-                            <span class="product-meta-value">{{ product.category.name }}</span>
-                        </div>
-                        
-                        <div class="product-meta-item">
-                            <span class="product-meta-label">Description</span>
-                            <span class="product-meta-value">{{ product.description }}</span>
-                        </div>
-                        
-                        <div class="product-meta-item">
-                            <span class="product-meta-label">Stock</span>
-                            <span class="product-meta-value">{{ product.stock }} available</span>
-                        </div>
-                    </div>
+            <!-- Info -->
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
 
-                    <input type="hidden" value="{{ product.id }}" name="product_id">
+                {% if product.category %}
+                <span class="product-category">{{ product.category.name }}</span>
+                {% endif %}
 
-                    {% if sizes %}
-                    <div class="product-size-selector">
-                        <label class="product-meta-label" for="product-size-dropdown">Select Size</label>
-                        <select class="product-select-size" name="selected_size" id="product-size-dropdown" required>
-                            <option value="" disabled selected>Choose size</option>
-                            {% for size in sizes %}
-                            {% if size.Stock > 0 %}
-                            <option value="{{ size.size }}">
-                                {{ size.size }}
-                            </option>
-                            {% else %}
-                            <option value="{{ size.size }}" disabled>
-                                {{ size.size }} (Out of stock)
-                            </option>
-                            {% endif %}
-                            {% endfor %}
-                        </select>
-                    </div>
+                <p class="product-price">₹{{ product.price }}</p>
+
+                <p class="product-description">
+                    {{ product.description|default:"No description available for this product." }}
+                </p>
+
+                <div class="stock-info">
+                    {% if in_stock %}
+                    <span class="stock-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    <span class="stock-count">{{ product.stock }} units available</span>
+                    {% else %}
+                    <span class="stock-badge out-of-stock"><i class="fas fa-times-circle"></i> Out of Stock</span>
                     {% endif %}
+                </div>
 
-                    <div class="product-actions">
-                        <div class="product-quantity-selector">
-                            <span class="product-quantity-label">Quantity:</span>
-                            <div class="product-quantity-controls">
-                                <input type="number" class="product-quantity-input" name="quantity" id="product-quantity" value="1" disabled min="1" max="{{ product.stock }}">
-                            </div>
-                        </div>
-
-                        <div class="product-button-group">
-                            {% if not in_stock %}
-                            <p class="product-text-danger">Out of Stock</p>
-                            {% else %}
-                                {% if product.id in cart_product_ids %}
-                                <a href="{% url 'cart' %}" class="product-btn product-btn-primary">GO TO CART</a>
-                                {% else %}
-                                <button type="submit" class="product-btn product-btn-primary">ADD TO CART</button>
-                                {% endif %}
-                            {% endif %}
-                        </div>
-                    </div>
-                </form>
+                <div class="action-buttons">
+                    {% if in_stock %}
+                    <a href="{% url 'add_to_cart' product.pk %}" class="btn-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </a>
+                    {% else %}
+                    <button class="btn-cart" disabled style="opacity:0.5; cursor:not-allowed;">
+                        <i class="fas fa-shopping-cart"></i> Out of Stock
+                    </button>
+                    {% endif %}
+                    <a href="{% url 'products' %}" class="btn-back">
+                        <i class="fas fa-arrow-left"></i> Back to Products
+                    </a>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -473,8 +426,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Products</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
@@ -510,30 +462,5 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Quantity controls
-            const quantityInput = document.getElementById('product-quantity');
-            const maxStock = {{ product.stock }};
-            
-            // Ensure quantity doesn't exceed stock
-            quantityInput.addEventListener('change', function() {
-                if (parseInt(this.value) > maxStock) {
-                    this.value = maxStock;
-                }
-                if (parseInt(this.value) < 1) {
-                    this.value = 1;
-                }
-            });
-            
-            // Auto hide messages after 3 seconds
-            setTimeout(function() {
-                const messages = document.querySelectorAll('.alert');
-                messages.forEach(function(message) {
-                    message.style.display = 'none';
-                });
-            }, 3000);
-        });
-    </script>
 </body>
 </html>
