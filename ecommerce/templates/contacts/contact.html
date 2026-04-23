@@ -5,271 +5,573 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - MedShop</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        :root {
+            --primary-color: #ff1a1a;
+            --light-bg: #f5f5f5;
+            --dark-bg: #000000;
+            --text-light: #ffffff;
+            --text-dark: #333333;
         }
 
-        /* Navbar Styling */
-        .navbar {
-            background-color: #000 !important;
-            position: sticky;
-            top: 0;
-            z-index: 9999;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-bg);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        .navbar-brand {
-            font-weight: bold;
-            color: red !important;
-            flex-grow: 1;
-            text-align: center;
+        .logo a {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
         }
 
-        .navbar-nav .nav-link {
-            color: white !important;
-            font-size: 16px;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .navbar-toggler {
-            border: none;
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
+        .nav-links a:hover { color: var(--primary-color); }
 
-        .cart-icon {
-            color: white;
-            font-size: 27px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .cart-i {
-            color: white;
-        }
+        .cart-icon { position: relative; }
 
         .cart-count {
             position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: red;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary-color);
             color: white;
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 100%;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
         }
 
-        /* Contact Section */
-        .contact-section {
-            background-color: #fff;
-            padding: 50px 20px;
-        }
-
-        .contact-section h2 {
-            font-size: 28px;
-            margin-bottom: 30px;
+        /* Hero */
+        .contact-hero {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 70px 5%;
             text-align: center;
-            color: #333;
         }
 
-        .contact-form {
-            background-color: #fff;
+        .contact-hero h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .contact-hero h1 span { color: var(--primary-color); }
+
+        .contact-hero p {
+            font-size: 17px;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .contact-section {
+            padding: 70px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* Info Cards */
+        .contact-info h2 {
+            font-size: 28px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 35px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            background: white;
+            border-radius: 14px;
+            padding: 22px 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover { transform: translateY(-4px); }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fff0f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon i {
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-text h4 {
+            font-size: 15px;
+            color: #999;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .info-text p {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .social-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form */
+        .contact-form-wrap {
+            background: white;
+            border-radius: 20px;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-form-wrap h2 {
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-wrap p {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
 
         .form-group {
             margin-bottom: 20px;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 16px;
+            padding: 13px 16px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 15px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.3s;
+            background-color: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            background-color: white;
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 130px;
         }
 
-        .form-group button {
-            background-color: #e53935;
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover { background-color: #e60000; }
+        .submit-btn:active { transform: scale(0.98); }
+
+        /* Success Message */
+        .success-msg {
+            display: none;
+            background-color: #e6f4ea;
+            color: #2e7d32;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .success-msg.show { display: flex; }
+
+        {% if messages %}
+        .success-msg { display: flex; }
+        {% endif %}
+
+        /* Map placeholder */
+        .map-section {
+            background-color: #111;
+            padding: 0;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
             font-size: 16px;
-            transition: background-color 0.3s;
+            gap: 12px;
         }
 
-        .form-group button:hover {
-            background-color: #c62828;
-        }
-
-        .contact-info {
-            text-align: center;
-            margin-top: 50px;
-            color: #333;
-        }
-
-        .contact-info p {
-            font-size: 16px;
-        }
+        .map-section i { font-size: 28px; color: var(--primary-color); }
 
         /* Footer */
-        .footer {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 50px 5% 20px;
         }
 
-        /* Responsive Design */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover { color: var(--primary-color); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 14px;
+        }
+
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+            .contact-section { grid-template-columns: 1fr; gap: 30px; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-hero h1 { font-size: 32px; }
+        }
 
-            .navbar-nav {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .navbar-toggler {
-                order: 1;
-            }
-
-            .navbar-brand {
-                order: 2;
-            }
-
-            .cart-icon {
-                order: 3;
-                margin-top: 10px;
-            }
+        @media (max-width: 576px) {
+            header { flex-direction: column; gap: 12px; }
+            .contact-form-wrap { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Medshop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Pharmacy</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                    {% if not user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">SignIn</a></li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            <div class="cart-icon">
-                <a class="cart-i" href="{% url 'cart' %}">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                </a>
-               
-            </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="{% url 'index' %}">Medshop</a>
         </div>
-    </nav>
+        <div class="nav-links">
+            <a href="{% url 'products' %}">Pharmacy</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'cart' %}" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">{{ cart_items_count|default:0 }}</span>
+            </a>
+        </div>
+    </header>
 
-    <!-- Contact Us Section -->
+    <!-- Hero -->
+    <section class="contact-hero">
+        <h1>Contact <span>Us</span></h1>
+        <p>Have a question or need help? We're here for you 24/7. Reach out and we'll get back to you as soon as possible.</p>
+    </section>
+
+    <!-- Contact Section -->
     <section class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="container">
-            <div class="contact-form">
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit">Send Message</button>
-                    </div>
-                </form>
+
+        <!-- Left Info -->
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you. Here's how you can reach us.</p>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-text">
+                    <h4>Our Address</h4>
+                    <p>123 Health Street, Medical City, IN 682001</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-text">
+                    <h4>Phone Number</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-text">
+                    <h4>Email Address</h4>
+                    <p>support@medshop.com</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-text">
+                    <h4>Working Hours</h4>
+                    <p>Mon – Sat: 9:00 AM – 8:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Social -->
+            <div class="social-links">
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
+
+        <!-- Right Form -->
+        <div class="contact-form-wrap">
+            <h2>Send a Message</h2>
+            <p>Fill out the form below and we'll respond within 24 hours.</p>
+
+            {% if messages %}
+            <div class="success-msg show">
+                <i class="fas fa-check-circle"></i>
+                Message sent successfully! We'll get back to you soon.
+            </div>
+            {% endif %}
+
+            <div class="success-msg" id="success-msg">
+                <i class="fas fa-check-circle"></i>
+                Message sent successfully! We'll get back to you soon.
+            </div>
+
+            <form method="POST" action="{% url 'contact' %}" id="contact-form">
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select name="subject">
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Order Issue">Order Issue</option>
+                        <option value="Product Question">Product Question</option>
+                        <option value="Return/Refund">Return / Refund</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+
     </section>
 
-    <!-- Contact Information -->
-    <section class="contact-info">
-        <h3>Get in Touch</h3>
-        <p>Email: <a href="mailto:support@medshop.com">support@medshop.com</a></p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Our customer support team is available Monday to Friday, 9 AM - 6 PM.</p>
-    </section>
+    <!-- Map Placeholder -->
+    <div class="map-section">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>123 Health Street, Medical City — Google Maps integration coming soon</span>
+    </div>
 
     <!-- Footer -->
-    <section class="footer">
-        <p>&copy; 2025 MedShop. All rights reserved.</p>
-    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Prescription Drugs</a></li>
+                    <li><a href="#">Over-the-counter</a></li>
+                    <li><a href="#">Health Supplements</a></li>
+                    <li><a href="#">Medical Devices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> support@medshop.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MedShop. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            const cartCount = document.querySelector('.cart-count');
-
-            let cartItems = parseInt(localStorage.getItem('cartItems')) || 0;
-            cartCount.textContent = cartItems;
-
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.target.textContent = "Added!";
-                    e.target.style.backgroundColor = "#4CAF50";
-
-                    cartItems++;
-                    localStorage.setItem('cartItems', cartItems);
-                    cartCount.textContent = cartItems;
-
-                    setTimeout(() => {
-                        e.target.textContent = "Add To Cart";
-                        e.target.style.backgroundColor = "#e53935";
-                    }, 1000);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

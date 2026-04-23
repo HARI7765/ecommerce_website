@@ -1,525 +1,814 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedShop - User Profile</title>
+    <title>My Profile - MedShop</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff1a1a;
-            --secondary-color: #333;
-            --light-bg: #f5f5f5;
-            --dark-bg: #000000;
-            --text-light: #ffffff;
-            --text-dark: #333333;
+            --primary: #ff1a1a;
+            --primary-dark: #cc0000;
+            --primary-light: #fff0f0;
+            --dark: #0a0a0a;
+            --dark2: #111;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --border: #eee;
+            --white: #ffffff;
+            --text: #222;
+            --success: #28a745;
+            --warning: #ff6600;
+            --info: #0077cc;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text);
             line-height: 1.6;
-            background-color: var(--light-bg);
         }
 
-        /* Header Styles */
+        /* ---- HEADER ---- */
         header {
-            background-color: var(--dark-bg);
+            background: var(--dark);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            width: 100%;
-        }
-
-        .logo {
-            flex: 0 0 auto;
+            z-index: 200;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
         }
 
         .logo a {
-            color: var(--primary-color);
-            font-size: 28px;
-            font-weight: 700;
+            color: var(--primary);
+            font-size: 26px;
+            font-weight: 800;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            text-transform: none;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex: 1;
-        }
+        .nav-links { display: flex; align-items: center; gap: 5px; }
 
         .nav-links a {
-            color: var(--text-light);
+            color: #ccc;
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 16px;
+            margin-left: 20px;
+            font-size: 14px;
             font-weight: 500;
-            transition: color 0.3s ease;
-            white-space: nowrap;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
-        .cart-icon {
-            position: relative;
-        }
-
-        .cart-icon i {
-            font-size: 20px;
-        }
+        .cart-icon { position: relative; }
 
         .cart-count {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: var(--primary-color);
+            top: -8px; right: -8px;
+            background: var(--primary);
             color: white;
             border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;
+            width: 18px; height: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 700;
         }
 
-        /* Profile Section Styles */
-        .profile-section {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .profile-header h1 {
-            font-size: 36px;
-            color: var(--text-dark);
-            margin-bottom: 10px;
+        /* ---- PROFILE HERO ---- */
+        .profile-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a0000 100%);
+            padding: 50px 5% 80px;
             position: relative;
-            display: inline-block;
+            overflow: hidden;
         }
 
-        .profile-header h1::after {
+        .profile-hero::before {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .profile-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .profile-sidebar {
-            flex: 0 0 250px;
-        }
-
-        .profile-main {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        /* Profile Sidebar Styles */
-        .profile-avatar {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .avatar-container {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 15px;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,26,26,0.1) 0%, transparent 70%);
             border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid var(--light-bg);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .avatar-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .profile-name {
-            font-size: 22px;
-            color: var(--text-dark);
+        .avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #ff6600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            border: 4px solid rgba(255,255,255,0.15);
+            box-shadow: 0 8px 30px rgba(255,26,26,0.3);
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 6px; right: 6px;
+            width: 18px; height: 18px;
+            background: var(--success);
+            border-radius: 50%;
+            border: 3px solid var(--dark);
+        }
+
+        .hero-info h1 {
+            font-size: 32px;
+            color: white;
+            font-weight: 700;
             margin-bottom: 5px;
         }
 
-        .profile-email {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .profile-menu {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-menu ul {
-            list-style: none;
-        }
-
-        .profile-menu ul li {
-            margin-bottom: 10px;
-        }
-
-        .profile-menu ul li a {
-            display: flex;
-            align-items: center;
-            color: var(--text-dark);
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .profile-menu ul li a:hover,
-        .profile-menu ul li a.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .profile-menu ul li a i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* Profile Cards Styles */
-        .profile-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .profile-card h2 {
-            font-size: 20px;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-
-        .profile-card h2 i {
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-
-        .profile-detail {
+        .hero-info p {
+            color: #aaa;
+            font-size: 15px;
             margin-bottom: 15px;
         }
 
-        .profile-detail:last-child {
-            margin-bottom: 0;
+        .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+
+        .badge {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .profile-detail-label {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 5px;
+        .badge-member { background: rgba(255,255,255,0.1); color: #ccc; }
+        .badge-verified { background: rgba(40,167,69,0.2); color: #5cb85c; }
+        .badge-premium { background: rgba(255,102,0,0.2); color: #ff9944; }
+
+        /* ---- QUICK STATS ---- */
+        .quick-stats {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 0 5%;
+            max-width: 100%;
         }
 
-        .profile-detail-value {
-            color: var(--text-dark);
-            font-size: 16px;
+        .stats-inner {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+            transform: translateY(-30px);
+            gap: 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .stat-item {
+            flex: 1;
+            padding: 22px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            transition: background 0.3s;
+        }
+
+        .stat-item:last-child { border-right: none; }
+        .stat-item:hover { background: var(--primary-light); }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--gray);
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* Form Styles */
-        .profile-form {
+        /* ---- MAIN LAYOUT ---- */
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5% 60px;
+        }
+
+        /* ---- SIDEBAR ---- */
+        .sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        .sidebar-nav a i {
+            width: 18px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .sidebar-nav a .nav-badge {
+            margin-left: auto;
+            background: var(--primary);
+            color: white;
+            border-radius: 10px;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 5px 0;
+        }
+
+        /* ---- CONTENT AREA ---- */
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+
+        .section-card {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-header h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-header h2 i { color: var(--primary); }
+
+        .card-body { padding: 25px; }
+
+        .edit-btn {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: none;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .edit-btn:hover { background: var(--primary); color: white; }
+
+        /* ---- PERSONAL INFO ---- */
+        .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / 3;
-        }
-
-        .form-group label {
+        .info-item label {
             display: block;
-            margin-bottom: 5px;
-            color: #666;
-            font-size: 14px;
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .info-item .info-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            padding: 10px 14px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .info-item input,
+        .info-item select {
             width: 100%;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
-            transition: background-color 0.3s ease;
+            color: var(--text);
+            padding: 10px 14px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            outline: none;
+            transition: border-color 0.2s;
         }
 
-        .btn:hover {
-            background-color: #e60000;
-        }
+        .info-item input:focus,
+        .info-item select:focus { border-color: var(--primary); }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
+        .info-full { grid-column: 1 / 3; }
 
         .form-actions {
             display: flex;
+            gap: 12px;
             justify-content: flex-end;
-            gap: 15px;
-            grid-column: 1 / 3;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
         }
 
-        /* Address Card Styles */
-        .address-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .address-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            position: relative;
-        }
-
-        .address-card.default {
-            border-color: var(--primary-color);
-        }
-
-        .address-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: var(--primary-color);
+        .btn-save {
+            background: var(--primary);
             color: white;
-            font-size: 12px;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-weight: 500;
-        }
-
-        .address-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .address-type {
-            background-color: #f5f5f5;
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
-
-        .address-details {
-            margin-bottom: 10px;
+            border: none;
+            padding: 11px 28px;
+            border-radius: 50px;
             font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
         }
 
-        .address-actions {
+        .btn-save:hover { background: var(--primary-dark); }
+
+        .btn-cancel {
+            background: transparent;
+            color: var(--gray);
+            border: 2px solid var(--border);
+            padding: 11px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-cancel:hover { border-color: var(--gray); }
+
+        /* ---- ORDERS ---- */
+        .order-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            transition: box-shadow 0.2s;
+        }
+
+        .order-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .order-item:last-child { margin-bottom: 0; }
+
+        .order-header {
+            background: var(--light-gray);
+            padding: 12px 18px;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 10px;
         }
 
-        .address-actions button {
-            background-color: transparent;
-            border: none;
-            color: var(--primary-color);
-            cursor: pointer;
+        .order-id {
+            font-weight: 700;
             font-size: 14px;
-            padding: 0;
+            color: var(--text);
+        }
+
+        .order-meta {
             display: flex;
             align-items: center;
-        }
-
-        .address-actions button i {
-            margin-right: 5px;
-        }
-
-        .add-address {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            height: 100%;
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-
-        .add-address:hover {
-            border-color: var(--primary-color);
-        }
-
-        .add-address i {
-            font-size: 24px;
-            color: #999;
-            margin-bottom: 10px;
-        }
-
-        .add-address span {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Orders Card Styles */
-        .order-list {
-            display: flex;
-            flex-direction: column;
             gap: 15px;
         }
 
-        .order-item {
-            border: 1px solid #eee;
-            border-radius: 5px;
-            overflow: hidden;
+        .order-date { color: var(--gray); font-size: 13px; }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
         }
 
-        .order-header {
-            background-color: #f9f9f9;
-            padding: 12px 15px;
+        .status-delivered { background: #e6f4ea; color: #2e7d32; }
+        .status-pending { background: #fff3e0; color: #e65100; }
+        .status-processing { background: #e3f2fd; color: #1565c0; }
+        .status-cancelled { background: #fdecea; color: #c62828; }
+
+        .order-body {
+            padding: 16px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .order-id {
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .order-date {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .order-body {
-            padding: 15px;
-        }
-
-        .order-summary {
+        .order-product {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+            align-items: center;
+            gap: 12px;
         }
 
-        .order-status {
-            color: var(--primary-color);
-            font-weight: 500;
+        .order-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
         }
+
+        .order-details h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+        .order-details p { font-size: 13px; color: var(--gray); }
 
         .order-total {
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
         }
 
         .order-actions {
             display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .order-actions button {
-            background-color: transparent;
-            border: 1px solid #ddd;
-            color: #666;
-            padding: 5px 10px;
-            border-radius: 3px;
+        .order-btn {
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            border: 1.5px solid var(--border);
+            background: white;
+            color: var(--gray);
+            transition: all 0.2s;
         }
 
-        .order-actions button:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+        .order-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        .order-btn-primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
-        /* Footer Styles */
+        .order-btn-primary:hover { background: var(--primary-dark); }
+
+        /* ---- ADDRESSES ---- */
+        .address-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .address-card {
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .address-card:hover { border-color: #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .address-card.default { border-color: var(--primary); background: var(--primary-light); }
+
+        .default-tag {
+            position: absolute;
+            top: -1px; right: 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .address-type-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .address-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .address-card p { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 14px; }
+
+        .address-actions { display: flex; gap: 8px; }
+
+        .addr-btn {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1.5px solid var(--border);
+            background: white;
+            color: var(--gray);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .addr-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        .addr-btn-danger:hover { border-color: #dc3545; color: #dc3545; }
+
+        .add-address-card {
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-height: 160px;
+            text-align: center;
+        }
+
+        .add-address-card:hover { border-color: var(--primary); background: var(--primary-light); }
+
+        .add-address-card i { font-size: 28px; color: #ccc; margin-bottom: 10px; }
+        .add-address-card:hover i { color: var(--primary); }
+        .add-address-card span { font-size: 13px; color: var(--gray); font-weight: 600; }
+
+        /* ---- PAYMENT CARDS ---- */
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .payment-card {
+            border-radius: 14px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-visa { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+        .card-master { background: linear-gradient(135deg, #2d1b69, #11998e); }
+
+        .payment-card .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-chip {
+            width: 36px; height: 28px;
+            background: linear-gradient(135deg, #d4af37, #f5d060);
+            border-radius: 5px;
+        }
+
+        .card-network { font-size: 22px; font-weight: 900; font-style: italic; }
+        .card-visa .card-network { color: white; letter-spacing: 2px; }
+        .card-master .card-network { color: #ff6b35; }
+
+        .card-number {
+            font-size: 17px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .card-holder { font-size: 12px; opacity: 0.7; text-transform: uppercase; margin-bottom: 2px; }
+        .card-name { font-size: 14px; font-weight: 700; }
+        .card-expiry-label { font-size: 10px; opacity: 0.7; text-transform: uppercase; }
+        .card-expiry { font-size: 14px; font-weight: 700; }
+
+        .card-default-badge {
+            position: absolute;
+            top: 12px; left: 12px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+        }
+
+        .add-card {
+            border: 2px dashed #ddd;
+            border-radius: 14px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            gap: 8px;
+        }
+
+        .add-card:hover { border-color: var(--primary); background: var(--primary-light); }
+        .add-card i { font-size: 28px; color: #ccc; }
+        .add-card:hover i { color: var(--primary); }
+        .add-card span { font-size: 13px; color: var(--gray); font-weight: 600; }
+
+        /* ---- PASSWORD ---- */
+        .password-form { display: flex; flex-direction: column; gap: 16px; }
+
+        .pass-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pass-input-wrap { position: relative; }
+
+        .pass-input-wrap input {
+            width: 100%;
+            padding: 12px 45px 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .pass-input-wrap input:focus { border-color: var(--primary); }
+
+        .toggle-pass {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .password-strength {
+            margin-top: 6px;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--border);
+            overflow: hidden;
+        }
+
+        .strength-bar {
+            height: 100%;
+            width: 0%;
+            border-radius: 2px;
+            transition: width 0.3s, background 0.3s;
+        }
+
+        /* ---- NOTIFICATIONS ---- */
+        .notif-list { display: flex; flex-direction: column; gap: 0; }
+
+        .notif-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .notif-item:last-child { border-bottom: none; }
+
+        .notif-info { display: flex; align-items: center; gap: 14px; }
+
+        .notif-icon {
+            width: 42px; height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+
+        .notif-icon.red { background: var(--primary-light); color: var(--primary); }
+        .notif-icon.blue { background: #e3f2fd; color: #1565c0; }
+        .notif-icon.green { background: #e6f4ea; color: #2e7d32; }
+        .notif-icon.orange { background: #fff3e0; color: #e65100; }
+
+        .notif-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+        .notif-text p { font-size: 12px; color: var(--gray); }
+
+        /* Toggle Switch */
+        .toggle {
+            position: relative;
+            width: 48px;
+            height: 26px;
+            flex-shrink: 0;
+        }
+
+        .toggle input { opacity: 0; width: 0; height: 0; }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #ccc;
+            border-radius: 26px;
+            transition: 0.3s;
+        }
+
+        .toggle-slider::before {
+            position: absolute;
+            content: '';
+            height: 20px; width: 20px;
+            left: 3px; bottom: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .toggle input:checked + .toggle-slider { background: var(--primary); }
+        .toggle input:checked + .toggle-slider::before { transform: translateX(22px); }
+
+        /* ---- FOOTER ---- */
         footer {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background: var(--dark);
+            color: white;
             padding: 50px 5% 20px;
+            margin-top: 20px;
         }
 
         .footer-content {
@@ -530,8 +819,8 @@
         }
 
         .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 18px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -539,376 +828,574 @@
         .footer-column h3::after {
             content: '';
             position: absolute;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-color);
-            bottom: 0;
-            left: 0;
+            width: 40px; height: 2px;
+            background: var(--primary);
+            bottom: 0; left: 0;
         }
 
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 9px; }
 
         .footer-column ul li a {
             color: #aaa;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 14px;
+            transition: color 0.2s;
         }
 
-        .footer-column ul li a:hover {
-            color: var(--primary-color);
-        }
+        .footer-column ul li a:hover { color: var(--primary); }
 
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid #333;
-            color: #aaa;
-            font-size: 14px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 13px;
         }
 
-        /* Responsive Media Queries */
-        @media (max-width: 992px) {
-            .profile-content {
-                flex-direction: column;
-            }
-
-            .profile-sidebar {
-                flex: 0 0 100%;
-            }
-
-            .profile-avatar {
-                text-align: center;
-            }
-
-            .profile-menu ul {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .profile-menu ul li {
-                margin-bottom: 0;
-            }
-
-            .profile-menu ul li a {
-                padding: 8px 15px;
-            }
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 900px) {
+            .profile-layout { grid-template-columns: 1fr; }
+            .sidebar { flex-direction: row; flex-wrap: wrap; }
+            .sidebar-card { flex: 1; min-width: 200px; }
+            .sidebar-nav { display: flex; flex-wrap: wrap; }
+            .sidebar-nav a { flex: 1; min-width: 140px; border-left: none; border-bottom: 3px solid transparent; }
+            .sidebar-nav a:hover, .sidebar-nav a.active { border-left: none; border-bottom-color: var(--primary); }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); display: grid; }
         }
 
-        @media (max-width: 768px) {
-            .nav-links a {
-                margin-left: 20px;
-                font-size: 14px;
-            }
-
-            .profile-form {
-                grid-template-columns: 1fr;
-            }
-
-            .form-group.full-width {
-                grid-column: 1;
-            }
-
-            .form-actions {
-                grid-column: 1;
-            }
-
-            .profile-menu ul {
-                flex-direction: column;
-            }
-
-            .profile-menu ul li {
-                margin-bottom: 5px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .logo a {
-                font-size: 24px;
-            }
-
-            .profile-header h1 {
-                font-size: 28px;
-            }
-
-            .profile-card {
-                padding: 15px;
-            }
-
-            .address-list {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            .info-grid, .address-grid, .payment-grid { grid-template-columns: 1fr; }
+            .info-full { grid-column: 1; }
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-badges { justify-content: center; }
+            .stats-inner { grid-template-columns: 1fr 1fr; }
+            header { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
-
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <a href="{% url 'index'  %}">Medshop</a>
-        </div>
-        <div class="nav-links">
-            <a href="{% url 'index' %}">Home</a>
-            <a href="{% url 'products' %}">Pharmacy</a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'profile' %}" class="active">Profile</a>
-            {% else %}
-            {% endif %}
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Logout</a>
-            {% endif %}
-            <a href="{% url 'contact' %}">Contact</a>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'cart' %}" class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
-        </div>
-    </header>
 
-    <!-- Profile Section -->
-    <section class="profile-section">
-        <div class="profile-header">
-            <h1>My Profile</h1>
+<!-- Header -->
+<header>
+    <div class="logo"><a href="{% url 'index' %}">Medshop</a></div>
+    <div class="nav-links">
+        <a href="{% url 'products' %}">Pharmacy</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'cart' %}" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">{{ cart_items_count|default:0 }}</span>
+        </a>
+    </div>
+</header>
+
+<!-- Profile Hero -->
+<div class="profile-hero">
+    <div class="hero-content">
+        <div class="avatar-wrap">
+            <div class="avatar">{{ user.username|first|upper }}</div>
+            <div class="online-dot"></div>
         </div>
-
-        <div class="profile-content">
-            <!-- Profile Sidebar -->
-            <div class="profile-sidebar">
-                <div class="profile-avatar">
-                    <div class="avatar-container">
-                        <img src="/api/placeholder/150/150" alt="User Avatar">
-                    </div>
-                    <h3 class="profile-name">{{ user.first_name }} {{ user.last_name }}</h3>
-                    <p class="profile-email">{{ user.email }}</p>
-                </div>
-
-                <div class="profile-menu">
-                    <ul>
-                        <li><a href="#personal-info" class="active"><i class="fas fa-user"></i> Personal Info</a></li>
-                        <li><a href="#addresses"><i class="fas fa-map-marker-alt"></i> My Addresses</a></li>
-                        <li><a href="#orders"><i class="fas fa-box"></i> My Orders</a></li>
-                        <li><a href="#password"><i class="fas fa-lock"></i> Change Password</a></li>
-                        <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
-                    </ul>
-                </div>
+        <div class="hero-info">
+            <h1>{{ user.get_full_name|default:user.username }}</h1>
+            <p>{{ user.email|default:"No email set" }}</p>
+            <div class="hero-badges">
+                <span class="badge badge-member"><i class="fas fa-user"></i> Member since {{ user.date_joined|date:"Y" }}</span>
+                <span class="badge badge-verified"><i class="fas fa-check-circle"></i> Verified</span>
+                <span class="badge badge-premium"><i class="fas fa-star"></i> Premium Member</span>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Profile Main Content -->
-            <div class="profile-main">
-                <!-- Personal Info Card -->
-                <div class="profile-card" id="personal-info">
-                    <h2><i class="fas fa-user"></i> Personal Information</h2>
-                    <form class="profile-form">
-                        <div class="form-group">
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" value="{{ user.first_name }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" value="{{ user.last_name }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" value="{{ user.email }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" value="{{ user.profile.phone }}">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="birthdate">Date of Birth</label>
-                            <input type="date" id="birthdate" value="{{ user.profile.birthdate|date:'Y-m-d' }}">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="gender">Gender</label>
-                            <select id="gender">
-                                <option value="male" {% if user.profile.gender == 'male' %}selected{% endif %}>Male</option>
-                                <option value="female" {% if user.profile.gender == 'female' %}selected{% endif %}>Female</option>
-                                <option value="other" {% if user.profile.gender == 'other' %}selected{% endif %}>Other</option>
-                                <option value="prefer-not" {% if user.profile.gender == 'prefer-not' %}selected{% endif %}>Prefer not to say</option>
-                            </select>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn btn-outline">Cancel</button>
-                            <button type="submit" class="btn">Save Changes</button>
-                        </div>
-                    </form>
-                </div>
+<!-- Quick Stats -->
+<div class="quick-stats">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <h3>{{ user.order_set.count|default:"0" }}</h3>
+            <p>Total Orders</p>
+        </div>
+        <div class="stat-item">
+            <h3>0</h3>
+            <p>Pending</p>
+        </div>
+        <div class="stat-item">
+            <h3>0</h3>
+            <p>Delivered</p>
+        </div>
+        <div class="stat-item">
+            <h3>{{ cart_items_count|default:0 }}</h3>
+            <p>In Cart</p>
+        </div>
+    </div>
+</div>
 
-                <!-- Addresses Card -->
-                <div class="profile-card" id="addresses">
-                    <h2><i class="fas fa-map-marker-alt"></i> My Addresses</h2>
-                    <div class="address-list">
-                        <div class="address-card default">
-                            <div class="address-badge">Default</div>
-                            <div class="address-name">Home</div>
-                            <div class="address-type">Residential</div>
-                            <div class="address-details">
-                                123 Health Street, Apartment 4B<br>
-                                Medical City, MC 12345<br>
-                                Phone: +1 (555) 123-4567
-                            </div>
-                            <div class="address-actions">
-                                <button><i class="fas fa-edit"></i> Edit</button>
-                                <button><i class="fas fa-trash"></i> Delete</button>
-                            </div>
-                        </div>
-                        <div class="address-card">
-                            <div class="address-name">Office</div>
-                            <div class="address-type">Work</div>
-                            <div class="address-details">
-                                456 Business Avenue, Suite 200<br>
-                                Corporate Plaza, CP 67890<br>
-                                Phone: +1 (555) 987-6543
-                            </div>
-                            <div class="address-actions">
-                                <button><i class="fas fa-edit"></i> Edit</button>
-                                <button><i class="fas fa-trash"></i> Delete</button>
-                                <button><i class="fas fa-check-circle"></i> Set as Default</button>
-                            </div>
-                        </div>
-                        <div class="add-address">
-                            <i class="fas fa-plus-circle"></i>
-                            <span>Add New Address</span>
-                        </div>
+<!-- Main Layout -->
+<div class="profile-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-card">
+            <nav class="sidebar-nav">
+                <a href="#personal" class="active" onclick="showSection('personal', this)">
+                    <i class="fas fa-user"></i> Personal Info
+                </a>
+                <div class="sidebar-divider"></div>
+                <a href="#orders" onclick="showSection('orders', this)">
+                    <i class="fas fa-box"></i> My Orders
+                    <span class="nav-badge">{{ user.order_set.count|default:"0" }}</span>
+                </a>
+                <div class="sidebar-divider"></div>
+                <a href="#addresses" onclick="showSection('addresses', this)">
+                    <i class="fas fa-map-marker-alt"></i> Addresses
+                </a>
+                <div class="sidebar-divider"></div>
+                <a href="#payments" onclick="showSection('payments', this)">
+                    <i class="fas fa-credit-card"></i> Payment Cards
+                </a>
+                <div class="sidebar-divider"></div>
+                <a href="#password" onclick="showSection('password', this)">
+                    <i class="fas fa-lock"></i> Security
+                </a>
+                <div class="sidebar-divider"></div>
+                <a href="#notifications" onclick="showSection('notifications', this)">
+                    <i class="fas fa-bell"></i> Notifications
+                </a>
+                <div class="sidebar-divider"></div>
+                <a href="{% url 'logout' %}" style="color:#dc3545;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Content -->
+    <div class="content-area">
+
+        <!-- Personal Info -->
+        <div class="section-card" id="personal">
+            <div class="card-header">
+                <h2><i class="fas fa-user"></i> Personal Information</h2>
+                <button class="edit-btn" onclick="toggleEdit('personal-form')">
+                    <i class="fas fa-pen"></i> Edit
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="info-grid" id="personal-view">
+                    <div class="info-item">
+                        <label>Username</label>
+                        <div class="info-value">{{ user.username }}</div>
                     </div>
-                </div>
-
-                <!-- Orders Card -->
-                <div class="profile-card" id="orders">
-                    <h2><i class="fas fa-box"></i> My Orders</h2>
-                    <div class="order-list">
-                        <div class="order-item">
-                            <div class="order-header">
-                                <div class="order-id">Order #ORD-2025-0001</div>
-                                <div class="order-date">May 15, 2025</div>
-                            </div>
-                            <div class="order-body">
-                                <div class="order-summary">
-                                    <div class="order-status">Delivered</div>
-                                    <div class="order-total">₹1,250.00</div>
-                                </div>
-                                <div class="order-actions">
-                                    <button>View Details</button>
-                                    <button>Track Order</button>
-                                    <button>Download Invoice</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order-item">
-                            <div class="order-header">
-                                <div class="order-id">Order #ORD-2025-0002</div>
-                                <div class="order-date">May 10, 2025</div>
-                            </div>
-                            <div class="order-body">
-                                <div class="order-summary">
-                                    <div class="order-status">Processing</div>
-                                    <div class="order-total">₹850.00</div>
-                                </div>
-                                <div class="order-actions">
-                                    <button>View Details</button>
-                                    <button>Track Order</button>
-                                    <button>Cancel Order</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order-item">
-                            <div class="order-header">
-                                <div class="order-id">Order #ORD-2025-0003</div>
-                                <div class="order-date">May 5, 2025</div>
-                            </div>
-                            <div class="order-body">
-                                <div class="order-summary">
-                                    <div class="order-status">Delivered</div>
-                                    <div class="order-total">₹2,100.00</div>
-                                </div>
-                                <div class="order-actions">
-                                    <button>View Details</button>
-                                    <button>Buy Again</button>
-                                    <button>Download Invoice</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <div class="info-value">{{ user.get_full_name|default:"Not set" }}</div>
+                    </div>
+                    <div class="info-item">
+                        <label>Email Address</label>
+                        <div class="info-value">{{ user.email|default:"Not set" }}</div>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone Number</label>
+                        <div class="info-value">Not set</div>
+                    </div>
+                    <div class="info-item">
+                        <label>Date Joined</label>
+                        <div class="info-value">{{ user.date_joined|date:"d M Y" }}</div>
+                    </div>
+                    <div class="info-item">
+                        <label>Last Login</label>
+                        <div class="info-value">{{ user.last_login|date:"d M Y, H:i" }}</div>
                     </div>
                 </div>
 
-                <!-- Change Password Card -->
-                <div class="profile-card" id="password">
-                    <h2><i class="fas fa-lock"></i> Change Password</h2>
-                    <form class="profile-form">
-                        <div class="form-group full-width">
-                            <label for="current-password">Current Password</label>
-                            <input type="password" id="current-password">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="new-password">New Password</label>
-                            <input type="password" id="new-password">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="confirm-password">Confirm New Password</label>
-                            <input type="password" id="confirm-password">
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn btn-outline">Cancel</button>
-                            <button type="submit" class="btn">Update Password</button>
-                        </div>
-                    </form>
+                <div class="info-grid" id="personal-form" style="display:none;">
+                    <div class="info-item">
+                        <label>First Name</label>
+                        <input type="text" value="{{ user.first_name }}" placeholder="First name">
+                    </div>
+                    <div class="info-item">
+                        <label>Last Name</label>
+                        <input type="text" value="{{ user.last_name }}" placeholder="Last name">
+                    </div>
+                    <div class="info-item">
+                        <label>Email Address</label>
+                        <input type="email" value="{{ user.email }}" placeholder="Email">
+                    </div>
+                    <div class="info-item">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+91 98765 43210">
+                    </div>
+                    <div class="info-item">
+                        <label>Date of Birth</label>
+                        <input type="date">
+                    </div>
+                    <div class="info-item">
+                        <label>Gender</label>
+                        <select>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                            <option>Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-actions info-full">
+                        <button class="btn-cancel" onclick="toggleEdit('personal-form')">Cancel</button>
+                        <button class="btn-save"><i class="fas fa-check"></i> Save Changes</button>
+                    </div>
                 </div>
+            </div>
+        </div>
 
+        <!-- Orders -->
+        <div class="section-card" id="orders" style="display:none;">
+            <div class="card-header">
+                <h2><i class="fas fa-box"></i> My Orders</h2>
+                <a href="{% url 'orders' %}" style="font-size:13px; color:var(--primary); text-decoration:none; font-weight:600;">View All →</a>
+            </div>
+            <div class="card-body">
+                {% if user.order_set.all %}
+                {% for order in user.order_set.all|slice:":5" %}
+                <div class="order-item">
+                    <div class="order-header">
+                        <span class="order-id"># {{ order.provider_order_id|slice:":12" }}...</span>
+                        <div class="order-meta">
+                            <span class="order-date"><i class="far fa-calendar"></i> {{ order.created_at|date:"d M Y"|default:"N/A" }}</span>
+                            <span class="status-badge status-{{ order.status|lower }}">{{ order.status }}</span>
+                        </div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-product">
+                            <div class="order-img">💊</div>
+                            <div class="order-details">
+                                <h4>{{ order.product.name }}</h4>
+                                <p>Qty: {{ order.quantity }} × ₹{{ order.product.price }}</p>
+                            </div>
+                        </div>
+                        <div class="order-total">₹{{ order.amount }}</div>
+                        <div class="order-actions">
+                            <button class="order-btn order-btn-primary"><i class="fas fa-eye"></i> Details</button>
+                            <button class="order-btn"><i class="fas fa-redo"></i> Buy Again</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div style="text-align:center; padding:40px; color:var(--gray);">
+                    <i class="fas fa-box-open" style="font-size:48px; color:#ddd; display:block; margin-bottom:15px;"></i>
+                    <h3 style="margin-bottom:10px; color:#999;">No orders yet</h3>
+                    <p style="margin-bottom:20px;">Start shopping to see your orders here</p>
+                    <a href="{% url 'products' %}" style="background:var(--primary); color:white; padding:10px 24px; border-radius:50px; text-decoration:none; font-weight:600; font-size:14px;">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </a>
+                </div>
+                {% endif %}
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                </ul>
+        <!-- Addresses -->
+        <div class="section-card" id="addresses" style="display:none;">
+            <div class="card-header">
+                <h2><i class="fas fa-map-marker-alt"></i> My Addresses</h2>
+                <button class="edit-btn"><i class="fas fa-plus"></i> Add New</button>
             </div>
-            <div class="footer-column">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="#">Prescription Drugs</a></li>
-                    <li><a href="#">Over-the-counter</a></li>
-                    <li><a href="#">Health Supplements</a></li>
-                    <li><a href="#">Medical Devices</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> support@medshop.com</a></li>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</a></li>
-                </ul>
+            <div class="card-body">
+                <div class="address-grid">
+                    <div class="address-card default">
+                        <div class="default-tag">Default</div>
+                        <div class="address-type-icon"><i class="fas fa-home"></i></div>
+                        <h4>Home</h4>
+                        <p>123 Health Street, Apt 4B<br>Medical City, MC 12345<br>📞 +91 98765 43210</p>
+                        <div class="address-actions">
+                            <button class="addr-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="addr-btn addr-btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                    <div class="address-card">
+                        <div class="address-type-icon"><i class="fas fa-briefcase"></i></div>
+                        <h4>Office</h4>
+                        <p>456 Business Ave, Suite 200<br>Corporate Plaza, CP 67890<br>📞 +91 98765 00000</p>
+                        <div class="address-actions">
+                            <button class="addr-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="addr-btn"><i class="fas fa-check-circle"></i> Set Default</button>
+                            <button class="addr-btn addr-btn-danger"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="add-address-card">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add New Address</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 MedShop. All rights reserved.</p>
+
+        <!-- Payment Cards -->
+        <div class="section-card" id="payments" style="display:none;">
+            <div class="card-header">
+                <h2><i class="fas fa-credit-card"></i> Payment Cards</h2>
+                <button class="edit-btn"><i class="fas fa-plus"></i> Add Card</button>
+            </div>
+            <div class="card-body">
+                <div class="payment-grid">
+                    <div class="payment-card card-visa">
+                        <div class="card-default-badge">Default</div>
+                        <div class="card-top">
+                            <div class="card-chip"></div>
+                            <div class="card-network">VISA</div>
+                        </div>
+                        <div class="card-number">•••• •••• •••• 4242</div>
+                        <div class="card-bottom">
+                            <div>
+                                <div class="card-holder">Card Holder</div>
+                                <div class="card-name">{{ user.get_full_name|default:user.username }}</div>
+                            </div>
+                            <div>
+                                <div class="card-expiry-label">Expires</div>
+                                <div class="card-expiry">12/28</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card card-master">
+                        <div class="card-top">
+                            <div class="card-chip"></div>
+                            <div class="card-network">MC</div>
+                        </div>
+                        <div class="card-number">•••• •••• •••• 8910</div>
+                        <div class="card-bottom">
+                            <div>
+                                <div class="card-holder">Card Holder</div>
+                                <div class="card-name">{{ user.get_full_name|default:user.username }}</div>
+                            </div>
+                            <div>
+                                <div class="card-expiry-label">Expires</div>
+                                <div class="card-expiry">06/27</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-card">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Add New Card</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <!-- Security / Password -->
+        <div class="section-card" id="password" style="display:none;">
+            <div class="card-header">
+                <h2><i class="fas fa-lock"></i> Security & Password</h2>
+            </div>
+            <div class="card-body">
+                <div class="password-form">
+                    <div class="pass-group">
+                        <label>Current Password</label>
+                        <div class="pass-input-wrap">
+                            <input type="password" id="cur-pass" placeholder="Enter current password">
+                            <i class="fas fa-eye toggle-pass" onclick="togglePass('cur-pass', this)"></i>
+                        </div>
+                    </div>
+                    <div class="pass-group">
+                        <label>New Password</label>
+                        <div class="pass-input-wrap">
+                            <input type="password" id="new-pass" placeholder="Enter new password" oninput="checkStrength(this.value)">
+                            <i class="fas fa-eye toggle-pass" onclick="togglePass('new-pass', this)"></i>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar" id="strength-bar"></div>
+                        </div>
+                        <p id="strength-text" style="font-size:12px; color:var(--gray); margin-top:4px;"></p>
+                    </div>
+                    <div class="pass-group">
+                        <label>Confirm New Password</label>
+                        <div class="pass-input-wrap">
+                            <input type="password" id="conf-pass" placeholder="Confirm new password">
+                            <i class="fas fa-eye toggle-pass" onclick="togglePass('conf-pass', this)"></i>
+                        </div>
+                    </div>
+                    <div class="form-actions" style="border-top:none; padding-top:0; margin-top:0;">
+                        <button class="btn-cancel">Cancel</button>
+                        <button class="btn-save"><i class="fas fa-lock"></i> Update Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="section-card" id="notifications" style="display:none;">
+            <div class="card-header">
+                <h2><i class="fas fa-bell"></i> Notification Preferences</h2>
+            </div>
+            <div class="card-body">
+                <div class="notif-list">
+                    <div class="notif-item">
+                        <div class="notif-info">
+                            <div class="notif-icon red"><i class="fas fa-shopping-bag"></i></div>A
+                            <div class="notif-text">
+                                <h4>Order Updates</h4>
+                                <p>Get notified about your order status and delivery</p>
+                            </div>
+                        </div>
+                        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-info">
+                            <div class="notif-icon blue"><i class="fas fa-tag"></i></div>
+                            <div class="notif-text">
+                                <h4>Promotions & Offers</h4>
+                                <p>Receive deals, discounts, and exclusive offers</p>
+                            </div>
+                        </div>
+                        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-info">
+                            <div class="notif-icon green"><i class="fas fa-pills"></i></div>
+                            <div class="notif-text">
+                                <h4>Medicine Reminders</h4>
+                                <p>Get reminders to reorder your regular medicines</p>
+                            </div>
+                        </div>
+                        <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-info">
+                            <div class="notif-icon orange"><i class="fas fa-envelope"></i></div>
+                            <div class="notif-text">
+                                <h4>Email Newsletter</h4>
+                                <p>Weekly health tips and MedShop news</p>
+                            </div>
+                        </div>
+                        <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-info">
+                            <div class="notif-icon blue"><i class="fas fa-shield-alt"></i></div>
+                            <div class="notif-text">
+                                <h4>Security Alerts</h4>
+                                <p>Get notified about login attempts and account changes</p>
+                            </div>
+                        </div>
+                        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-save"><i class="fas fa-save"></i> Save Preferences</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#">Prescription Drugs</a></li>
+                <li><a href="#">Over-the-counter</a></li>
+                <li><a href="#">Health Supplements</a></li>
+                <li><a href="#">Medical Devices</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> support@medshop.com</a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2025 MedShop. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Section navigation
+    function showSection(id, link) {
+        document.querySelectorAll('.section-card').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+        event.preventDefault();
+    }
+
+    // Toggle edit form
+    function toggleEdit(formId) {
+        const form = document.getElementById(formId);
+        const view = document.getElementById(formId.replace('-form', '-view'));
+        if (form.style.display === 'none') {
+            form.style.display = 'grid';
+            if (view) view.style.display = 'none';
+        } else {
+            form.style.display = 'none';
+            if (view) view.style.display = 'grid';
+        }
+    }
+
+    // Toggle password visibility
+    function togglePass(inputId, icon) {
+        const input = document.getElementById(inputId);
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    }
+
+    // Password strength checker
+    function checkStrength(val) {
+        const bar = document.getElementById('strength-bar');
+        const text = document.getElementById('strength-text');
+        let strength = 0;
+        if (val.length >= 8) strength++;
+        if (/[A-Z]/.test(val)) strength++;
+        if (/[0-9]/.test(val)) strength++;
+        if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+        const levels = [
+            { w: '25%', bg: '#dc3545', t: 'Weak' },
+            { w: '50%', bg: '#ff6600', t: 'Fair' },
+            { w: '75%', bg: '#ffc107', t: 'Good' },
+            { w: '100%', bg: '#28a745', t: 'Strong' },
+        ];
+
+        if (val.length === 0) { bar.style.width = '0'; text.textContent = ''; return; }
+        const level = levels[strength - 1] || levels[0];
+        bar.style.width = level.w;
+        bar.style.background = level.bg;
+        text.textContent = `Password strength: ${level.t}`;
+        text.style.color = level.bg;
+    }
+</script>
+
 </body>
-
 </html>

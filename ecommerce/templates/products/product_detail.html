@@ -1,0 +1,678 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - MedShop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff1a1a;
+            --light-bg: #f5f5f5;
+            --dark-bg: #000000;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-bg);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo a {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .cart-icon { position: relative; }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Back button top-left */
+        .back-bar {
+            padding: 15px 5%;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: white;
+            color: var(--text-dark);
+            border: 2px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .btn-back:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Product Detail */
+        .product-detail {
+            padding: 10px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-image-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            padding: 30px;
+            min-height: 350px;
+        }
+
+        .product-image-wrap img {
+            max-width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .product-info h1 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .product-category {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 25px;
+        }
+
+        .stock-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .stock-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .in-stock { background-color: #e6f4ea; color: #2e7d32; }
+        .out-of-stock { background-color: #fdecea; color: #c62828; }
+        .stock-count { color: #666; font-size: 14px; }
+
+        /* Quantity Selector */
+        .quantity-section {
+            margin-bottom: 25px;
+        }
+
+        .quantity-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: background-color 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qty-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .qty-input {
+            width: 60px;
+            height: 44px;
+            border: none;
+            border-left: 2px solid #e0e0e0;
+            border-right: 2px solid #e0e0e0;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            outline: none;
+        }
+
+        .qty-input::-webkit-outer-spin-button,
+        .qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .qty-input[type=number] { -moz-appearance: textfield; }
+
+        /* Action Buttons Row 1: Add to Cart | Buy Now | Go to Cart */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-cart {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-cart:hover { background-color: #e60000; }
+        .btn-cart:disabled { cursor: not-allowed; opacity: 0.7; }
+
+        .btn-buy-now {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-buy-now:hover { background-color: #e55c00; }
+
+        .btn-go-cart {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-go-cart:hover { background-color: #333; }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #28a745;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .toast.show { transform: translateY(0); opacity: 1; }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 50px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover { color: var(--primary-color); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 25px;
+            }
+            .product-info h1 { font-size: 24px; }
+            .product-price { font-size: 28px; }
+            .action-buttons { flex-direction: column; }
+            .btn-cart, .btn-buy-now, .btn-go-cart { justify-content: center; width: 100%; }
+        }
+
+        @media (max-width: 576px) {
+            header { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-msg">Added to cart!</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="{% url 'index' %}">Medshop</a>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'products' %}">Pharmacy</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'cart' %}" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">{{ cart_items_count|default:0 }}</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Back Button Top Left -->
+    <div class="back-bar">
+        <a href="{% url 'products' %}" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Back to Products
+        </a>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="product-container">
+
+            <!-- Image -->
+            <div class="product-image-wrap">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+            </div>
+
+            <!-- Info -->
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+
+                {% if product.category %}
+                <span class="product-category">{{ product.category.name }}</span>
+                {% endif %}
+
+                <p class="product-price">₹{{ product.price }}</p>
+
+                <p class="product-description">
+                    {{ product.description|default:"No description available for this product." }}
+                </p>
+
+                <div class="stock-info">
+                    {% if in_stock %}
+                    <span class="stock-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    <span class="stock-count">{{ product.stock }} units available</span>
+                    {% else %}
+                    <span class="stock-badge out-of-stock"><i class="fas fa-times-circle"></i> Out of Stock</span>
+                    {% endif %}
+                </div>
+
+                {% if in_stock %}
+
+                <!-- Quantity Selector -->
+                <div class="quantity-section">
+                    <span class="quantity-label">Quantity:</span>
+                    <div class="quantity-selector">
+                        <button class="qty-btn" onclick="changeQty(-1)" type="button">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input
+                            type="number"
+                            class="qty-input"
+                            id="qty-input"
+                            value="1"
+                            min="1"
+                            max="{{ product.stock }}"
+                        >
+                        <button class="qty-btn" onclick="changeQty(1)" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons: Add to Cart | Buy Now | Go to Cart -->
+                <div class="action-buttons">
+                    <button
+                        class="btn-cart"
+                        id="add-to-cart-btn"
+                        onclick="addToCart(event, {{ product.pk }}, this)"
+                        data-url="{% url 'add_to_cart' product.pk %}">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+
+                    <button
+                        class="btn-buy-now"
+                        onclick="buyNow(event, {{ product.pk }}, this)"
+                        data-url="{% url 'add_to_cart' product.pk %}">
+                        <i class="fas fa-bolt"></i> Buy Now
+                    </button>
+
+                    <a href="{% url 'cart' %}" class="btn-go-cart">
+                        <i class="fas fa-shopping-bag"></i> Go to Cart
+                    </a>
+                </div>
+
+                {% else %}
+                <div class="action-buttons">
+                    <button class="btn-cart" disabled style="opacity:0.5; cursor:not-allowed;">
+                        <i class="fas fa-shopping-cart"></i> Out of Stock
+                    </button>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Prescription Drugs</a></li>
+                    <li><a href="#">Over-the-counter</a></li>
+                    <li><a href="#">Health Supplements</a></li>
+                    <li><a href="#">Medical Devices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> support@medshop.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MedShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const maxStock = {{ product.stock }};
+
+        function changeQty(delta) {
+            const input = document.getElementById('qty-input');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            if (val > maxStock) val = maxStock;
+            input.value = val;
+        }
+
+        document.getElementById('qty-input')?.addEventListener('input', function () {
+            let val = parseInt(this.value);
+            if (isNaN(val) || val < 1) this.value = 1;
+            if (val > maxStock) this.value = maxStock;
+        });
+
+        function getCookie(name) {
+            const val = document.cookie.split(';').find(c => c.trim().startsWith(name + '='));
+            return val ? val.trim().split('=')[1] : '';
+        }
+
+        let toastTimer;
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        async function addToCart(event, productId, btn) {
+            event.preventDefault();
+            const url = btn.getAttribute('data-url');
+            const csrfToken = getCookie('csrftoken');
+            const quantity = parseInt(document.getElementById('qty-input')?.value) || 1;
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding...';
+            btn.style.backgroundColor = '#ff6666';
+
+            try {
+                let lastData = null;
+                for (let i = 0; i < quantity; i++) {
+                    const res = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'X-CSRFToken': csrfToken, 'Content-Type': 'application/json' },
+                    });
+                    lastData = await res.json();
+                }
+
+                if (lastData?.success) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+                    btn.style.backgroundColor = '#28a745';
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = lastData.cart_count;
+                    });
+                    showToast(`${quantity} item(s) added to cart!`);
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    resetBtn(btn, '<i class="fas fa-shopping-cart"></i> Add to Cart', '');
+                }
+            } catch {
+                resetBtn(btn, '<i class="fas fa-shopping-cart"></i> Add to Cart', '');
+            }
+        }
+
+        async function buyNow(event, productId, btn) {
+            event.preventDefault();
+            const url = btn.getAttribute('data-url');
+            const csrfToken = getCookie('csrftoken');
+            const quantity = parseInt(document.getElementById('qty-input')?.value) || 1;
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.style.backgroundColor = '#cc5500';
+
+            try {
+                for (let i = 0; i < quantity; i++) {
+                    await fetch(url, {
+                        method: 'POST',
+                        headers: { 'X-CSRFToken': csrfToken, 'Content-Type': 'application/json' },
+                    });
+                }
+                // Redirect to cart after adding
+                window.location.href = "{% url 'cart' %}";
+            } catch {
+                resetBtn(btn, '<i class="fas fa-bolt"></i> Buy Now', '#ff6600');
+            }
+        }
+
+        function resetBtn(btn, html, bg) {
+            btn.innerHTML = html;
+            btn.style.backgroundColor = bg;
+            btn.disabled = false;
+        }
+    </script>
+
+</body>
+</html>

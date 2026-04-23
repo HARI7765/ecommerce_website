@@ -236,7 +236,7 @@ def contact_view(request):
 # About
 # -------------------------------
 def about_view(request):
-    return render(request, "about.html")
+    return render(request, "main/about.html")
 
 
 # -------------------------------
