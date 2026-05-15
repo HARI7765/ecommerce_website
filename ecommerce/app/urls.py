@@ -4,6 +4,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+
+    # Admin Panel
+    path('admin-panel/', views.admin_dashboard, name='admin_dashboard'),
+    path('admin-panel/users/', views.admin_users, name='admin_users'),
+    path('admin-panel/products/', views.admin_products, name='admin_products'),
+    path('admin-panel/orders/', views.admin_orders, name='admin_orders'),
+    path('admin-panel/add-product/', views.admin_add_product, name='admin_add_product'),
+    path('admin-panel/delete-product/<int:product_id>/', views.admin_delete_product, name='admin_delete_product'),
+    path('admin-panel/toggle-user/<int:user_id>/', views.admin_toggle_user, name='admin_toggle_user'),
+    
     # Home
     path('', views.index, name='home'),
     path('index/', views.index, name='index'),
@@ -26,6 +36,9 @@ urlpatterns = [
     # Orders
     path('orders/', views.orders_view, name='orders'),
     path('checkout/', views.checkout, name='checkout'),
+
+    path('checkout/', views.checkout, name='checkout'),
+ path('payment/success/', views.payment_success, name='payment_success'),
 
     # Auth
     path('register/', views.register_view, name='register'),

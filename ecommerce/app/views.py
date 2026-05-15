@@ -2,6 +2,7 @@ from decimal import Decimal
 import uuid
 import requests
 import random
+import razorpay
 from functools import wraps
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -10,8 +11,94 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q, Prefetch
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
-
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import Product, Category, CartItem, Order, Contact
+from .constants import PaymentStatus
+
+
+
+# -------------------------------
+# Admin Login Required Decorator
+# -------------------------------
+
+def admin_required(view_func):
+    decorated = user_passes_test(
+        lambda u: u.is_staff or u.is_superuser,
+        login_url='/login/'
+    )(view_func)
+    return decorated
+
+@admin_required
+def admin_dashboard(request):
+    from django.contrib.auth.models import User
+    users = User.objects.all()
+    products = Product.objects.all()
+    orders = Order.objects.all()
+    categories = Category.objects.all()
+    return render(request, 'admin_panel/dashboard.html', {
+        'users': users,
+        'products': products,
+        'orders': orders,
+        'categories': categories,
+        'total_users': users.count(),
+        'total_products': products.count(),
+        'total_orders': orders.count(),
+        'total_revenue': sum(o.amount for o in orders),
+    })
+
+@admin_required
+def admin_users(request):
+    from django.contrib.auth.models import User
+    users = User.objects.all().order_by('-date_joined')
+    return render(request, 'admin_panel/users.html', {'users': users})
+
+@admin_required
+def admin_products(request):
+    products = Product.objects.all().order_by('-id')
+    categories = Category.objects.all()
+    return render(request, 'admin_panel/products.html', {
+        'products': products,
+        'categories': categories,
+    })
+
+@admin_required
+def admin_orders(request):
+    orders = Order.objects.all().order_by('-id')
+    return render(request, 'admin_panel/orders.html', {'orders': orders})
+
+@admin_required
+def admin_add_product(request):
+    categories = Category.objects.all()
+    if request.method == 'POST':
+        Product.objects.create(
+            name=request.POST.get('name'),
+            description=request.POST.get('description'),
+            price=request.POST.get('price'),
+            stock=request.POST.get('stock'),
+            category=Category.objects.get(id=request.POST.get('category')),
+            image=request.POST.get('image'),
+        )
+        messages.success(request, 'Product added!')
+        return redirect('admin_products')
+    return render(request, 'admin_panel/add_product.html', {'categories': categories})
+
+@admin_required
+def admin_delete_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect('admin_products')
+
+@admin_required
+def admin_toggle_user(request, user_id):
+    from django.contrib.auth.models import User
+    user = get_object_or_404(User, id=user_id)
+    user.is_active = not user.is_active
+    user.save()
+    return redirect('admin_users')
 
 
 # -------------------------------
@@ -221,16 +308,45 @@ def profile_view(request):
 # -------------------------------
 # Contact
 # -------------------------------
+
 def contact_view(request):
     if request.method == "POST":
-        Contact.objects.create(
-            name=request.POST.get("name"),
-            email=request.POST.get("email"),
-            message=request.POST.get("message")
-        )
-        messages.success(request, "Message sent!")
-    return render(request, "contacts/contact.html")
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
 
+        # Save to database
+        Contact.objects.create(
+            name=name,
+            email=email,
+            message=message
+        )
+
+        # 1. Email notification to YOU (admin)
+        send_mail(
+            subject=f"New Contact Message from {name}",
+            message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.EMAIL_HOST_USER],
+            fail_silently=False,
+        )
+
+        # 2. Auto-reply to CUSTOMER
+        send_mail(
+            subject="Thank you for contacting us!",
+            message=f"Hi {name},\n\nThank you for reaching out to us.\n"
+                    f"We have received your message and will get back "
+                    f"to you within 24 hours.\n\n"
+                    f"Your Message:\n{message}\n\n"
+                    f"Best Regards,\nYour Shop Team",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[email],
+            fail_silently=False,
+        )
+
+        messages.success(request, "Message sent successfully!")
+
+    return render(request, "contacts/contact.html")
 
 # -------------------------------
 # About
@@ -357,3 +473,94 @@ def fetch_products_view(request):
     count = fetch_medicines()
     messages.success(request, f"Done! Added {count} new products.")
     return redirect("products")
+
+# Initialize Razorpay client
+razorpay_client = razorpay.Client(
+    auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET)
+)
+
+
+# -------------------------------
+# Checkout — Create Razorpay Order
+# -------------------------------
+@custom_login_required
+def checkout(request):
+    cart_items = CartItem.objects.filter(user=request.user)
+
+    if not cart_items.exists():
+        messages.error(request, "Your cart is empty!")
+        return redirect("cart")
+
+    # Calculate total
+    total = sum(item.product.price * item.quantity for item in cart_items)
+    total_paise = int(total * 100)  # Razorpay uses paise
+
+    # Create Razorpay order
+    razorpay_order = razorpay_client.order.create({
+        "amount": total_paise,
+        "currency": "INR",
+        "payment_capture": 1
+    })
+
+    # Save orders to DB with PENDING status
+    order_ids = []
+    for item in cart_items:
+        order = Order.objects.create(
+            user=request.user,
+            product=item.product,
+            quantity=item.quantity,
+            amount=item.product.price * item.quantity,
+            status="PENDING",
+            provider_order_id=razorpay_order['id']
+        )
+        order_ids.append(order.id)
+
+    context = {
+        "razorpay_key": settings.RAZORPAY_KEY_ID,
+        "razorpay_order_id": razorpay_order['id'],
+        "total": total,
+        "total_paise": total_paise,
+        "cart_items": cart_items,
+        "order_ids": order_ids,
+    }
+    return render(request, "orders/checkout.html", context)
+
+
+# -------------------------------
+# Payment Success — Verify Razorpay
+# -------------------------------
+@csrf_exempt
+def payment_success(request):
+    if request.method == "POST":
+        payment_id = request.POST.get("razorpay_payment_id")
+        order_id = request.POST.get("razorpay_order_id")
+        signature = request.POST.get("razorpay_signature")
+
+        params_dict = {
+            "razorpay_order_id": order_id,
+            "razorpay_payment_id": payment_id,
+            "razorpay_signature": signature,
+        }
+
+        try:
+            # Verify payment signature
+            razorpay_client.utility.verify_payment_signature(params_dict)
+
+            # Update all orders with this razorpay order ID
+            Order.objects.filter(provider_order_id=order_id).update(
+                status="COMPLETED",
+                payment_id=payment_id,
+                signature_id=signature,
+            )
+
+            messages.success(request, "Payment successful! Order placed.")
+            return redirect("orders")
+
+        except razorpay.errors.SignatureVerificationError:
+            Order.objects.filter(provider_order_id=order_id).update(
+                status="FAILED"
+            )
+            messages.error(request, "Payment verification failed!")
+            return redirect("cart")
+
+    return redirect("cart")

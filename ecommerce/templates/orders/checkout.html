@@ -29,7 +29,7 @@
             background-color: var(--light-bg);
         }
 
-        /* Header Styles */
+        /* ── Header ── */
         header {
             background-color: var(--dark-bg);
             padding: 15px 5%;
@@ -39,21 +39,17 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             width: 100%;
         }
 
-        .logo {
-            flex: 0 0 auto;
-        }
-
+        .logo { flex: 0 0 auto; }
         .logo a {
             color: var(--primary-color);
             font-size: 28px;
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 0.5px;
-            text-transform: none;
         }
 
         .nav-links {
@@ -73,18 +69,10 @@
             white-space: nowrap;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        .nav-links a:hover { color: var(--primary-color); }
 
-        .cart-icon {
-            position: relative;
-        }
-
-        .cart-icon i {
-            font-size: 20px;
-        }
-
+        .cart-icon { position: relative; }
+        .cart-icon i { font-size: 20px; }
         .cart-count {
             position: absolute;
             top: -10px;
@@ -101,7 +89,7 @@
             font-weight: bold;
         }
 
-        /* Page Title */
+        /* ── Page Title ── */
         .page-title {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -109,10 +97,7 @@
             text-align: center;
         }
 
-        .page-title h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+        .page-title h1 { font-size: 36px; margin-bottom: 10px; }
 
         .breadcrumb {
             display: flex;
@@ -120,21 +105,15 @@
             list-style: none;
         }
 
-        .breadcrumb li {
-            margin: 0 5px;
-        }
-
+        .breadcrumb li { margin: 0 5px; }
         .breadcrumb li a {
             color: #aaa;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+        .breadcrumb li a:hover { color: var(--primary-color); }
 
-        .breadcrumb li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Checkout Content */
+        /* ── Layout ── */
         .checkout-container {
             max-width: 1200px;
             margin: 40px auto;
@@ -144,12 +123,13 @@
             gap: 30px;
         }
 
-        /* Customer Details */
-        .customer-details {
+        /* ── Customer Details ── */
+        .customer-details,
+        .order-summary {
             background-color: white;
             border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .section-title {
@@ -160,10 +140,7 @@
             border-bottom: 2px solid var(--primary-color);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
+        .form-group { margin-bottom: 20px; }
         .form-group label {
             display: block;
             margin-bottom: 8px;
@@ -191,17 +168,8 @@
             gap: 15px;
         }
 
-        /* Order Summary */
-        .order-summary {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .cart-items {
-            margin-bottom: 30px;
-        }
+        /* ── Order Summary ── */
+        .cart-items { margin-bottom: 30px; }
 
         .cart-item {
             display: flex;
@@ -216,6 +184,7 @@
             border-radius: 5px;
             overflow: hidden;
             margin-right: 15px;
+            flex-shrink: 0;
         }
 
         .cart-item-image img {
@@ -224,29 +193,12 @@
             object-fit: cover;
         }
 
-        .cart-item-details {
-            flex: 1;
-        }
+        .cart-item-details { flex: 1; }
+        .cart-item-title { font-weight: 500; margin-bottom: 5px; color: var(--text-dark); }
+        .cart-item-price  { color: var(--primary-color); font-weight: 500; }
+        .cart-item-quantity { color: #666; font-size: 14px; }
 
-        .cart-item-title {
-            font-weight: 500;
-            margin-bottom: 5px;
-            color: var(--text-dark);
-        }
-
-        .cart-item-price {
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .cart-item-quantity {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .order-total {
-            margin-top: 20px;
-        }
+        .order-total { margin-top: 20px; }
 
         .total-row {
             display: flex;
@@ -255,7 +207,7 @@
             border-bottom: 1px solid #eee;
         }
 
-        .total-row:last-child {
+        .total-row.grand-total {
             border-bottom: none;
             padding-top: 15px;
             font-weight: 700;
@@ -263,10 +215,8 @@
             color: var(--text-dark);
         }
 
-        /* Payment Method Styles */
-        .payment-methods {
-            margin-top: 30px;
-        }
+        /* ── Payment Methods ── */
+        .payment-methods { margin-top: 30px; }
 
         .payment-option {
             display: flex;
@@ -280,30 +230,21 @@
             flex-wrap: wrap;
         }
 
-        .payment-option:hover {
-            border-color: #ddd;
-        }
+        .payment-option:hover,
+        .payment-option.selected { border-color: var(--primary-color); background: #fff5f5; }
 
-        .payment-option input {
-            margin-right: 10px;
-        }
-
-        .payment-icon {
-            margin-left: 10px;
-            font-size: 18px;
-            color: #666;
-        }
+        .payment-option input { margin-right: 10px; accent-color: var(--primary-color); }
+        .payment-icon { margin-left: 10px; font-size: 18px; color: #666; }
 
         .payment-description {
             font-size: 14px;
             color: #666;
-            margin-left: 15px;
             flex-basis: 100%;
             margin-top: 5px;
             margin-left: 30px;
         }
 
-        /* Place Order Button */
+        /* ── Place Order Button ── */
         .place-order-btn {
             display: block;
             width: 100%;
@@ -315,34 +256,24 @@
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
             margin-top: 30px;
         }
 
-        .place-order-btn:hover {
-            background-color: #e60000;
-        }
+        .place-order-btn:hover:not(:disabled) { background-color: #e60000; }
+        .place-order-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-        /* Alert Messages */
+        /* ── Alerts ── */
         .alert {
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 5px;
         }
 
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
+        .alert-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .alert-danger  { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-        .alert-danger {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        /* Enhanced Security Section */
+        /* ── Secure Badge ── */
         .secured-checkout {
             text-align: center;
             padding: 20px;
@@ -360,13 +291,9 @@
             margin-bottom: 10px;
         }
 
-        .secured-checkout i {
-            color: green;
-            margin-right: 10px;
-            font-size: 18px;
-        }
+        .secured-checkout i { color: green; margin-right: 10px; font-size: 18px; }
 
-        /* Footer Styles */
+        /* ── Footer ── */
         footer {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -383,29 +310,11 @@
             padding: 0 20px;
         }
 
-        .footer-column h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--primary-color);
-        }
+        .footer-column h3 { color: var(--primary-color); margin-bottom: 20px; font-size: 18px; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: #aaa; text-decoration: none; transition: color 0.3s ease; }
+        .footer-column ul li a:hover { color: var(--primary-color); }
 
         .copyright {
             text-align: center;
@@ -415,95 +324,49 @@
             color: #888;
         }
 
-        /* Responsive Styles */
+        /* ── Responsive ── */
         @media (max-width: 992px) {
-            .checkout-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .checkout-container     { grid-template-columns: 1fr; }
+            .footer-content         { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .nav-links a {
-                margin-left: 20px;
-                font-size: 14px;
-            }
-
-            .page-title h1 {
-                font-size: 28px;
-            }
-
-            .customer-details, .order-summary {
-                padding: 20px;
-            }
-
-            .section-title {
-                font-size: 22px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
+            .nav-links a            { margin-left: 20px; font-size: 14px; }
+            .page-title h1          { font-size: 28px; }
+            .customer-details,
+            .order-summary          { padding: 20px; }
+            .section-title          { font-size: 22px; }
+            .form-row               { grid-template-columns: 1fr; gap: 10px; }
         }
 
         @media (max-width: 576px) {
-            .logo a {
-                font-size: 24px;
-            }
-
-            .nav-links a {
-                margin-left: 15px;
-                font-size: 13px;
-            }
-
-            .page-title {
-                padding: 30px 0;
-            }
-
-            .page-title h1 {
-                font-size: 24px;
-            }
-
-            .checkout-container {
-                margin: 20px auto;
-            }
-
-            .cart-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .cart-item-image {
-                margin-bottom: 10px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .logo a                 { font-size: 24px; }
+            .nav-links a            { margin-left: 15px; font-size: 13px; }
+            .page-title             { padding: 30px 0; }
+            .page-title h1          { font-size: 24px; }
+            .checkout-container     { margin: 20px auto; }
+            .cart-item              { flex-direction: column; align-items: flex-start; }
+            .cart-item-image        { margin-bottom: 10px; }
+            .footer-content         { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
+
+    <!-- ══ Header ══ -->
     <header>
         <div class="logo">
-            <a href="{% url 'index'  %}">Medshop</a>
+            <a href="{% url 'index' %}">Medshop</a>
         </div>
         <div class="nav-links">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'products' %}">Pharmacy</a>
             {% if user.is_authenticated %}
-            <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
             {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            {% endif %}
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Logout</a>
+                <a href="{% url 'login' %}">Login</a>
             {% endif %}
             <a href="{% url 'contact' %}">Contact</a>
             <a href="{% url 'about' %}">About</a>
@@ -514,56 +377,74 @@
         </div>
     </header>
 
-    <!-- Page Title -->
+    <!-- ══ Page Title ══ -->
     <section class="page-title">
         <h1>Checkout</h1>
         <ul class="breadcrumb">
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li>></li>
+            <li>›</li>
             <li><a href="{% url 'cart' %}">Cart</a></li>
-            <li>></li>
+            <li>›</li>
             <li>Checkout</li>
         </ul>
     </section>
 
-    <!-- Display Messages -->
+    <!-- ══ Django Messages ══ -->
     {% if messages %}
         {% for message in messages %}
-            <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}" style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
+            <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}"
+                 style="max-width:1200px;margin:20px auto;padding:0 20px;">
                 {{ message }}
             </div>
         {% endfor %}
     {% endif %}
 
-    <!-- Checkout Content -->
+    <!-- ══ Checkout Grid ══ -->
     <div class="checkout-container">
-        <!-- Customer Details -->
+
+        <!-- Left: Shipping Form -->
         <div class="customer-details">
             <h2 class="section-title">Shipping Information</h2>
-            <form action="{% url 'checkout' %}" method="post">
+
+            <!--
+                FIX: this form only collects shipping info and the chosen
+                payment method.  For Razorpay orders the actual payment
+                flow is triggered client-side via the SDK; for COD the
+                form POSTs directly to 'checkout'.
+            -->
+            <form id="checkout-form" action="{% url 'checkout' %}" method="post" novalidate>
                 {% csrf_token %}
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name" class="form-control" required>
+                        <input type="text" id="first_name" name="first_name" class="form-control" required
+                               value="{{ user.first_name|default:'' }}">
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" name="last_name" class="form-control" required>
+                        <input type="text" id="last_name" name="last_name" class="form-control" required
+                               value="{{ user.last_name|default:'' }}">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" required
+                           value="{{ user.email|default:'' }}">
                 </div>
+
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                    <input type="tel" id="phone" name="phone" class="form-control" required
+                           placeholder="10-digit mobile number">
                 </div>
+
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" class="form-control" required>
                 </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="city">City</label>
@@ -571,30 +452,60 @@
                     </div>
                     <div class="form-group">
                         <label for="postal_code">Postal Code</label>
-                        <input type="text" id="postal_code" name="postal_code" class="form-control" required>
+                        <input type="text" id="postal_code" name="postal_code" class="form-control" required
+                               placeholder="6-digit PIN">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="state">State</label>
                     <input type="text" id="state" name="state" class="form-control" required>
                 </div>
+
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <input type="text" id="country" name="country" class="form-control" required>
+                    <input type="text" id="country" name="country" class="form-control" required value="India">
                 </div>
-                
+
+                <!-- ── Payment Methods ── -->
+                <div class="payment-methods">
+                    <h3 class="section-title" style="font-size:20px;">Payment Method</h3>
+
+                    <label class="payment-option" id="label-razorpay">
+                        <input type="radio" name="payment_method" value="razorpay" checked>
+                        <span>Pay Online (Card / UPI / Netbanking)</span>
+                        <span class="payment-icon">
+                            <i class="fas fa-credit-card"></i>
+                            <i class="fas fa-mobile-alt" style="margin-left:6px;"></i>
+                        </span>
+                        <span class="payment-description">
+                            Powered by Razorpay — fast &amp; secure.
+                        </span>
+                    </label>
+
+                    <label class="payment-option" id="label-cod">
+                        <input type="radio" name="payment_method" value="cod">
+                        <span>Cash on Delivery</span>
+                        <span class="payment-icon"><i class="fas fa-money-bill-wave"></i></span>
+                        <span class="payment-description">Pay when your order arrives.</span>
+                    </label>
+                </div>
+
                 <div class="secured-checkout">
                     <p><i class="fas fa-lock"></i> Your payment information is secure</p>
-                    <p>All transactions are encrypted and secure. We do not store your payment details.</p>
+                    <p>All transactions are encrypted. We do not store your payment details.</p>
                 </div>
-                
-                <button type="submit" class="place-order-btn">Place Order</button>
+
+                <button type="submit" id="place-order-btn" class="place-order-btn">
+                    Place Order
+                </button>
             </form>
         </div>
 
-        <!-- Order Summary -->
+        <!-- Right: Order Summary -->
         <div class="order-summary">
             <h2 class="section-title">Order Summary</h2>
+
             <div class="cart-items">
                 {% for item in cart_items %}
                 <div class="cart-item">
@@ -604,11 +515,11 @@
                     <div class="cart-item-details">
                         <h4 class="cart-item-title">{{ item.product.name }}</h4>
                         <p class="cart-item-price">₹{{ item.product.price }}</p>
-                        <p class="cart-item-quantity">Quantity: {{ item.quantity }}</p>
+                        <p class="cart-item-quantity">Qty: {{ item.quantity }}</p>
                     </div>
                 </div>
                 {% empty %}
-                <p>Your cart is empty.</p>
+                    <p>Your cart is empty.</p>
                 {% endfor %}
             </div>
 
@@ -621,22 +532,23 @@
                     <span>Shipping</span>
                     <span>₹{{ shipping_cost }}</span>
                 </div>
-                <div class="total-row">
+                <!-- FIX: was showing subtotal twice; now shows the real total -->
+                <div class="total-row grand-total">
                     <span>Total</span>
-                    <span>₹{{ subtotal }}</span>
+                    <span>₹{{ total }}</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- ══ Footer ══ -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="{% url 'products' %}">Products</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
@@ -662,7 +574,7 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> +91 9876543210</a></li>
                     <li><a href="#"><i class="fas fa-envelope"></i> support@medshop.com</a></li>
                     <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</a></li>
                 </ul>
@@ -672,38 +584,127 @@
             <p>&copy; 2025 MedShop. All rights reserved.</p>
         </div>
     </footer>
-    
-    <!-- Page Script -->
+
+    <!-- ══ Razorpay SDK ══ -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
     <script>
-        document.addEventListener('DOMContentInterval', function() {
-            // Auto-populate form fields if user is logged in
-            {% if user.is_authenticated %}
-                // You can add JavaScript to pre-fill form fields if needed
-                // For example, if you have user profile data available
-            {% endif %}
-            
-            // Form validation
-            const checkoutForm = document.querySelector('form');
-            checkoutForm.addEventListener('submit', function(e) {
-                const phoneInput = document.getElementById('phone');
-                const postalCodeInput = document.getElementById('postal_code');
-                
-                // Phone validation - simple check for length
-                if (phoneInput.value.length < 10) {
-                    e.preventDefault();
-                    alert('Please enter a valid phone number');
-                    return;
-                }
-                
-                // Postal code validation - simple check for length
-                if (postalCodeInput.value.length < 5) {
-                    e.preventDefault();
-                    alert('Please enter a valid postal code');
-                    return;
-                }
+    (function () {
+        /* ── Highlight selected payment option ── */
+        const paymentOptions = document.querySelectorAll('.payment-option input[type="radio"]');
+        paymentOptions.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                document.querySelectorAll('.payment-option').forEach(function (el) {
+                    el.classList.remove('selected');
+                });
+                this.closest('.payment-option').classList.add('selected');
             });
         });
+        // Mark default selected on load
+        const defaultChecked = document.querySelector('.payment-option input[type="radio"]:checked');
+        if (defaultChecked) defaultChecked.closest('.payment-option').classList.add('selected');
+
+        /* ── Client-side validation ── */
+        function validateForm() {
+            const phone      = document.getElementById('phone').value.trim();
+            const postalCode = document.getElementById('postal_code').value.trim();
+
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+            if (!/^\d{6}$/.test(postalCode)) {
+                alert('Please enter a valid 6-digit postal code.');
+                return false;
+            }
+            return true;
+        }
+
+        /* ── Form submit handler ── */
+        document.getElementById('checkout-form').addEventListener('submit', function (e) {
+            e.preventDefault();                      // always intercept first
+
+            if (!validateForm()) return;
+
+            const method = document.querySelector('input[name="payment_method"]:checked').value;
+            const btn    = document.getElementById('place-order-btn');
+
+            if (method === 'cod') {
+                // COD: just submit the form normally
+                btn.disabled    = true;
+                btn.textContent = 'Placing Order…';
+                this.submit();
+                return;
+            }
+
+            // ── Razorpay Online Payment ──
+            // razorpay_key, total_paise, razorpay_order_id are rendered
+            // by the Django view into the template context.
+            var options = {
+                key:         "{{ razorpay_key }}",
+                amount:      {{ total_paise }},          // FIX: integer, no quotes
+                currency:    "INR",
+                name:        "MedShop",
+                description: "Order Payment",
+                order_id:    "{{ razorpay_order_id }}",
+
+                handler: function (response) {
+                    // Build a hidden form and POST verification details server-side
+                    var form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = "{% url 'payment_success' %}";
+
+                    var fields = {
+                        razorpay_payment_id: response.razorpay_payment_id,
+                        razorpay_order_id:   response.razorpay_order_id,
+                        razorpay_signature:  response.razorpay_signature,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    };
+
+                    Object.entries(fields).forEach(function ([key, val]) {
+                        var input   = document.createElement('input');
+                        input.type  = 'hidden';
+                        input.name  = key;
+                        input.value = val;
+                        form.appendChild(input);
+                    });
+
+                    document.body.appendChild(form);
+                    form.submit();
+                },
+
+                prefill: {
+                    name:    document.getElementById('first_name').value + ' ' +
+                             document.getElementById('last_name').value,
+                    email:   document.getElementById('email').value,
+                    contact: document.getElementById('phone').value
+                },
+
+                theme: { color: "#ff1a1a" },
+
+                // FIX: handle failures & modal dismissal
+                modal: {
+                    ondismiss: function () {
+                        btn.disabled    = false;
+                        btn.textContent = 'Place Order';
+                    }
+                }
+            };
+
+            var rzp = new Razorpay(options);
+
+            rzp.on('payment.failed', function (response) {
+                alert('Payment failed: ' + response.error.description +
+                      '\nPlease try again or choose Cash on Delivery.');
+                btn.disabled    = false;
+                btn.textContent = 'Place Order';
+            });
+
+            btn.disabled    = true;
+            btn.textContent = 'Processing…';
+            rzp.open();
+        });
+    })();
     </script>
 </body>
-
 </html>
